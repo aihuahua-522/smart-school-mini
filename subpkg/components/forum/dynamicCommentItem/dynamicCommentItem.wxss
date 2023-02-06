@@ -1,0 +1,92 @@
+.assess-item {
+  color: #666666;
+  border-bottom: 4rpx solid #e4e4e4;
+}
+.content-box {
+  padding: 0 60rpx;
+  font-size: 30rpx;
+}
+.assess-content {
+  line-height: 50rpx;
+  padding-bottom: 10rpx;
+  /* 文本自动换行 */
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.back {
+  padding: 0 20rpx;
+}
+.back-box {
+  display: flex;
+}
+.back-name {
+  color: #000000;
+  margin-right: 10rpx;
+  line-height: 50rpx;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* /* .back-name .nn{
+  width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+.back-con {
+  width: 80%;
+  line-height: 50rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.back-num {
+  color: #1891fa;
+  padding: 0 0 10rpx 20rpx;
+}
+/* 底部 */
+.assess-bot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx 10rpx;
+}
+.bot-time {
+  width: 60%;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+/* 操作区域 */
+.handle {
+  display: flex;
+}
+.headportrait {
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.handle-item {
+  display: flex;
+  margin: 0 10rpx;
+  color: #999999;
+}
+.icon-great {
+  color: #ffcc33;
+}
+.num {
+  margin-left: 4rpx;
+  line-height: 60rpx;
+}
+/* 论坛内容 */
+.personal-data {
+  width: 100%;
+  padding-top: 10rpx;
+  display: flex;
+  position: relative;
+}
+.personal-box {
+  display: flex;
+  align-items: center;
+}
+/*# sourceMappingURL=dynamicCommentItem.wxss.map */

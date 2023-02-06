@@ -1,0 +1,26 @@
+<!--subpkg/pages/common/moreApplication/moreApplication.wxml-->
+<view class="container">
+  <view class="moreApp" wx:for="{{menuData}}">
+    <view class="title">
+      {{item.title}}
+    </view>
+    <t-grid class="block" column="{{5}}">
+      <t-grid-item text="{{menuItem.name}}" image="{{menuItem.icon}}" data-path="{{menuItem.path}}" wx:for="{{item.menuList}}" wx:for-item="menuItem" bindtap="clickItem" />
+    </t-grid>
+  </view>
+  <!--<view class="moreApp">-->
+  <!--  <view class="title">-->
+  <!--    休闲娱乐-->
+  <!--  </view>-->
+  <!--  <t-grid class="block" column="{{5}}">-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="标题文字" image="{{img}}" />-->
+  <!--    <t-grid-item text="最多四字" image="{{img}}" />-->
+  <!--  </t-grid>-->
+  <!--</view>-->
+</view>

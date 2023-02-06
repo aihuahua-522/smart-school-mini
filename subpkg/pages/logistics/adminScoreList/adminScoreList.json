@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cascader": "tdesign-miniprogram/cascader/cascader",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh"
+  },
+  "enablePullDownRefresh":true,
+  "navigationBarTitleText": "宿舍打分",
+  "navigationStyle": "default"
+}

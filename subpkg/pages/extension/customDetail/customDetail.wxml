@@ -1,0 +1,51 @@
+<!--subpkg/pages/extension/customAdd/customAdd.wxml-->
+<!--subpkg/pages/locationSign/locationSign.wxml-->
+<view class="container">
+
+  <view class="top-con-view">
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      活动名称:{{activityName}}
+      <!-- <t-input value="{{activityName}}" data-id="activityName" disabled bindchange="inputChange" /> -->
+    </view>
+    <view class="con-item">
+      活动地址:{{activityAddress}}
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      <text style="margin-right:26rpx"> 活动类型:</text>
+      <text>{{CurrentValue}}</text>
+
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      活动学分:<text>{{credit}}</text>
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item" style="font-size: 16px; font-weight: 500; color: #333333;">
+      证明材料：
+    </view>
+    <view class="chooseImg">
+      <view class="imgs">
+        <view wx:for="{{imageList}}" wx:key="index">
+          <!-- 添加的图片 -->
+          <view class="add-img img">
+            <image data-index="{{index}}" bindtap="previewAvatarImage" src="{{item.url}}" />
+            <!-- <image class="removeicon" src="/image/image-del.png" mode="" bindtap="removeAvatarImage"></image> -->
+            <!-- 删除按钮 -->
+            <!-- <view class="removeicon" data-index="{{index}}" bindtap="removeAvatarImage">×</view> -->
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+
+  <!-- 添加图片按钮 -->
+
+</view>

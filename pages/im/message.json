@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh"
+  },
+  "navigationBarTitleText": "消息",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}

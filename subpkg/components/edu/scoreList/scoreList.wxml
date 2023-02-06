@@ -1,0 +1,14 @@
+<!--subpkg/components/edu/scoreItem/scoreItem.wxml-->
+<view class="container">
+  <view class="item" wx:for="{{scoreItems}}">
+    <t-cell-group theme="card">
+      <t-cell title="课程名称" hover note="{{item.courseName}}"> </t-cell>
+      <t-cell title="教师名称" hover note="{{item.teacherName}}"></t-cell>
+      <!-- <t-cell title="平时成绩" hover note="{{item.peaceTimeScore}}"></t-cell>
+      <t-cell title="实验成绩" hover note="{{item.experimentScore}}"></t-cell>
+      <t-cell title="考试成绩" hover note="{{item.testPaperScore}}"></t-cell> -->
+      <t-cell title="总成绩" hover note="{{item.achievement}}"></t-cell>
+      <t-cell title="绩点" hover note="{{item.gradePoint}}"></t-cell>
+    </t-cell-group>
+  </view>
+</view>

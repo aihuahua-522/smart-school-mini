@@ -1,0 +1,64 @@
+<!--components/logistics/repair.wxml-->
+
+<view class="repair-apply">
+  <t-message id="t-message" />
+  <!-- 报修人 -->
+  <view class="info-item">
+    <t-input value="{{param.name}}" label="报修人" placeholder="请输入名字" disabled bindchange="nameInput" />
+  </view>
+  <!-- 手机号 -->
+  <view class="info-item">
+    <t-input placeholder="请输入手机号码" label="手机号码" disabled value="{{param.phoneNumber}}" type="number" bindchange="numberInput">
+    </t-input>
+  </view>
+  <!-- 预约时间 -->
+  <view class="info-item">
+    <t-cell title="预约时间" hover note="{{datetimeText || '年月日时分'}}" arrow data-mode="datetime" bindtap="showPicker" t-class="pannel-item" t-class-note="{{datetimeText ? 'sub-text' : 'empty'}}" />
+
+    <t-date-time-picker title="预约时间" visible="{{datetimeVisible}}" mode="minute" value="{{datetime}}" format="YYYY-MM-DD HH:mm" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker"></t-date-time-picker>
+  </view>
+  <!-- 报修位置 -->
+  <view class="info-item">
+    <t-cell title="报修位置" note="{{note|| '请选择房间号'}}" bind:click="showCascader" t-class-note="{{datetimeText ? 'sub-text' : 'empty'}}" t-class="pannel-item ft" arrow></t-cell>
+
+    <t-cascader visible="{{roomvisible}}" options="{{roomTree}}" title="请选择房间号" bind:change="onRoomChange"></t-cascader>
+
+
+    <t-picker visible="{{siteVisible}}" value="{{param.roomId}}" data-key="site" title="{{pickerTitle}}" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange1" bindpick="onColumnChange" bindcancel="onPickerCancel">
+      <t-picker-item options="{{school}}"></t-picker-item>
+      <t-picker-item options="{{building}}"></t-picker-item>
+      <t-picker-item options="{{bedroom}}"></t-picker-item>
+    </t-picker>
+  </view>
+  <!-- 故障类型 -->
+  <view class="info-item">
+    <view class="pannel-item" bind:tap="onClickPicker" data-key="{{PICKER_KEY.CUT}}">
+      <view class="pannel-label">故障类型</view>
+      <view class="pannel-text {{cutCurrentValue ? '' : 'empty'}}">{{cutCurrentValue || '选择类型'}}</view>
+      <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+    </view>
+    <t-picker visible="{{cutVisible}}" value="{{cutValue}}" data-key="cut" title="{{pickerTitle}}" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange2" bindpick="onColumnChange" bindcancel="onPickerCancel">
+      <t-picker-item options="{{logisticsStatusKeyType}}"></t-picker-item>
+    </t-picker>
+  </view>
+  <!-- 报修描述 -->
+  <t-textarea label="故障描述" placeholder="请输入故障描述(200字以内)..." bindchange="questionInput" value="{{content}}" maxlength="200" />
+  <!-- 添加图片 -->
+  <view class="chooseImg">
+    <view class="imgs">
+      <!-- 添加图片按钮 -->
+      <image class="add-img" bindtap="goChooseImg" src="/image/delete.png" mode=""></image>
+      <view wx:for="{{avatarPath}}" wx:key="index">
+        <!-- 添加的图片 -->
+        <view class="add-img img">
+          <image data-index="{{index}}" bindtap="previewAvatarImage" src="{{item}}" />
+          <!-- <image class="removeicon" src="/image/delete.png" mode="" bindtap="removeAvatarImage"></image> -->
+          <!-- 删除按钮 -->
+          <view class="removeicon" data-index="{{index}}" bindtap="removeAvatarImage">×</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 申请按钮 -->
+  <button bindtap="applyRepair">申请报修</button>
+</view>

@@ -1,0 +1,2 @@
+<!--subpkg/pages/news/newsDetail.wxml-->
+<web-view src="{{url}}"></web-view>

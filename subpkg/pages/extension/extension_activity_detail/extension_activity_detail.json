@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+    "t-steps": "tdesign-miniprogram/steps/steps",
+    "t-step-item": "tdesign-miniprogram/steps/step-item",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog" ,
+    "t-button": "tdesign-miniprogram/button/button"
+  },
+  "navigationStyle": "default",
+  "navigationBarTitleText": "活动详情",
+  "enablePullDownRefresh":true
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "活动收藏",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "activityItem": "/components/activityItem/activityItem",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-divider": "tdesign-miniprogram/divider/divider"
+  }
+}

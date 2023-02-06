@@ -1,0 +1,83 @@
+.page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f6f6f6;
+  z-index: -1000;
+}
+.top_back {
+  background-color: #ffbc2d;
+  height: 550rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.content_container {
+  z-index: 1;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+}
+.content_container .user_info {
+  width: calc(100vw - 80rpx);
+  display: flex;
+  justify-content: flex-start;
+  margin: 20rpx 40rpx 10rpx;
+  color: #fff;
+}
+.content_container .user_info .right_user_info {
+  width: 73%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.content_container .user_info .right_user_info .user_dept_text {
+  color: #fff;
+}
+.content_container .user_info .right_user_info .nickName {
+  text-align: left;
+  margin-right: 6rpx;
+}
+.content_container .user_info .left_user_info .external-class {
+  width: 72px;
+  height: 72px;
+}
+.content_container .user_data {
+  flex-direction: row;
+  width: calc(100vw - 50rpx);
+  padding: 36rpx 10rpx 24rpx;
+  color: #fff;
+}
+.content_container .user_data .data_name {
+  color: #fff;
+  margin: 10rpx 0 0 0;
+}
+.content_container .center_container {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 48rpx 48rpx 0 0;
+  padding: 10rpx 0rpx;
+  flex-direction: row;
+}
+.content_container .center_container .balance_box {
+  flex: 1;
+  box-sizing: border-box;
+  margin: 10rpx;
+  padding: 20rpx;
+  background-color: #f7f7f7;
+}
+.edit {
+  display: flex;
+  align-self: center;
+}
+.edit .t-icon-base {
+  text-align: right;
+}
+.demo-section__wrapper {
+  margin: 20rpx 0;
+  box-sizing: border-box;
+}
+.t-cell {
+  padding: 32rpx 20rpx !important;
+}
+/*# sourceMappingURL=me.wxss.map */

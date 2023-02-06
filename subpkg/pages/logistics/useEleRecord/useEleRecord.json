@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"ec-canvas": "../../../../../compoent/ec-canvas/ec-canvas"
+	},
+
+	"navigationBarTitleText": "用电记录",
+	"navigationStyle": "default"
+}

@@ -1,0 +1,101 @@
+/* components/logistics/repair.wxss */
+.repair-apply{
+  height: 100vh;
+  background-color: #fff;
+}
+.pannel-item {
+  display: flex;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 32rpx;
+  font-size: 32rpx;
+  background-color: #fff;
+}
+.ft{
+  font-size: 24rpx !important;
+}
+.pannel-item .last {
+  margin-bottom: -13rpx;
+}
+.pannel-label {
+  width: 160rpx;
+  margin-right: 32rpx;
+}
+.ss{
+  margin-left: 20rpx;
+}
+.pannel-text {
+  flex: 1;
+  color: #000;
+  opacity: 0.9;
+}
+.pannel-text.empty {
+  opacity: 0.26;
+}
+.t-cell__title, .t-cell__note {
+  flex:none !important;
+  padding-right: 66rpx;
+}
+.t-cell__title, .t-cell__note {
+  flex: none !important;
+}
+.t-cell__right {
+  position: absolute;
+  right: 30rpx;
+}
+
+
+.chooseImg {
+  width: 90%;
+  padding: 20rpx;
+  /* padding: 30rpx 50rpx 70rpx; */
+}
+
+.img-tit {
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #495258;
+  margin: 0 0 24rpx 6rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.imgs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-img {
+  width: 110rpx;
+  height: 110rpx;
+  margin: 10rpx 25rpx 10rpx 0;
+}
+.sub-text{
+  color:#000;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  /* border: 1rpx solid #3a3a3a; */
+}
+
+.img {
+  position: relative;
+}
+
+.removeicon {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  text-align: center;
+  line-height: 36rpx;
+  color: #495258;
+  font-size: 26rpx;
+  z-index: 2;
+  top: -20rpx;
+  right: -20rpx;
+}

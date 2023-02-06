@@ -1,0 +1,33 @@
+<!--pages/forum/good/good.wxml-->
+<view class="container">
+  <!-- 自定义导航栏 -->
+  <page-meta>
+    <navigation-bar title="TA的粉丝 ({{num}})" />
+  </page-meta>
+  <!-- 个人信息item -->
+  <view class="good-item">
+    <view class="personal-box" bindtap="goPersonalData">
+      <image src="/image/school_icon.png" class="headportrait"></image>
+      <view class="human">
+        <view class="name">花花的智慧校园</view>
+        <view class="signature">郭总爱花花~~</view>
+      </view>
+    </view>
+    <text class="concern">关注</text>
+    <!-- <text class="concern" data-index="{{index}}" bindtap="handleAssess">{{item.essence==0?'关注':'已关注'}}</text> -->
+  </view>
+
+    <!-- 个人信息item -->
+    <view class="good-item">
+    <view class="personal-box" bindtap="goPersonalData">
+      <image src="/image/school_icon.png" class="headportrait"></image>
+      <view class="human">
+        <view class="name">花花的智慧校园</view>
+        <view class="signature">郭总爱花花~~</view>
+      </view>
+    </view>
+    <text class="concern">关注</text>
+    <!-- <text class="concern" data-index="{{index}}" bindtap="handleAssess">{{item.essence==0?'关注':'已关注'}}</text> -->
+  </view>
+
+</view>

@@ -1,0 +1,333 @@
+<view class="container">
+  <t-message id="t-message" />
+  <!-- 顶部 -->
+  <view class="top_banner">
+    <!-- 顶部图片 -->
+    <view class="top_bg">
+      <!-- <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" bindchange="onChange" navigation>
+      <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
+        <image src="{{item.image}}" class="img" />
+      </t-swiper-item>
+    </t-swiper> -->
+      <image src="/image/detail_bg.png" class="detail_bg"></image>
+
+      <view class="time_box" wx:if="{{activityDetail.countDownFlag == 0}}">
+        <view class="time_name">距离报名开始</view>
+        <view class="countDown">
+          <view wx:if="{{showTime.days !='0'}}">{{showTime.days}}天</view>
+          {{showTime.hours}}:{{showTime.minutes}}:{{showTime.seconds}}
+        </view>
+      </view>
+
+      <view class="time_box" wx:elif="{{activityDetail.countDownFlag == 1}}">
+        <view class="time_name">距离活动开始</view>
+        <view class="countDown">
+          <view wx:if="{{showTime.days !='0'}}">{{showTime.days}}天</view>
+          {{showTime.hours}}:{{showTime.minutes}}:{{showTime.seconds}}
+        </view>
+      </view>
+
+      <view class="time_box" wx:elif="{{activityDetail.countDownFlag == 2}}">
+        <view class="time_name">距离活动结束</view>
+        <view class="countDown">
+          <view wx:if="{{showTime.days !='0'}}">{{showTime.days}}天</view>
+          {{showTime.hours}}:{{showTime.minutes}}:{{showTime.seconds}}
+        </view>
+      </view>
+
+      <view class="time_box" wx:else>
+        <view class="time_name"></view>
+        <view class="countDown">活动已结束</view>
+      </view>
+
+    </view>
+
+    <!-- 活动logo -->
+    <view class="activity_logo_box">
+      <!-- 活动图标 -->
+      <image src="{{activityDetail.icon}}" class="activity_icon"></image>
+      <!-- 活动状态 -->
+      <!-- <view class="activity_status">
+        <image class="status_image" src="/image/doing.png" wx:if="{{activityDetail.countDownFlag==1||activityDetail.countDownFlag==2}}"></image>
+        <image class="status_image" src="/image/notBegun.png" wx:elif="{{activityDetail.countDownFlag==0}}"></image>
+        <image class="status_image" src="/image/over.png" wx:else></image>
+      </view> -->
+
+
+    </view>
+
+
+
+
+
+  </view>
+
+  <!-- 活动标题 -->
+  <view class="activity_title_box">
+
+    <view class="activity_title">
+      <view class="tip">
+        {{activityDetail.credit}}学分
+      </view>
+      {{activityDetail.name}}
+    </view>
+
+    <view class="activity_statistics">
+      <view>人数：{{activityDetail.places>50000?'无限制':activityDetail.places}}</view>
+      <view>已报名：{{activityDetail.reportCount}}人</view>
+      <view>已签到：{{activityDetail.signInCount}}人</view>
+      <view wx:if="{{activityDetail.shouldSignOut === 1}}">已签退：{{activityDetail.signOutCount}}人</view>
+    </view>
+
+
+
+
+
+  </view>
+
+
+
+  <!-- 活动公告 -->
+  <view class="activity_inform">
+    <navigator hoverClass="none" openType="navigate" url="/pages/notice/noticeList">
+      <view class="inform_1">活动</view>
+      <view class="inform_2">公告</view>
+      <view class="iconfont icon-icon_fire"></view>
+      <view class="inform_3" bindtap="goNoticeDetail">{{notice != '' && notice.title}}</view>
+      <!-- <view class="inform_3">暂无公告</view> -->
+      <view bindtap="goNoticeList" class="iconfont icon-youjiantou"></view>
+    </navigator>
+
+
+
+  </view>
+
+  <!-- 活动流程 -->
+  <view class="activity_flow">
+
+
+    <view class="title">活动流程</view>
+
+    <view class="flow_step">
+      <t-steps class="demo-steps" current="{{currentStep}}" readonly="true">
+        <t-step-item wx:for="{{steps}}" title="{{item.stepName}}" wx:key="index" />
+      </t-steps>
+    </view>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class=" tabs">
+    <view bindtap="swichNav" class="{{currentTab==0?'active':''}}" data-current="0">详情</view>
+    <view bindtap="swichNav" class="{{currentTab==1?'active':''}}" data-current="1">简介</view>
+    <view bindtap="swichNav" class="{{currentTab==2?'active':''}}" data-current="2">成员</view>
+    <view bindtap="swichNav" class="{{currentTab==3?'active':''}}" data-current="3">评价</view>
+    <view bindtap="swichNav" class="{{currentTab==4?'active':''}}" data-current="4">现场</view>
+  </view>
+
+
+  <swiper bindchange="switchTab" current="{{currentTab}}" class="swiper_container">
+    <!-- 详情 -->
+    <swiper-item itemId="0">
+      <view class="details">
+        <view>
+          <view class="callName">活动分类</view>
+          <view class="contText">{{activityDetail.activityTypeName}}</view>
+        </view>
+        <view wx:if="{{activityDetail.contactName}}">
+          <view class="callName">活动联系人</view>
+          <view class="contText">{{activityDetail.contactName}}</view>
+        </view>
+        <view wx:if="{{actiDetails.notRegSignIn==1}}">
+          <view class="callName">报名时间</view>
+          <view class="contText">活动无需报名</view>
+        </view>
+        <view wx:else>
+          <view class="callName">报名时间</view>
+          <view class="contText">{{activityDetail.applyTime}}</view>
+        </view>
+        <view>
+          <view class="callName">活动时间</view>
+          <view class="contText">{{activityDetail.activityTime}}</view>
+        </view>
+        <view>
+          <view class="callName">活动地点</view>
+          <view class="contText">{{activityDetail.address}}</view>
+        </view>
+        <view wx:if="{{activityDetail.grades}}">
+          <view class="callName">活动年级</view>
+          <view class="contText" wx:if="{{activityDetail.grades.length==0}}">
+            全部
+          </view>
+          <view class="contText" wx:else>
+            <view wx:for="{{activityDetail.grades}}"> {{item}}级 </view>
+          </view>
+        </view>
+        <view wx:if="{{activityDetail.deptNames}}">
+          <view class="callName">活动院系</view>
+          <view class="contText" wx:if="{{activityDetail.deptNames.length==0}}">
+            全部
+          </view>
+          <view class="contText" wx:else>
+            <view wx:for="{{activityDetail.deptNames}}" wx:key="index">{{item}}</view>
+          </view>
+        </view>
+        <view wx:if="{{actiDetails.allow_user_type==1}}">
+          <view class="callName">活动对象</view>
+          <view class="contText">
+            <view wx:for="{{actiDetails.allow_group}}" wx:key="index">{{item}}</view>
+          </view>
+        </view>
+        <view wx:if="{{actiDetails.tags.length>0}}">
+          <view class="callName">活动标签</view>
+          <view class="contText">
+            <view wx:for="{{actiDetails.tags}}" wx:key="index">{{item.name}}</view>
+          </view>
+        </view>
+        <view wx:if="{{activityDetail.teamName}}">
+          <view class="callName">归属部落</view>
+          <view class="contText" style="color: blue;" bindtap="goTribalDetailPage">{{activityDetail.teamName}}</view>
+        </view>
+        <view wx:if="{{activityDetail.gpsFlag==1}}">
+          <view class="callName">定位签到</view>
+          <view class="contText">{{activityDetail.gpsAddress}}</view>
+        </view>
+        <view>
+          <view class="callName"></view>
+          <view class="contText"></view>
+        </view>
+      </view>
+    </swiper-item>
+
+    <!-- 简介 -->
+    <swiper-item itemId="1">
+      <view class="intro">
+        {{activityDetail.description}}
+      </view>
+    </swiper-item>
+
+    <!-- 成员 -->
+    <swiper-item itemId="2">
+      <scroll-view bindscrolltolower="moreMember" data-wpymoremember-a="" scrollX="false" scrollY="true" style="height: 90%;" class="member_container">
+        <view class="member">
+          <view wx:for="{{memberLists}}" wx:key="index">
+            <image src="{{item.avatar}}"></image>
+            <view class="member_info">
+              <view class="member_tag orange" wx:if="{{item.userStatus==1}}">管理员</view>
+              <view class="member_tag blue" wx:if="{{item.status==2}}">签到员</view>
+              <view class="member_tag gray" wx:if="{{item.status==0}}">未签到</view>
+              <view class="member_tag green" wx:if="{{item.status==1}}">已签到</view>
+              <view class="member_tag gray" wx:if="{{item.status==2}}">未签退</view>
+              <view class="member_tag green" wx:if="{{item.status==3}}">已签退</view>
+              <view class="member_name">{{item.name}}</view>
+            </view>
+          </view>
+          <view class="is_more" wx:if="{{is_more}}">没有更多数据了~</view>
+        </view>
+        <view class="no_cont" wx:if="{{activityDetail.memberLists.length == 0}}">
+          <image src="/image/nocont.png"></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 评论 -->
+    <swiper-item itemId="3">
+      <scroll-view scrollX="false" scrollY="true" style="height: 90%;" class="comment_container">
+        <view class="no_cont" wx:if="{{is_empty1}}">
+          <image src="/image/nocont.png"></image>
+        </view>
+        <view class="comment" wx:else>
+          <view bindtap="goLinkList" class="comment-title">
+            活动评价<view>({{scoreObj.score}}分)</view>
+            <view class="text-right">好评度{{scoreObj.good}}%<image src="/image/arrow_2.png"></image>
+            </view>
+          </view>
+          <view class="comment_list" wx:for="{{commentList}}" wx:key="index">
+            <image src="{{item.avatar}}"></image>
+            <view class="comment_mes">
+              <view class="name">
+                <view>{{item.name}}</view>
+                <view class="star-num">
+                  <image src="/image/stared.png" wx:for="{{item.star-0}}" wx:key="index"></image>
+                  <image src="/image/star.png" wx:for="{{5-item.star-0}}" wx:key="index"></image>
+                </view>
+              </view>
+              <view class="time">
+
+                <view>
+                  发布时间:{{item.createTime}}
+                </view>
+                <view>
+                  <text>来自{{item.deptName}}</text>
+                  <!-- <t-button theme="primary" icon="app" shape="square"></t-button> -->
+                </view>
+              </view>
+              <view class="comment-content">
+                <view class="text">{{item.content}}</view>
+                <view class="one-img-box" wx:if="{{item.pictures.length===1}}">
+                  <image alt="" mode="aspectFit" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="index"></image>
+                </view>
+                <view class="four-img-box" wx:elif="{{item.pictures.length===4}}">
+                  <image alt="" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="index"></image>
+                </view>
+                <view class="other-img-box" wx:else>
+                  <image alt="" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="index"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view bindtap="goLinkList" class="look-more">查看全部</view>
+        </view>
+        <view bindtap="checkedComment" class="comment_btn" data-wpycheckedcomment-a="" wx:if="{{activityDetail.evaluateFlag==0}}">
+          <image src="/image/comment.png"></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 现场 -->
+    <swiper-item itemId="4">
+      <scroll-view bindscrolltolower="morePic" data-wpymorepic-a="" scrollX="false" scrollY="true" style="height: 90%;">
+        <view class="img-v">
+          <view bindtap="chooseImg" class="upload-img-btn">
+            <image src="/image/delete.png"></image>
+          </view>
+          <view class="img" wx:for="{{liveList}}" wx:key="*this">
+            <image bindtap="previewImg" data-index="{{index}}" mode="aspectFill" src="{{item.url}}"></image>
+            <view catchtap="deleteImg" class="delete-btn iconfont icon-deletes" data-id="{{item.id}}" data-index="{{index}}" data-wpydeleteimg-a="" wx:if="{{is_sponsor||userId==item.uid}}"></view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+  <t-dialog visible="{{showSureActivityApply}}" title="互活动报名" content="确定要报名此活动吗" confirm-btn="确定" cancel-btn="取消" bind:confirm="sureActivityApply" bind:cancel="closeSureActivityApplyDialog" />
+  <!-- 底部操作按钮 -->
+  <view class="bottom_btn">
+    <view bindtap="getIsCollect" class="collect" bindtap="switchFavorite">
+      <view class="iconfont icon-shoucang {{activityDetail.favoriteFlag == 1?'orange':'gray'}}"></view>
+      <view>{{activityDetail.favoriteFlag == 1?'已收藏':'收藏'}}</view>
+    </view>
+    <view bindtap="showActivityApplyDialog" class="apply_btn" wx:if="{{activityDetail.reportFlag == 0 && activityDetail.countDownFlag != 3}}">报名</view>
+    <view class="apply_btn disabled" wx:elif="{{activityDetail.reportFlag == -1 && activityDetail.countDownFlag != 3}}">报名未开始</view>
+    <view class="apply_btn disabled" wx:elif="{{activityDetail.reportFlag == -2 && activityDetail.countDownFlag != 3}}" disabled>报名结束</view>
+    <view wx:elif="{{activityDetail.countDownFlag == 3}}" class="apply_btn disabled">活动已结束</view>
+    <view class="apply_btn" wx:elif="{{activityDetail.reportFlag==1}}">报名审核中</view>
+
+    <!-- <view bindtap="activityJoin" class="apply_btn" data-wpyactivityjoin-a="" wx:if="{{activityDetail.reportFlag == 2}}">重新报名</view> -->
+    <!-- 管理员操作 -->
+    <view class="apply_btn" data-wpygpssign-a="" wx:elif="{{activityDetail.adminFlag == 1}}" bindtap="adminSignIn">查看密码</view>
+
+    <view bindtap="signIn" class="apply_btn" data-wpygpssign-a="" wx:elif="{{activityDetail.reportFlag==2 && activityDetail.signFlag==0}}">签到</view>
+
+    <view bindtap="signOut" class="apply_btn" data-wpygpssign-a="" wx:elif="{{activityDetail.reportFlag==2 && activityDetail.signFlag==1}}">签退</view>
+    <view wx:elif="{{activityDetail.reportFlag==2 && activityDetail.signFlag==2}}" class="apply_btn">已签退</view>
+    <view wx:else class="apply_btn">已结束</view>
+  </view>
+
+
+
+  <t-dialog visible="{{showPassDialog}}" title="请输入活动密码" confirm-btn="确认" cancel-btn="取消">
+
+    <input slot="content" placeholder="输入文案" placeholder-class="placeholder" />
+  </t-dialog>
+
+</view>

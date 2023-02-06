@@ -1,0 +1,105 @@
+@import url("../../../../app.less");
+.container{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f5f5; 
+}
+.imgCell{
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text{
+    padding-left: 20rpx;
+  }
+  image{
+    width: 140rpx;
+    height: 140rpx;
+    margin: 10rpx 20rpx;
+    border-radius: 50%;
+  }
+}
+ 
+.imgCell::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  left: 32rpx;
+  bottom: 0;
+  border-bottom: 1px solid var(--td-input-border-color, #e7e7e7);
+  transform: scaleY(0.5);
+  left: 32rpx;
+}
+.tagTitle{
+  background-color: #fff;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+}
+.pickMenu{
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  position: relative;
+  .pick-icon{
+    padding: 10rpx;
+    .icon-tag{
+      margin: 10rpx;
+    }
+  }
+}
+.dropdown{
+  width: 82rpx; 
+  .dropdown-i{
+    position: absolute;
+    bottom: 2rpx;
+    right: 0;
+  }
+  .t-button--primary{
+    background-color: @yellow !important;
+  }
+}
+.t-dropdown-menu__item.t-is-active{
+  color: @yellow !important;
+}
+.btn{
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  .t-button--default{
+    background-color: @yellow !important;
+    color: white !important;
+  }
+}
+.t-cell-group--card{
+  margin: 0 !important;
+}
+
+.t-input__label{
+  margin-right: 0 !important;
+}
+.t-input{
+  padding: 24rpx 20rpx !important;
+}
+.t-divider--horizontal{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+  margin-left: 30rpx;
+}
+.t-tag{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.t-input__control--disabled{
+  color: #999 !important;
+}
+.t-checkbox--tag.t-is-actived{
+  color: @yellow !important;
+  background-color: #FeF6e6 !important;
+}
+

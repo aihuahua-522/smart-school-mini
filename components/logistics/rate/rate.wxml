@@ -1,0 +1,13 @@
+<view class="main">
+    <view class="qusetion">
+        问题{{question.sort}}：{{question.title}}
+        <text class="select">单选</text>
+        <text class="score">分值({{question.score}})</text>
+    </view>
+    <t-radio-group bind:change="onChange" t-class="theme-card" defaultValue="{{question.checkId}}" disabled="{{disable}}">
+        <t-radio wx:for="{{question.options}}" wx:key="id" value="{{item.id}}"
+                 label="{{item.completeName}}"/>
+    </t-radio-group>
+    <view class="gutter" style="height: 32rpx"></view>
+
+</view>

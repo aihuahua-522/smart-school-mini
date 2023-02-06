@@ -1,0 +1,29 @@
+.noticeList {
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 10rpx;
+}
+.noticeList .line {
+  height: 4rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#51e6ef), to(#5b7bd4));
+  background: linear-gradient(to right, #51e6ef, #5b7bd4);
+}
+.noticeList .noticeContainer {
+  padding: 30rpx 30rpx 50rpx;
+}
+.noticeList .noticeContainer .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.noticeList .noticeContainer .from_time {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 13rpx;
+}
+.noticeList .noticeContainer .text {
+  font-size: 28rpx;
+  margin-top: 19rpx;
+}
+.noCont image {
+  width: 100%;
+}
+/*# sourceMappingURL=extension_notice_list.wxss.map */

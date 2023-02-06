@@ -1,0 +1,10 @@
+<!--subpkg/pages/edu/exam/examList.wxml-->
+<view class="page">
+  <t-collapse value="{{activeValues}}" bind:change="handleChange">
+    <t-empty wx:if="{{list.length === 0}}" icon="info-circle-filled" description="暂无数据" />
+    <t-collapse-panel wx:for="{{list}}" header="{{item.semesterName}}" value="{{item.semesterId}}" expandIcon>
+      <scoreList scoreItems="{{item.scoreList}}"></scoreList>
+    </t-collapse-panel>
+
+  </t-collapse>
+</view>

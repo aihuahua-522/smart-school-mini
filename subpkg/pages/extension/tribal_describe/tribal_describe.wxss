@@ -1,0 +1,17 @@
+.content_container {
+  padding: 30rpx 30rpx 50rpx;
+}
+.content_container .title {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.content_container .from_time {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 13rpx;
+}
+.content_container .text {
+  font-size: 28rpx;
+  margin-top: 19rpx;
+}
+/*# sourceMappingURL=tribal_describe.wxss.map */

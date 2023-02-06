@@ -1,0 +1,13 @@
+{
+	"usingComponents": {
+		"t-tag": "tdesign-miniprogram/tag/tag",
+		"t-sticky": "tdesign-miniprogram/sticky/sticky",
+		"t-empty": "tdesign-miniprogram/empty/empty",
+		"w-cell": "../../../../components/cellBox/cellBox"
+	},
+	"navigationBarTitleText": "充值记录",
+	"navigationStyle": "default",
+	"enablePullDownRefresh": true,
+	"onReachBottomDistance": 50,
+	"backgroundTextStyle": "dark"
+}

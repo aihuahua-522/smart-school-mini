@@ -1,0 +1,5 @@
+<!--pages/heath_sign.wxml-->
+<view class="container">
+  <view>{{uname}}</view>
+  <view>hahah</view>
+</view>

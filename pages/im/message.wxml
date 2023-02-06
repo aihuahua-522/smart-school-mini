@@ -1,0 +1,28 @@
+<!--pages/message.wxml-->
+
+<t-pull-down-refresh value="{{baseRefresh.value}}" loadingProps="{{loadingProps}}" t-class-indicator="indicator-blue" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}" bind:refresh="onPullDownRefresh">
+  <view>
+
+
+
+    <view class="content" wx:for="{{messageList}}">
+      <view class="item" bindtap="clickItem" data-objectUserId="{{item.objectUserId}}">
+        <!-- 头像 -->
+        <view class='img'>
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="title">
+          <view class="names">
+            <text class='name'>{{item.nickName}}</text>
+            <text class="time">{{item.newestTime}}</text>
+          </view>
+          <view class='message'>
+            <text class="msg">{{item.newestContent}}</text>
+            <view class="megNum" wx:if="{{item.messageCount !== 0}}">{{item.messageCount}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- {{result}} -->
+  </view>
+</t-pull-down-refresh>

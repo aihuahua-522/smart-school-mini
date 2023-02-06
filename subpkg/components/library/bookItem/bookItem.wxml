@@ -1,0 +1,14 @@
+<!--subpkg/pages/library/components/bookItem/bookItem.wxml-->
+<!-- 图书item -->
+<view>
+  <view class="book_item" wx:for="{{bookList}}" wx:key="index" bindtap="routerEvent" data-id="{{item.id}}">
+    <block>
+      <t-image shape="round" width="76" height="108" src="{{item.url}}"></t-image>
+      <view class="item_right">
+        <text class="font-mm">{{item.name}}</text>
+        <text class="book_descript  font-mm ig-text-color">{{item.describe}}</text>
+      </view>
+    </block>
+
+  </view>
+</view>

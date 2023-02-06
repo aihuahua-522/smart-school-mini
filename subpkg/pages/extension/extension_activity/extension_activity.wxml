@@ -1,0 +1,76 @@
+<!--pages/extension_activity/extension_activity.wxml-->
+<view class="container">
+  <t-message id="t-message" />
+  <!-- 用户信息 -->
+  <view class="user_info_box">
+    <image src="/image/school_bg.png" class="user_info_bg"></image>
+    <view class="user_info">
+      <image src="/image/school_icon.png" class="school_icon"></image>
+      <view class="font-mm white-text-color">
+        活动中心
+      </view>
+    </view>
+    <view class="banner">
+      <image src="/image/banner_b.png" class="banner_image"> </image>
+    </view>
+
+  </view>
+
+  <view class="title">全校活动</view>
+  <!-- 导航菜单 -->
+  <view class="nav_list">
+    <!-- <navigator hoverClass="none" openType="navigate" url="/pages/calendar/calendar">
+      <image class="nav_icon" src="/image/calendar.png"></image>
+      <view class="nav_text">活动部落</view>
+    </navigator>
+    <navigator hoverClass="none" openType="navigate" url="/pages/calendar/calendar">
+      <image class="nav_icon" src="/image/calendar.png"></image>
+      <view class="nav_text">活动日历</view>
+    </navigator>
+    <navigator hoverClass="none" openType="navigate" url="/pages/calendar/calendar">
+      <image class="nav_icon" src="/image/calendar.png"></image>
+      <view class="nav_text">活动收藏</view>
+    </navigator> -->
+  </view>
+  <t-dropdown-menu>
+    <t-dropdown-item label="归属组织" options="{{teamList}}" value="{{filterData.teamId}}" bindchange="handleTeamSelect" />
+    <t-dropdown-item label="活动类型" options="{{activityTypeList}}" keys="{{dictConvertObj}}" value="{{filterData.type}}" bindchange="handleActivityTypeSelect" />
+    <!-- <t-dropdown-item label="活动状态" options="{{activityStatusList}}" keys="{{dictConvertObj}}" value="{{filterData.status}}" bindchange="handleActivityStatusSelect" /> -->
+  </t-dropdown-menu>
+  <view class="list">
+
+    <!-- 活动列表 -->
+    <view class="activityListContainer ig-text-color" wx:for="{{activityList}}" data-activityid="{{item.id}}" bindtap="goActivityDetail">
+      <!-- 图片浏览区 -->
+      <view class="activity_image">
+        <t-image t-class="external-class" src="{{item.icon}}" mode="{{mode}}" shape="round"></t-image>
+      </view>
+
+      <!-- 活动信息区域 -->
+      <view class="activityInfo">
+        <h2 class="activity_title font-mm">{{item.title}}</h2>
+        <!-- 时间区域 -->
+        <view class="timeContainer">
+          <!-- 报名时间 -->
+          <span class="font-sm">报名:{{item.applyTime}}</span>
+          <!-- 活动时间 -->
+          <span class="font-sm">活动:{{item.activityTime}}</span>
+        </view>
+
+
+
+
+        <!--地点信息 -->
+        <view class="font-sm">地点：{{item.address}}</view>
+
+        <!-- 人数区域 -->
+        <view class="font-sm">
+          <!-- 人气 -->
+          <span>{{item.reports}}人已报名</span>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

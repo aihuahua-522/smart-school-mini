@@ -1,0 +1,106 @@
+.book {
+  padding: 0 20rpx 120rpx;
+  .book-view {
+    // border: 1rpx solid #cfcfcf;
+    box-shadow: 0 0 10rpx #cfcfcf;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20rpx;
+    margin-top: 20rpx;
+    background-color: #fff;
+    .book-img {
+      width: 220rpx;
+      min-width: 220rpx;
+      height: 300rpx;
+      margin-right: 20rpx;
+    }
+    .book-cont {
+      position: relative;
+      flex-grow: 1;
+    }
+    .cont-title {
+      font-size: 32rpx;
+      font-weight: bold;
+    }
+    .cont-detail {
+      font-size: 28rpx;
+      margin-top: 16rpx;
+      color: #6c6c6c;
+      height: 150rpx;
+      overflow: hidden; //超出的文本隐藏
+      text-overflow: ellipsis; //溢出用省略号显示
+      display: -webkit-box;
+      -webkit-line-clamp: 4; // 超出多少行
+      -webkit-box-orient: vertical;
+    }
+    .cont-more {
+      position: absolute;
+      bottom: 0rpx;
+      right: 0rpx;
+    }
+  }
+}
+.cell {
+  box-shadow: 0 0 10rpx #cfcfcf;
+  padding: 20rpx;
+  margin-top: 40rpx;
+  view {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20rpx;
+    border-bottom: 1px solid #cfcfcf;
+  }
+  view:last-child {
+    border-bottom: none;
+  }
+  .cell-left {
+    color: #6c6c6c;
+  }
+}
+.introduce {
+  box-shadow: 0 0 10rpx #cfcfcf;
+  padding: 20rpx;
+  margin-top: 40rpx;
+  .introduce-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #cfcfcf;
+  }
+  .introduce-detail {
+    margin-top: 20rpx;
+    color: #6c6c6c;
+  }
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  view {
+    padding: 30rpx 0;
+    text-align: center;
+  }
+  view:first-child {
+    width: 30%;
+    background-color: #d4e3fc;
+  }
+  view:last-child {
+    // flex-grow: 1;
+    width: 70%;
+    background-color: #ffbc2d;
+  }
+}
+
+.long-content {
+  height: 576rpx;
+  margin-top: 16rpx;
+  font-size: 32rpx;
+  color: #888;
+}
+
+.long-content .content-container {
+  width: 540rpx;
+  white-space: pre-line;
+}

@@ -1,0 +1,14 @@
+{
+	"navigationBarTitleText": "图书列表",
+	"navigationStyle": "default",
+	"usingComponents": {
+		"bookItem": "/subpkg/components/library/bookItem/bookItem",
+		"t-side-bar": "tdesign-miniprogram/side-bar/side-bar",
+		"t-side-bar-item": "tdesign-miniprogram/side-bar-item/side-bar-item",
+		"t-cell": "tdesign-miniprogram/cell/cell",
+		"t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+		"t-image": "tdesign-miniprogram/image/image",
+		"t-search": "tdesign-miniprogram/search/search",
+		"t-empty": "tdesign-miniprogram/empty/empty"
+	}
+}

@@ -1,0 +1,7 @@
+/* pages/logistics/logistics.wxss */
+/* .container{
+  height: 100vh;
+} */
+t-tab-panel{
+  height: 90vh !important;
+}

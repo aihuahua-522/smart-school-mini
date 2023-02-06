@@ -1,0 +1,18 @@
+<!--subpkg/components/library/bookOrderItem/bookOrderItem.wxml-->
+<view class="card_shadow" style="margin:10rpx 8rpx">
+  <view class="order_container">
+    <!--图标-->
+    <view>
+      <t-image src="https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/image/image-2.jpg" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+    </view>
+    <!--    订单信息-->
+    <view class="order_info">
+      <text class="book_name">{{item.bookName}}</text>
+      <view wx:if="{{item.reserveTime}}">预约日期：{{item.reserveTime}}</view>
+      <view wx:if="{{item.borrowTime}}">借阅日期：{{item.borrowTime}}</view>
+      <view wx:if="{{item.shouldReturnTime}}">应还日期：{{item.shouldReturnTime}}</view>
+      <view class="ig-text-color" wx:if="{{item.returnTime}}">归还日期：{{item.returnTime}}</view>
+      <view wx:if="{{item.canContinueCount}}" class="ig-text-color">可续借次数：{{item.canContinueCount}}</view>
+    </view>
+  </view>
+</view>

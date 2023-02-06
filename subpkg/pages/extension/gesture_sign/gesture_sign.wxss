@@ -1,0 +1,96 @@
+.info {
+  height: 116rpx;
+  line-height: 116rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding-left: 32rpx;
+}
+.info image {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  border: 1rpx solid #e0e0e0;
+  vertical-align: middle;
+  margin-right: 19rpx;
+}
+.info view {
+  display: inline-block;
+  font-size: 32rpx;
+}
+.essay {
+  padding: 54rpx 32rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.sign_box {
+  padding: 0 36rpx;
+}
+.sign_title {
+  color: #666;
+}
+.sign_title view {
+  display: inline-block;
+}
+.sign_title .sign_time {
+  font-size: 26rpx;
+  padding-left: 29rpx;
+}
+.sign_title .green {
+  color: #35cf50;
+}
+.reality_time {
+  font-size: 36rpx;
+  font-weight: bold;
+  padding-left: 59rpx;
+  padding-top: 24rpx;
+}
+.sign_in_address {
+  color: #999;
+  font-size: 26rpx;
+  padding-left: 59rpx;
+  padding-top: 35rpx;
+}
+.sign_in_address view {
+  display: inline-block;
+}
+.sign_out {
+  margin-top: 150rpx;
+}
+.sign_ball {
+  width: 273rpx;
+  height: 273rpx;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+.sign_ball image {
+  width: 100%;
+  height: 100%;
+}
+.sign_ball > view {
+  position: absolute;
+  color: #fff;
+  top: 94rpx;
+  width: 100%;
+}
+.sign_ball > view .text {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.sign_ball > view .time {
+  font-size: 26rpx;
+}
+.now_address {
+  padding: 0 56rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.now_address view {
+  display: inline-block;
+}
+.now_address .green {
+  color: #35cf50;
+}
+.now_address .see_map {
+  color: #2aa7f7;
+}
+/*# sourceMappingURL=gesture_sign.wxss.map */

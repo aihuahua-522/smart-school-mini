@@ -1,0 +1,98 @@
+.container {
+  background-color: white !important;
+}
+.user_info_box {
+  width: 100vw;
+  position: relative;
+}
+.user_info_box .user_info {
+  position: absolute;
+  top: 80rpx;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  left: 50%;
+}
+.user_info_box .user_info .school_icon {
+  height: 84rpx;
+  width: 84rpx;
+}
+.user_info_box .user_info_bg {
+  height: 400rpx;
+  width: 100%;
+}
+.user_info_box .banner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.user_info_box .banner .banner_image {
+  height: 42rpx;
+  width: 100%;
+}
+.title {
+  color: #424242;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 28rpx 0;
+  text-align: center;
+  position: relative;
+}
+.title:before {
+  content: "";
+  width: 74rpx;
+  height: 2rpx;
+  background-color: #979797;
+  position: absolute;
+  top: 20rpx;
+  left: 220rpx;
+}
+.title:after {
+  content: "";
+  width: 74rpx;
+  height: 2rpx;
+  background-color: #979797;
+  position: absolute;
+  top: 20rpx;
+  right: 220rpx;
+}
+.nav_list {
+  display: flex;
+  font-size: 26rpx;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 17rpx 50rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nav_list .nav_icon {
+  height: 118rpx;
+  margin: 0 auto;
+  width: 118rpx;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.list .activityListContainer {
+  padding: 20rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+  display: flex;
+}
+.list .activityListContainer .activity_image {
+  padding: 0 20rpx 0 20rpx;
+}
+.list .activityListContainer .activity_image .external-class {
+  width: 72px;
+  height: 72px;
+}
+.list .activityListContainer .activityInfo .activity_title {
+  font-weight: 900;
+  /*取值范围是100~900*/
+}
+.list .activityListContainer .activityInfo .timeContainer {
+  display: flex;
+  flex-direction: column;
+}

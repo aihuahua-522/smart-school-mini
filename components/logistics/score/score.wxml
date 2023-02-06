@@ -1,0 +1,10 @@
+<view class="main"> 
+<t-cell title="寝室" note="{{note}}" bind:click="showCascader" arrow></t-cell>
+<t-cascader visible="{{visible}}" options="{{options}}" title="请选择寝室" bind:change="onChange"></t-cascader>
+<view class="seizeaseat">
+<text class="txt">房间列表</text>
+</view >
+<view wx:for="{{floor}}" bindtap="skip" wx:key="index" class="single">
+  {{item.label}}
+</view>
+</view>

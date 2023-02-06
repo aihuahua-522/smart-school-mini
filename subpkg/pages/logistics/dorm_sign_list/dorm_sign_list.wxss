@@ -1,0 +1,48 @@
+/* subpkg/pages/logistics/dorm_sign_list/dorm_sign_list.wxss */
+.signList {
+  background-color: #fff;
+}
+.dorm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f6f688;
+}
+.dorm_name {
+  font-size: 34rpx;
+}
+.building {
+  font-size: 30rpx;
+}
+.situation {
+  position: relative;
+  color: #898989;
+}
+
+.seal {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #54e26099;
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #000;
+}
+.seal view {
+  transform: rotate(35deg);
+  font-size: 30rpx;
+}
+
+.roomInfo {
+  padding: 50rpx 50rpx 50rpx 30rpx;
+  margin: 10rpx 18rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  border-bottom: 1px solid #e7e7e7;
+}

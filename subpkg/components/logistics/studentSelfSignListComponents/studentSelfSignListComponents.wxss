@@ -1,0 +1,32 @@
+.card_shadow {
+  border: 0 solid #f5f5f5;
+  box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+.sign_container .wait_sign {
+  margin: 20rpx 18rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sign_container .wait_sign .publish_time {
+  margin-top: 18rpx;
+}
+.sign_container .has_sign {
+  padding: 20rpx;
+  margin: 20rpx 18rpx;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8rpx;
+}
+.sign_container .has_sign .left_sign {
+  display: flex;
+}
+.sign_container .has_sign .left_sign .sign_dorm_info {
+  padding: 5rpx 5rpx 5rpx 20rpx;
+}
+.sign_container .has_sign .left_sign .sign_dorm_info .sign_time {
+  margin-top: 18rpx;
+}
+/*# sourceMappingURL=studentSelfSignListComponents.wxss.map */

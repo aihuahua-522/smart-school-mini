@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky",
+    "t-empty": "tdesign-miniprogram/empty/empty"
+  }
+}

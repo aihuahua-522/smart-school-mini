@@ -1,0 +1,180 @@
+/* pages/elecQuery/elecQuery.wxss */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3601525 */
+  src: url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.woff2?t=1666161570862") format("woff2"), url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.woff?t=1666161570862") format("woff"), url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.ttf?t=1666161570862") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-nv:before {
+  content: "\e6f0";
+}
+.icon-xingbienv:before {
+  content: "\e605";
+}
+.icon-xingbienan:before {
+  content: "\e606";
+}
+.icon-jinrujiantouxiao:before {
+  content: "\e8b9";
+}
+.icon-shoucang:before {
+  content: "\e8c6";
+}
+.icon-youjiantou:before {
+  content: "\e600";
+}
+.icon-icon_fire:before {
+  content: "\e79d";
+}
+page {
+  background-color: #f2f2f2;
+}
+.tx-c {
+  text-align: center;
+}
+/**app.wxss**/
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  /* 纵向排列 */
+  flex-direction: column;
+  /* 每项居中 */
+  align-items: center;
+  /* 两端居中 */
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+  overflow: visible;
+  color: #333;
+}
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 1300rpx;
+}
+.font-sm {
+  font-size: 10pt;
+}
+.font-mm {
+  font-size: 12pt;
+  color: black;
+}
+.tc {
+  text-align: center;
+}
+.font-l {
+  font-size: 14pt;
+}
+.font-xl {
+  font-size: 16pt;
+}
+.font-xxl {
+  font-size: 20pt;
+}
+.ig-text-color {
+  color: #c7c7c7;
+}
+.white-text-color {
+  color: white;
+}
+.container {
+  display: flex;
+  padding: 20rpx;
+}
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.title .t-tag--variant-light-outline.t-tag--theme-primary {
+  background-color: #fbf6e6;
+  border-color: #ffbc2d;
+  color: #666;
+}
+.content {
+  width: 100%;
+  height: 700rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cdf {
+  width: 100%;
+  text-align: left;
+  margin-top: 30rpx;
+}
+.ele-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ele-btn .t-button {
+  margin-top: 40rpx;
+}
+.ele-btn .t-button text {
+  display: inline-block;
+  width: 100rpx;
+  text-align: center;
+}
+.chongzhi {
+  margin-top: 50rpx;
+}
+.chongzhi .t-button--primary {
+  color: #fff;
+  background-color: #ffbc2d;
+  border: 1px solid #ffbc2d;
+}
+.chongzhi .t-button--base {
+  padding: 0 80rpx;
+}
+.rcord-btn {
+  margin-top: 70rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.rcord-btn view {
+  width: 160rpx;
+  text-align: center;
+}
+.content-num {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50%;
+  border: 10rpx solid #ffbc2d;
+  box-shadow: 4px 4px 15px #999;
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-num text:nth-child(1) {
+  font-size: 50px;
+  font-weight: 600;
+}
+.inputBtn {
+  margin-top: 40rpx;
+  width: 98rpx;
+  padding: 16rpx 30rpx;
+  height: 38rpx;
+  border: 1px solid #ffbc2d;
+  border-radius: 10rpx;
+  color: #333;
+  text-align: center;
+}
+.btnBgc {
+  background-color: #ffbc2d;
+  color: #fff;
+}

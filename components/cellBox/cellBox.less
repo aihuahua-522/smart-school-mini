@@ -1,0 +1,54 @@
+/* subpkg/pages/upEleRecord/upEleRecord.wxss */
+@import "../../app.less";
+.contentBox{
+  width: 100%;
+  .cellBox{
+    margin: 20rpx 0;
+    background-color: #fff;
+    border: 1px solid @yellow;
+    border-radius: 10rpx;
+    .cellBox-min{
+      padding:0rpx 20rpx;
+      .t-cell{
+        padding-left: 0rpx;
+        padding-right: 0rpx;
+      }
+      
+      .cellTitle{
+        view{
+          display: flex;
+          align-items: center;
+        }
+        text{padding-left: 10rpx;}
+        padding: 20rpx 0rpx;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cellContent{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20rpx 0;
+        font-size: 14px;
+        .cellImg{
+          width: 100rpx;
+          height: 100rpx;
+          margin-right: 20rpx;
+          image{
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .cellText view:nth-child(1){
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+    
+  }
+  
+}
+

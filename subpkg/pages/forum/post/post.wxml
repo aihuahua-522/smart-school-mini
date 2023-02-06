@@ -1,0 +1,35 @@
+<!--pages/forum/post/post.wxml-->
+<view class="container">
+  <view style="width:100vw">
+    <t-cell class="block" title="选择动态分类" arrow hover note="{{typeName}}" bind:click="showTypePicker" />
+    <t-picker visible="{{typeVisible}}" value="{{type}}" data-key="value" title="选择动态分类" cancelBtn="取消" confirmBtn="确认" bindconfirm="confirmType">
+      <t-picker-item options="{{typeList}}"></t-picker-item>
+    </t-picker>
+  </view>
+  <view class="top-box">
+    <view class="topic-name">#{{topicName}}#</view>
+    <view class="change-topic" bind:tap="openDrawerBase">更换话题
+    </view>
+    <t-drawer visible="{{visible}}" items="{{sidebar}}" bind:overlay-click="overlayClick" bind:item-click="itemClick"></t-drawer>
+  </view>
+
+  <t-textarea placeholder="请输入动态内容(1000字以内)..." bindchange="onPostInput" value="{{content}}" maxlength="1000" />
+  <!-- 添加图片 -->
+  <view class="chooseImg">
+    <view class="imgs">
+      <!-- 添加图片按钮 -->
+      <image class="add-img" bindtap="goChooseImg" src="/image/delete.png" mode=""></image>
+      <view wx:for="{{avatarPath}}" wx:key="index">
+        <!-- 添加的图片 -->
+        <view class="add-img img">
+          <image data-index="{{index}}" bindtap="previewAvatarImage" src="{{item}}" />
+          <!-- <image class="removeicon" src="/image/delete.png" mode="" bindtap="removeAvatarImage"></image> -->
+          <!-- 删除按钮 -->
+          <view class="removeicon" data-index="{{index}}" bindtap="removeAvatarImage">×</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <button bindtap="post">发布</button>
+</view>

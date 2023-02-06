@@ -1,0 +1,22 @@
+<!--subpkg/pages/foulEleRecord/foulEleRecord.wxml-->
+<view class="container">
+  <block>
+    <view class="card" wx:for="{{info}}" wx:key="index">
+      <view style="font-weight: 600">违规描述：{{item.message}}</view>
+      <view class="content">
+        <view>{{item.completeName}}</view>
+      </view>
+      <view><text style="font-weight: 600">违规时间：</text> {{item.createTime}}</view>
+    </view>
+  </block>
+
+  <t-empty t-class="empty-cls" icon="info-circle-filled" description="无违规记录" wx:if="{{(total==0)}}" />
+
+  <view class="loading">
+    <!-- 加载圈圈 -->
+    <t-loading theme="circular" size="48rpx" text="加载中..." t-class-text="text-l" t-class-indicator="indicator-black" loading="{{isLoading}}" wx:if="{{info.length>=7}}">
+    </t-loading>
+    <view class="none-more" wx:if="{{noMore}}">我也是有底线的哦~</view>
+  </view>
+
+</view>

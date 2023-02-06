@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "dynamicCommentItem": "/subpkg/components/forum/dynamicCommentItem/dynamicCommentItem"
+  },
+  "navigationBarTitleText": "动态详情",
+  "navigationStyle": "default",
+  "openGId": "OPENGID",
+  "enablePullDownRefresh": true
+}

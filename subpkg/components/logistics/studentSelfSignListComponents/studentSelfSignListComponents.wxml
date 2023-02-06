@@ -1,0 +1,26 @@
+<view class="sign_container">
+
+  <view wx:for="{{signList}}" wx:key="id">
+    <view class="wait_sign card_shadow" wx:if="{{item.signFlag == 0}}" bindtap="goSign" data-id="{{item.id}}">
+      <view>
+        <view>{{item.packName}}/{{item.dormName}}/{{item.roomName}}</view>
+        <view class="ig-text-color publish_time">发布时间:{{item.createTime}}</view>
+      </view>
+
+    </view>
+
+    <view class="has_sign card_shadow" wx:else>
+      <view class="left_sign" bindtap="goSign" data-id="{{item.id}}">
+        <t-image src="{{item.url}}" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+        <view class="sign_dorm_info">
+          <view>
+            <view>{{item.packName}}/{{item.dormName}}/{{item.roomName}}</view>
+            <view class="ig-text-color sign_time">发布时间:{{item.createTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

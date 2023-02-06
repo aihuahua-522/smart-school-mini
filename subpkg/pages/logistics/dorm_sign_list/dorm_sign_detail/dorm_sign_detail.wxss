@@ -1,0 +1,61 @@
+/* subpkg/pages/logistics/dorm_sign_list/dorm_sign_detail/dorm_sign_detail.wxss */
+.signListDetail {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+.dorm {
+  height: 100rpx;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f8f6f688;
+}
+.dorm_name {
+  font-size: 34rpx;
+}
+.building {
+  font-size: 30rpx;
+}
+.deatil .item {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 18rpx 30rpx;
+  display: flex;
+}
+.item image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+}
+.info {
+  flex: 1;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  flex: 1;
+}
+.name {
+  font-size: 34rpx;
+}
+.date {
+  margin-top: 14rpx;
+  color: #898989;
+}
+.isSing {
+  width: 150rpx;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #fff;
+  border-radius: 20rpx;
+}
+.Signed {
+  background-color: #4ecaf3;
+}
+.NoSign {
+  background-color: #fc304099;
+}

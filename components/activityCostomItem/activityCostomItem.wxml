@@ -1,0 +1,23 @@
+<!--components/activityCostomItem/activityCostomItem.wxml-->
+
+<view class="detail card_shadow">
+
+  <view class="item">
+    <image src="{{activityListItem.url}}"></image>
+    <view class="info ">
+      <view class="title">
+        <view class="activity_title">
+          <view class="tip">
+            {{activityListItem.credit}}学分
+          </view>
+          {{activityListItem.activityName}}
+        </view>
+
+        <view class="name font-sm">{{activityListItem.activityAddress}}</view>
+        <view class="name font-sm">
+          <text>{{activityListItem.activityTypeName}}</text>
+          <text>{{activityListItem.createTime}}</text>    </view>
+      </view>
+    </view>
+  </view>
+</view>

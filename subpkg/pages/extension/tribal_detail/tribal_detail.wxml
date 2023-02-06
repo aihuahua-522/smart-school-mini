@@ -1,0 +1,74 @@
+<view class="page">
+  <t-message id="t-message" />
+  <!-- 申请部落的弹框 -->
+  <t-dialog visible="{{showWithInput}}" title="申请社团" confirm-btn="确认" cancel-btn="取消" bind:confirm="submitApplyTeam" bind:cancel="closeDialog">
+    <!-- <input slot="content" placeholder="请输入申请理由" placeholder-class="placeholder" /> -->
+    <t-input slot="content" bind:change="changeReason" value="{{reason}}" placeholder=" 请输入申请理由" />
+
+  </t-dialog>
+
+
+  <view class="flex" style="height:270rpx;background-color: skyblue; padding: 60rpx 20rpx 60rpx 40rpx; box-sizing: border-box;">
+    <t-image src="{{teamObj.icon[0].url}}" shape="round" width="80" height="80" />
+    <view style="color: #fff;overflow: hidden; text-overflow: ellipsis; margin-left: 30rpx;">
+      <view style="margin-top: 10rpx; font-size: 30rpx; white-space: nowrap;overflow: hidden; text-overflow: ellipsis;">{{teamObj.teamName}}</view>
+      <view style="margin-top: 30rpx; font-size: 20rpx; white-space: nowrap;overflow: hidden; text-overflow: ellipsis;">成立：{{teamObj.createTime}}</view>
+    </view>
+  </view>
+  <view>
+    <t-cell bindtap="goTribalDescribePage">
+      <view slot="title" style="display: flex;align-items: center;">
+        <t-icon name="lock-on" color="#0052d4" slot="left-icon" />
+        简介
+      </view>
+      <view slot="description">{{teamObj.teamDescription}}</view>
+    </t-cell>
+  </view>
+
+  <view style="margin-top: 20rpx;">
+    <t-cell>
+      <view slot="title" style="width: 100%;">
+        <view class="flex-between">
+          <view class="flex-center">
+            <t-icon name="lock-on" color="#0052d4" slot="left-icon" /> 成员
+          </view>
+          <view>当前共有{{teamObj.personCount}}名成员</view>
+        </view>
+
+      </view>
+      <view class="flex" slot="description" style="margin-top: 10rpx;">
+        <view class="flex" style="flex-wrap: wrap; justify-content: space-around; overflow: hidden; height: 98rpx;">
+          <!-- 正常的遍历头像 -->
+          <t-avatar style="margin-left: 10rpx; margin-bottom: 10rpx;" image="{{item.avatar}}" wx:for="{{teamObj.personList}}" wx:key="id" />
+        </view>
+        <!-- 最后的省略头像 -->
+        <t-avatar style="margin-left: 20rpx;" image="https://avatars.githubusercontent.com/u/3693498?v=4" wx:key="id" wx:if="{{teamObj.personList.length>6}}" />
+        <!-- 暂无成员 -->
+        <t-avatar style="margin-left: 20rpx;" image="https://avatars.githubusercontent.com/u/3693498?v=4" wx:key="id" wx:if="{{teamObj.personList.length==0}}" />
+
+      </view>
+
+    </t-cell>
+  </view>
+  <view style="margin-top: 20rpx;">
+    <t-cell>
+      <view slot="title" style="width: 100%;">
+        <view class="flex-center">
+          <t-icon name="lock-on" color="#0052d4" slot="left-icon" /> 活动
+        </view>
+      </view>
+      <view slot="description">
+
+        <activity-item activityList="{{activityList}}"></activity-item>
+      </view>
+    </t-cell>
+  </view>
+  <t-button wx:if="{{teamObj.joinFlag == 0}}" bindtap="showApplyTeamDialog" style="width: 90%; left: 5%; position: fixed; bottom: 40rpx;" theme="primary" block size="large" disabled="{{teamObj.type != 0}}">报名</t-button>
+  <t-button wx:if="{{teamObj.joinFlag == 1}}" style="width: 90%; left: 5%; position: fixed; bottom: 40rpx;" theme="primary" block size="large" disabled>审核中</t-button>
+
+  <t-button wx:if="{{teamObj.joinFlag == 2}}" style="width: 90%; left: 5%; position: fixed; bottom: 40rpx;" theme="primary" block size="large">已加入</t-button>
+  <t-button wx:if="{{teamObj.joinFlag == 3}}" bindtap="showApplyTeamDialog" style="width: 90%; left: 5%; position: fixed; bottom: 40rpx;" theme="primary" block size="large">重新加入</t-button>
+
+  <!-- <t-button  theme="primary" block size="large">报名部落</t-button> -->
+
+</view>

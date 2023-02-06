@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"t-dropdown-menu": "tdesign-miniprogram/dropdown-menu/dropdown-menu",
+		"t-dropdown-item": "tdesign-miniprogram/dropdown-menu/dropdown-item",
+		"t-tag": "tdesign-miniprogram/tag/tag"
+	},
+	"navigationStyle": "default",
+	"navigationBarTitleText": "个人信息"
+}

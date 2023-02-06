@@ -1,0 +1,24 @@
+diff a/pages/elecQuery/elecQuery.wxml b/pages/elecQuery/elecQuery.wxml	(rejected hunks)
+@@ -39,17 +39,13 @@
+     ><text>200元</text></t-button> -->
+     <block wx:for="{{eleNum}}" wx:key="index" >
+     <!-- data-index="{{item}}" 传参  --> 
+-      <t-button  bind:tap="selectNum" data-index="{{index}}" data-value="{{item}}" t-class="external-class" theme="primary" variant="outline" block
+-      ><text>{{item}}元</text></t-button>
++      <view  bind:tap="selectNum" data-index="{{index}}" data-value="{{item}}" class="{{activeIndex===index? 'inputBtn btnBgc': 'inputBtn'}}"
++      ><text>{{item}}元</text></view>
+     </block>
+     
+-    <block wx:if="{{changeInput}}">
+-      <t-button  t-class="external-class" theme="primary" variant="outline" block bind:tap="changeNum">
+-        <text >自定义</text>
+-      </t-button>
+-    </block>
+-    <block wx:else>
+-      <input value="0" focus type="number" class="inputBtn" bindblur="bindblurNum" />
++    
++    <block>
++      <input value="" focus type="number" class="inputBtn" bindblur="bindblurNum" placeholder="自定义" placeholder-style="color:#bbb;" bindfocus="bindfocusEvent"/>
+     </block>
+ 
+     </view>

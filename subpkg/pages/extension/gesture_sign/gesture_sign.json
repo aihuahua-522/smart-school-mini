@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mini-gesture-lock": "/components/miniGestureLock/index"
+  },
+  "navigationStyle": "default",
+  "navigationBarTitleText": "签到打卡"
+}

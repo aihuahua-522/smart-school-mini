@@ -1,0 +1,256 @@
+/* pages/common/personal-data/personal-data.wxss */
+.container{
+  width: 100%;
+  padding: 0 0 20rpx;
+}
+.personal-center{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 70rpx;
+}
+.center-headportrait {
+  margin: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.name-box{
+  display: flex;
+}
+.center-name{
+  margin-right: 10rpx;
+}
+.center-name{
+  color: #555555;
+}
+.signature{
+  font-size: 30rpx;
+  color: #666666;
+}
+.handle-box{
+display: flex;
+}
+.care{
+  font-size: 28rpx;
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #FFCC33;
+  margin: 10rpx;
+}
+.quiz{
+  width: 160rpx;
+}
+
+.num-box{
+display: flex;
+line-height: 32rpx;
+padding: 20rpx 0 30rpx ;
+color: #555555;
+}
+.fan-num{
+padding: 0 20rpx;
+border-right: 2rpx solid #555555;
+}
+.care-num{
+padding: 0 20rpx;
+}
+
+/* 画像 */
+.portray{
+  width: 100%;
+  border-top: 12rpx solid #f2f2f2;
+  border-bottom: 12rpx solid #f2f2f2;
+  padding: 20rpx 30rpx;
+}
+.portray-tit{
+  font-weight: 800;
+  padding:0 40rpx 10rpx;
+}
+.item-box{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20rpx;
+}
+.portray-item{
+  line-height: 60rpx;
+  text-align: center;
+  padding: 0 20rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 40rpx;
+  color: #7f7f7f;
+  border: 2rpx solid #7f7f7f;
+  background-color: #f2f2f2;
+}
+
+/* tab切换栏 */
+.trends{
+  width: 100%;
+}
+.trends-box{
+  padding: 0 20rpx;
+}
+t-tabs{
+  --td-tab-item-color:#333333;
+  --td-tab-item-active-color:#666666;
+  --td-tab-border-color:#999999;
+  --td-tab-track-color:#999999;
+  --td-tab-track-thickness:8rpx;
+}
+
+/* 动态内容 */
+.container-item{
+  padding-top: 20rpx;
+}
+.personal-data {
+  width: 100%;
+  padding-top: 10rpx;
+  display: flex;
+}
+
+.personal-box {
+  display: flex;
+}
+
+.headportrait {
+  margin-right:  10rpx ;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100%;
+}
+
+.human {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #5c5b5b;
+}
+
+
+/* 内容 */
+.content {
+  width: 100%;
+  border-bottom: 2rpx solid #999999;
+  padding-bottom: 8rpx;
+}
+
+.con-text {
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  /*必须结合的属性,当内容溢出元素框时发生的事情*/
+  text-overflow: ellipsis;
+  /*可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。*/
+  display: -webkit-box;
+  /*必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。*/
+  -webkit-line-clamp: 3;
+  /*用来限制在一个块元素显示的文本的行数。*/
+  -webkit-box-orient: vertical;
+}
+
+.img {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img image {
+  width: 32%;
+  height: 180rpx;
+  margin: 5rpx;
+}
+/* 操作区域 */
+.handle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.handle-item {
+  display: flex;
+  color: rgb(78, 77, 77);
+}
+
+.num {
+  margin-left: 4rpx;
+  line-height: 60rpx;
+}
+
+/* 问答 */
+.QandA-item{
+  padding-top: 30rpx;
+  border-bottom: 2rpx solid #e4e4e4;
+}
+.questions-top{
+  display: flex;
+}
+.qa-headportrait{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}
+.questions{
+  width: 90%;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  /*单行超出 让长段文本不换行*/
+  white-space: nowrap;
+  /*设置文本超出元素宽度部分隐藏*/
+  overflow-x: hidden;
+  /*设置文本超出部分用省略号显示*/
+  text-overflow: ellipsis;
+}
+.qa-img{
+  padding: 10rpx 40rpx 0;
+}
+.qa-img image{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 10rpx;
+  border-radius: 20rpx;
+}
+.label-box{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20rpx;
+}
+.label-item{
+  border: 0;
+}
+
+.answer-top{
+  display: flex;
+}
+.answer{
+  width: 90%;
+  line-height: 50rpx;
+  color: #666666;
+  overflow: hidden;
+  /*必须结合的属性,当内容溢出元素框时发生的事情*/
+  text-overflow: ellipsis;
+  /*可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。*/
+  display: -webkit-box;
+  /*必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。*/
+  -webkit-line-clamp: 2;
+  /*用来限制在一个块元素显示的文本的行数。*/
+  -webkit-box-orient: vertical;
+}
+.answer-bot{
+  padding: 20rpx 40rpx 30rpx 80rpx;
+  color: #999999;
+  display: flex;
+  justify-content:space-between;
+}
+.bot-look{display: flex;}

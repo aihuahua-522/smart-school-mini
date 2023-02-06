@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "话题广场",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}

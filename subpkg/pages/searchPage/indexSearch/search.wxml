@@ -1,0 +1,27 @@
+<!--components/searchPage/search.wxml-->
+<view class="container">
+  <view class="serch-content">
+    <view class="content">
+      <input value="" type="text|number|idcard|digit|time|date" placeholder="搜索" focus  placeholder-class="input-placeholder"
+        bindinput="" bindfocus="" bindblur="" bindconfirm="">   
+      </input>     
+    </view>
+    <view class="clear" bindtap="clear">取消</view>
+  </view>
+  <!-- 搜索推荐 -->
+  <view class="serch-recommend">
+    <view wx:for="{{recommend}}" wx:key="key">{{item}}</view>
+  </view>
+  <!-- 搜索历史 -->
+  <view class="seach-history">
+    <view class="history-title">
+      <text style="font-size: 36rpx; font-weight: 600;">搜索历史</text>
+      <t-icon name="delete" data-name="delete" size="32rpx" bind:click="onIconTap" />
+    </view>
+    <view class="serch-recommend">
+      <view wx:for="{{history}}" wx:key="key">{{item}}</view>
+    </view>
+      
+  </view>
+
+</view>

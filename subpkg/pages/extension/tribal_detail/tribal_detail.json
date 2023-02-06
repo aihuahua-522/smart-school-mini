@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "社团详情",
+  "usingComponents": {
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-avatar-group": "tdesign-miniprogram/avatar/avatar-group",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-input": "tdesign-miniprogram/input/input",
+    "activity-item": "/components/activityItem/activityItem"
+  }
+}

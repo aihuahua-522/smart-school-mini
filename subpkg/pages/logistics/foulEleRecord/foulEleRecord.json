@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "违规记录",
+  "navigationStyle": "default"
+}

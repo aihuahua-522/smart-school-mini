@@ -1,0 +1,24 @@
+/* subpkg/components/library/bookOrderItem/bookOrderItem.wxss */
+.card_shadow {
+  border: 0 solid #f5f5f5;
+  box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+
+.order_container {
+  display: flex;
+  align-items: center;
+}
+
+.order_info {
+  margin: 18rpx;
+}
+
+.book_name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.ig-text-color {
+  color: #6c6c6c;
+}

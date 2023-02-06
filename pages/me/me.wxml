@@ -1,0 +1,79 @@
+<view class="page">
+  <!-- 顶部背景 -->
+  <view class="top_back">
+  </view>
+
+  <!-- 除了顶部背景的容器 -->
+  <view class="container content_container" style="height: auto;">
+    <view class="title font-l">我的</view>
+
+    <!-- 用户信息区域 -->
+    <view class="user_info">
+
+
+      <view class="left_user_info">
+        <t-image t-class="external-class" src="{{userinfo.avatar}}" mode="aspectFill" shape="{{shape}}"></t-image>
+      </view>
+      <view class="right_user_info">
+        <!-- 昵称 -->
+        <view>
+          <text class="font-xl nickName">{{userinfo.nickname}}</text>
+          <text class="iconfont icon-nv" wx:if="{{sex}}" style="color: #ff4d94;font-size: 1.4em;"></text>
+          <text class="iconfont icon-nv" wx:else style="color: #75b9eb;font-size: 1.4em;"></text>
+        </view>
+
+        <view style="margin-top: 10rpx;">
+          <!-- 分院 -->
+          <view class="ig-text-color font-sm user_dept_text ">{{!userinfo.personSign ? '暂无个性签名' : userinfo.personSign}}</view>
+        </view>
+      </view>
+      <!-- 编辑 -->
+      <view class="edit">
+        <t-icon name="edit-1" size="48rpx" data-name="edit-1" bind:click="onIconTap" />
+      </view>
+
+    </view>
+
+    <!-- 用户数据区域 -->
+    <view class="container user_data">
+
+      <view class="user_data_give_like" wx:for="{{userData}}" wx:key="index">
+        <view class=" data_value font-l tc">
+          {{item.value}}
+        </view>
+        <view class="data_name ig-text-color tc">{{item.name}}</view>
+      </view>
+
+
+    </view>
+
+    <!-- 中间的操作区 -->
+    <view class="center_container container">
+      <view class="demo-section__wrapper" style="flex: 1;">
+        <t-cell-group theme=" card">
+          <t-cell title="个人信息" hover arrow bindtap="navigateMyUserInfo">
+            <t-icon name="service" color="#ffbc2d" slot="left-icon" />
+          </t-cell>
+          <!-- <t-cell title="帮助中心" hover arrow>
+            <t-icon name="lock-on" color="#ffbc2d" slot="left-icon" />
+          </t-cell>
+          <t-cell title="意见反馈" hover arrow>
+            <t-icon name="lock-on" color="#ffbc2d" slot="left-icon" />
+          </t-cell> -->
+          <t-cell title="关于我们" hover arrow bindtap="navigateAbout">
+            <t-icon name="lock-on" color="#ffbc2d" slot="left-icon" />
+          </t-cell>
+          <t-cell title="账号解绑" hover arrow bindtap="handleUnBind">
+            <t-icon name="lock-on" color="#ffbc2d" slot="left-icon" />
+          </t-cell>
+        </t-cell-group>
+        <view class="ig-text-color tx-c">
+          <text>Copyright © 2022 All Rights Reserved</text>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

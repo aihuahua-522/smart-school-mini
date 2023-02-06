@@ -1,0 +1,115 @@
+/* subpkg/pages/upEleRecord/upEleRecord.wxss */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3601525 */
+  src: url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.woff2?t=1666161570862") format("woff2"), url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.woff?t=1666161570862") format("woff"), url("//at.alicdn.com/t/c/font_3601525_rvzxz7v3yic.ttf?t=1666161570862") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-nv:before {
+  content: "\e6f0";
+}
+.icon-xingbienv:before {
+  content: "\e605";
+}
+.icon-xingbienan:before {
+  content: "\e606";
+}
+.icon-jinrujiantouxiao:before {
+  content: "\e8b9";
+}
+.icon-shoucang:before {
+  content: "\e8c6";
+}
+.icon-youjiantou:before {
+  content: "\e600";
+}
+.icon-icon_fire:before {
+  content: "\e79d";
+}
+page {
+  background-color: #f2f2f2;
+}
+.tx-c {
+  text-align: center;
+}
+/**app.wxss**/
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  /* 纵向排列 */
+  flex-direction: column;
+  /* 每项居中 */
+  align-items: center;
+  /* 两端居中 */
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+  overflow: visible;
+  color: #333;
+}
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 1300rpx;
+}
+.font-sm {
+  font-size: 10pt;
+}
+.font-mm {
+  font-size: 12pt;
+  color: black;
+}
+.tc {
+  text-align: center;
+}
+.font-l {
+  font-size: 14pt;
+}
+.font-xl {
+  font-size: 16pt;
+}
+.font-xxl {
+  font-size: 20pt;
+}
+.ig-text-color {
+  color: #c7c7c7;
+}
+.white-text-color {
+  color: white;
+}
+.t-empty {
+  margin-top: 400rpx;
+}
+.t-empty__description {
+  margin-top: 30rpx !important;
+}
+.container {
+  padding: 60rpx 20rpx 20rpx;
+  color: #666;
+  width: 100%;
+}
+.addressBox {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+.addressBox view {
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}

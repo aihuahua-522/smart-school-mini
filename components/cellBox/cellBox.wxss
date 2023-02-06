@@ -1,0 +1,177 @@
+/* subpkg/pages/upEleRecord/upEleRecord.wxss */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3601525 */
+  src: url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.woff2?t=1669161024505') format('woff2'), url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.woff?t=1669161024505') format('woff'), url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.ttf?t=1669161024505') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-gou:before {
+  content: "\e63b";
+}
+.icon-dian:before {
+  content: "\ec1e";
+}
+.icon-nv:before {
+  content: "\e6f0";
+}
+.icon-xingbienv:before {
+  content: "\e605";
+}
+.icon-xingbienan:before {
+  content: "\e606";
+}
+.icon-jinrujiantouxiao:before {
+  content: "\e8b9";
+}
+.icon-shoucang:before {
+  content: "\e8c6";
+}
+.icon-youjiantou:before {
+  content: "\e600";
+}
+.icon-icon_fire:before {
+  content: "\e79d";
+}
+page {
+  background-color: #ffffff;
+}
+.tx-c {
+  text-align: center;
+}
+/**app.wxss**/
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card_shadow {
+  border: 0 solid #f5f5f5;
+  box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+.container {
+  display: flex;
+  /* 纵向排列 */
+  flex-direction: column;
+  /* 每项居中 */
+  align-items: center;
+  /* 两端居中 */
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+  overflow: visible;
+  color: #333;
+}
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 1300rpx;
+}
+.font-sm {
+  font-size: 10pt;
+}
+.font-mm {
+  font-size: 12pt;
+  color: black;
+}
+.tc {
+  text-align: center;
+}
+.font-l {
+  font-size: 14pt;
+}
+.font-xl {
+  font-size: 16pt;
+}
+.font-xxl {
+  font-size: 20pt;
+}
+.ig-text-color {
+  color: #6c6c6c;
+}
+.graw-text-color {
+  color: #8c8c8c;
+}
+.white-text-color {
+  color: white;
+}
+.t-empty {
+  margin-top: 400rpx;
+}
+.t-empty__description {
+  margin-top: 30rpx !important;
+}
+.full_vh {
+  height: 100vh;
+}
+.loading {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.fl1 {
+  flex: 1;
+}
+.contentBox {
+  width: 100%;
+}
+.contentBox .cellBox {
+  margin: 20rpx 0;
+  background-color: #fff;
+  border: 1px solid #ffbc2d;
+  border-radius: 10rpx;
+}
+.contentBox .cellBox .cellBox-min {
+  padding: 0rpx 20rpx;
+}
+.contentBox .cellBox .cellBox-min .t-cell {
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+}
+.contentBox .cellBox .cellBox-min .cellTitle {
+  padding: 20rpx 0rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contentBox .cellBox .cellBox-min .cellTitle view {
+  display: flex;
+  align-items: center;
+}
+.contentBox .cellBox .cellBox-min .cellTitle text {
+  padding-left: 10rpx;
+}
+.contentBox .cellBox .cellBox-min .cellContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 14px;
+}
+.contentBox .cellBox .cellBox-min .cellContent .cellImg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+.contentBox .cellBox .cellBox-min .cellContent .cellImg image {
+  height: 100%;
+  width: 100%;
+}
+.contentBox .cellBox .cellBox-min .cellContent .cellText view:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=cellBox.wxss.map */

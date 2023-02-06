@@ -1,0 +1,129 @@
+/* pages/forum/assess-details/assess-details.wxss */
+.container {
+  width: 100%;
+  padding: 10rpx 20rpx;
+  color: #666666;
+}
+
+.assess-item-box {
+  width: 100%;
+  padding: 10rpx 0;
+}
+
+.assess-top {
+  width: 100%;
+  padding-bottom: 30rpx;
+  border-bottom: 10rpx solid #e4e4e4;
+}
+
+/* 个人信息 */
+.personal-data {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.personal-box {
+  display: flex;
+  align-items: center;
+}
+
+.headportrait {
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.human {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #5c5b5b;
+}
+
+.handle {
+  position: absolute;
+  right: 10rpx;
+  display: flex;
+  color: #999999;
+}
+.icon-great {
+  color: #FFCC33;
+}
+.handle .num {
+  line-height: 70rpx;
+}
+
+.assess-item{
+border-bottom: 2rpx solid #e4e4e4;
+padding: 20rpx 0;
+}
+.assess-content {
+  padding: 0 60rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* 回复 */
+.assess-back {
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.else-back {
+  text-align: center;
+  padding: 200rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+
+/* 输入框 */
+.run {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #f9f9f9;
+  padding: 0 10rpx;
+}
+
+t-input {
+  width: 70%;
+  padding: 0 10rpx;
+}
+
+.t-input {
+  --td-input-bg-color: white;
+  border: 2rpx solid #e4e4e4;
+  padding: 8rpx 32rpx !important;
+  border-radius: 32rpx;
+}
+
+button {
+  color: #ffffff;
+  font-size: 32rpx;
+  height: 65rpx;
+  width: 140rpx;
+  border-radius: 16rpx;
+  line-height: 65rpx;
+  margin: 15rpx !important;
+  border: 0;
+  background-color: #aaaaaa;
+}

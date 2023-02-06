@@ -1,0 +1,32 @@
+<!--subpkg/pages/library/libraryCategoryList/libraryCategoryList.wxml-->
+<view style="padding:20rpx;">
+  <t-message id="t-message" />
+  <t-search placeholder="搜索图书" shape="round" bindfocus="showEvent" bindblur="hiddenEvent" bindchange="changeEvent" />
+</view>
+
+<view class="side-bar-wrapper">
+  <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
+    <t-side-bar-item wx:for="{{categories}}" wx:key="index" value="{{item.value || index}}" label="{{item.label}}" />
+  </t-side-bar>
+  <view class="content" style="transform: translateY(-{{sideBarIndex * 100}}%)">
+
+    <scroll-view wx:for="{{categories}}" wx:key="index" class="section" scroll-y scroll-with-animation show-scrollbar="{{false}}">
+      <view class="title">{{item.title || item.label}}</view>
+      <t-cell-group>
+        <!-- <block wx:for="{{books}}" wx:key="index" wx:for-item="book"> -->
+        <block wx:if="{{books.length>0}}">
+          <bookItem bookList="{{books}}" wx:key="index"></bookItem>
+        </block>
+      </t-cell-group>
+    </scroll-view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class="show" wx:if="{{isShow}}">
+  <block wx:if="{{books.length>0}}">
+    <bookItem bookList="{{books}}" wx:key="index"></bookItem>
+  </block>
+  <block wx:else>
+    <t-empty icon="info-circle-filled" description="未搜索到您要找的图书" />
+  </block>
+</view>

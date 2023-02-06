@@ -1,0 +1,12 @@
+<!--subpkg/pages/edu/timetable.wxml-->
+<view>
+  <timetable timetables="{{timetables}}"></timetable>
+  <t-fab icon="setting" bind:click="handleClick" aria-label="增加"></t-fab>
+  <t-picker visible="{{weekSelectVisible}}" value="{{cityValue}}" data-key="city" title="{{pickerTitle}}" cancelBtn="取消" confirmBtn="确认" bindchange="handleWeekChange">
+    <t-picker-item options="{{weeks}}"></t-picker-item>
+  </t-picker>
+
+  <view class="float_recovery_week">
+    回到本周
+  </view>
+</view>

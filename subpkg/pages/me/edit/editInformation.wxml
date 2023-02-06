@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="imgCell">
+    <text>头像</text>
+    <image src="{{userData.avatar}}" mode="" bindtap="changeImg"></image>
+  </view>
+  <view>
+    <t-input label="昵称" align="right" value="{{userData.nickname}}" bindchange="changeNickname"></t-input>
+  </view>
+  <view>
+    <t-input label="姓名" align="right" value="{{userData.studentInfo.name}}" disabled></t-input>
+  </view>
+  <view>
+    <t-input label="性别" align="right" value="{{userData.sexValue}}" disabled></t-input>
+  </view>
+  <view>
+    <t-input label="学号" align="right" value="{{userData.studentInfo.studentCode}}" disabled></t-input>
+  </view>
+  <view>
+    <t-input label="电话" align="right" value="{{userData.phone}}" disabled></t-input>
+  </view>
+  <view>
+    <t-input label="个性签名" placeholder="请输入个性签名" value="{{userData.personSign}}" bindchange="changePersonSign" align="right"></t-input>
+  </view>
+
+  <view class="tagTitle">
+    标签
+  </view>
+  <view class="pickMenu">
+    <view class="pick-icon">
+      <block wx:for="{{userData.tagNames}}" wx:key="index">
+        <t-tag class="icon-tag" wx:if="{{true}}" size="large" data-index="{{index}}" bind:close="handleClose" closable variant="outline">{{item}}</t-tag>
+      </block>
+
+
+    </view>
+
+    <view class="dropdown" wx:if="{{(tripleColumnsOptions.length > 0)}}">
+      <t-dropdown-menu class="dropdown-i">
+        <t-dropdown-item label="" optionsColumns="3" options="{{tripleColumnsOptions}}" multiple bindconfirm="confirmTag" />
+      </t-dropdown-menu>
+    </view>
+
+  </view>
+  <view class="btn">
+    <t-button size="large" block bindtap="checkMsg">确定更改</t-button>
+  </view>
+
+</view>

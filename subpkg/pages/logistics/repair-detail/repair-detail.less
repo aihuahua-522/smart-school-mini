@@ -1,0 +1,56 @@
+
+.container {
+  padding: 0 20rpx;
+  /* 页面内容刚好撑满屏幕 */
+  //position: fixed;
+  //height: 100%;
+  //width: 100%;
+}
+.info{
+  height: 100%;
+  width: 100%;
+}
+.imgs{
+  width: 100%;
+  display: flex;
+  margin-top: 10rpx;
+}
+.imgs image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8%;
+  margin: 10rpx;
+}
+/* 状态logo样式 */
+.bot-logo {
+  width: 400rpx;
+  height: 400rpx;
+  text-align: center;
+  line-height: 400rpx;
+  font-size: 60rpx;
+  border-radius: 50%;
+  transform: rotateZ(30deg);
+  position: absolute;
+  bottom: -100rpx;
+  right: -100rpx;
+  z-index: -999;
+}
+
+.pending {
+  background: rgba(228, 76, 76, .7);
+}
+
+.visited {
+  background: rgba(245, 222, 179, .7);
+}
+
+.evaluated {
+  background: rgba(33, 127, 216, 0.7);
+}
+.finish{
+  background: rgba(33, 207, 91, 0.7);
+}
+
+.order_btn{
+  margin: 20rpx;
+}

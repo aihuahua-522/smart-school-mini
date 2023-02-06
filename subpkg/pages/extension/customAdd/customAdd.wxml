@@ -1,0 +1,63 @@
+<!--subpkg/pages/extension/customAdd/customAdd.wxml-->
+<!--subpkg/pages/locationSign/locationSign.wxml-->
+<view class="container">
+  <t-message id="t-message" />
+  <view class="top-con-view">
+    <view class="con-item">
+      活动名称:
+      <t-input value="{{activityName}}" placeholder="请输入活动名称" data-id="activityName" bindchange="inputChange" />
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      活动地址:
+      <t-input value="{{activityAddress}}" placeholder="请输入活动地址" data-id="activityAddress" bindchange="inputChange" />
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      <text> 活动类型:</text>
+      <view style="flex:1">
+        <t-input value="{{CurrentValue ? CurrentValue : '请选择活动类型'}}" placeholder="请输入活动地址" data-id="activityAddress" bindchange="inputChange" disabled bind:tap="onClickPicker" />
+        <text arrow></text>
+        <!-- <t-cell hover note="" bordered="{{false}}" /> -->
+      </view>
+
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      活动学分:
+      <t-input value="{{credit}}" placeholder="请输入活动学分" data-id="credit" bindchange="inputChange" />
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item" style="font-size: 16px; font-weight: 500; color: #333333;">
+      证明材料：
+    </view>
+    <view class="chooseImg">
+      <view class="imgs">
+        <view wx:for="{{avatarPath}}" wx:key="index">
+          <!-- 添加的图片 -->
+          <view class="add-img img">
+            <image data-index="{{index}}" bindtap="previewAvatarImage" src="{{item}}" />
+            <image class="removeicon" src="/image/image-del.png" mode="" bindtap="removeAvatarImage"></image>
+            <!-- 删除按钮 -->
+            <!-- <view class="removeicon" data-index="{{index}}" bindtap="removeAvatarImage">×</view> -->
+          </view>
+        </view>
+
+        <image wx:if="{{avatarPath.length == 2 ? false : true}}" class="add-img" bindtap="goChooseImg" src="/image/delete.png" mode=""></image>
+
+      </view>
+    </view>
+
+  </view>
+  <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+
+  <view class="sign-btn" bindtap='submit'>提交审核</view>
+
+  <t-picker visible="{{Visible}}" value="{{typeValue}}" data-key="city" title="{{pickerTitle}}" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindcancel="onPickerCancel">
+    <t-picker-item options="{{activityTypeList}}"></t-picker-item>
+  </t-picker>
+
+
+  <!-- 添加图片按钮 -->
+
+</view>

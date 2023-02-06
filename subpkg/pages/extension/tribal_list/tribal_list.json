@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "社团列表",
+  "usingComponents": {
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh",
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-search": "tdesign-miniprogram/search/search",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel"
+  }
+}

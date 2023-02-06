@@ -1,0 +1,43 @@
+<view>
+  <!-- 评价item -->
+  <view class="assess-item">
+    <!-- 个人信息区域 -->
+    <view class="personal-data">
+      <view class="personal-box" bindtap="goPersonalData">
+        <image src="{{item.avatar}}" class="headportrait"></image>
+        <view class="name">{{item.nickname}}</view>
+      </view>
+    </view>
+    <!-- 评价内容 -->
+    <view class="content-box" bindtap="goAssess" data-index="{{item.id}}" bindlongpress="binddelete">
+      <view class="assess-content">
+        {{item.content}}
+      </view>
+
+      <!-- 回复 -->
+      <view class="back">
+        <!-- 三目处理动态详情只能看到四条回复 -->
+        <view class="back-box" wx:for="{{item.child.length<4?item.child:item.child.slice(0,4)}}" wx:key="index">
+          <!-- <view class="back-box" wx:for="{{item.child}}" wx:key="index"> -->
+          <view class="back-name">{{item.nickname}}:
+          </view>
+          <view class="back-con">{{item.content}}</view>
+        </view>
+      </view>
+
+      <view class="back-num" wx:if="{{item.child.length}}">共{{item.child.length}}条回复 ></view>
+    </view>
+
+    <!-- 时间点赞模块 -->
+    <view class="assess-bot">
+      <view class="bot-time">{{item.lastUpdateTime}}</view>
+      <!-- 点赞操作区域 -->
+      <view class="handle">
+        <view class="handle-item">
+          <t-icon name="thumb-up" class="{{item.greatFlag ==0?'':'icon-great'}}" size="60rpx" data-name="thumb-up" data-id="{{item.id}}" bindtap="handleAssessGreat" />
+          <text class="num">{{item.greats}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

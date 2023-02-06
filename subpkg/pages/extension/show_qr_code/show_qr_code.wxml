@@ -1,0 +1,16 @@
+<view class="QRcode">
+    <image alt="" class="me_bg" src="/image/mybg.png"></image>
+    <view class="QRcode_container">
+        <view class="QRcode_card">
+            <view class="QRcode_title">我的二维码</view>
+            <view class="QRcode_small">扫描二维码就可以完成活动签到哦！</view>
+            <view class="qr_code">
+              <canvas type="2d" style="width: 260px; height: 260px;" id="myQrcode"></canvas>
+            </view>
+            <view class="QRcode_small">二维码自动更新，有效时间25秒！</view>
+            <view class="QRcode_uid">我的UID：{{uid}}</view>
+        </view>
+    </view>
+
+
+</view>

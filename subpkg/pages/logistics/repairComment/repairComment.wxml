@@ -1,0 +1,18 @@
+<!--subpkg/pages/logistics/repairComment/repairComment.wxml-->
+<view class="flex flex-column full_vh">
+    <view class="demo-rate card_shadow">
+        <view class="demo-rate__title">请点击评分</view>
+        <!-- 实心评分，设置属性：variant-->
+        <t-rate value="{{value}}" variant="filled" bind:change="onChange" />
+    </view>
+
+    <view class="card_shadow fl1">
+        <t-textarea  placeholder="请输入文字" maxlength="200" indicator autosize bindchange="commentChange" />
+    </view>
+
+    <view>
+        <view class="comment_btn card_shadow" bind:tap="submit">提交评价</view>
+    </view>
+
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "课程表",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "timetable": "/subpkg/components/edu/timetable/timetable"
+  }
+}

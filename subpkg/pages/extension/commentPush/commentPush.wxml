@@ -1,0 +1,36 @@
+<veiw class="comment-wrapper">
+    <view class="choose-star box-shadow">
+        <image src="{{icon}}"></image>
+        <view bindtap="chooseStar" class="stars" data-wpychoosestar-a="1">
+            <image src="{{starNum>=1?'/image/stared.png':'/image/star.png'}}"></image>
+        </view>
+        <view bindtap="chooseStar" class="stars" data-wpychoosestar-a="2">
+            <image src="{{starNum>=2?'/image/stared.png':'/image/star.png'}}"></image>
+        </view>
+        <view bindtap="chooseStar" class="stars" data-wpychoosestar-a="3">
+            <image src="{{starNum>=3?'/image/stared.png':'/image/star.png'}}"></image>
+        </view>
+        <view bindtap="chooseStar" class="stars" data-wpychoosestar-a="4">
+            <image src="{{starNum>=4?'/image/stared.png':'/image/star.png'}}"></image>
+        </view>
+        <view bindtap="chooseStar" class="stars" data-wpychoosestar-a="5">
+            <image src="{{starNum>=5?'/image/stared.png':'/image/star.png'}}"></image>
+        </view>
+    </view>
+    <view class="input-comment box-shadow">
+        <textarea bindinput="getComment" placeholder="说说活动的优点和美中不足的感受吧"></textarea>
+    </view>
+    <!-- <view class="choose-pic box-shadow">
+        <view class="title">分享活动现场照片</view>
+        <view class="pic-wrapper">
+            <view class="picture-box" wx:for="{{FilePaths}}" wx:key="{{index}}">
+                <image src="{{item}}"></image>
+                <view bindtap="delPic" class="delete-btn iconfont icon-deletes" data-wpydelpic-a="{{index}}"></view>
+            </view>
+            <view bindtap="chooseImg" class="choose-btn">
+                <image src="../../images/upload.png"></image>
+            </view>
+        </view>
+    </view> -->
+    <view bindtap="submitData" class="submit-comment">发布</view>
+</veiw>

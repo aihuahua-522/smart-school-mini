@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-repair":"/components/logistics/repair/repair",
+    "my-score":"/components/logistics/score/score"
+  },
+  "navigationBarTitleText": "校园后勤",
+  "navigationStyle": "default"
+}

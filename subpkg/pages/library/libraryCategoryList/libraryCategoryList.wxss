@@ -1,0 +1,44 @@
+page {
+  background-color: #fff;
+}
+page .round-image {
+  border-radius: 12rpx;
+}
+.side-bar-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.side-bar-wrapper .content {
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+.side-bar-wrapper .section {
+  padding: 32rpx 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+.side-bar-wrapper .title {
+  padding-left: 40rpx;
+  margin-bottom: 8rpx;
+}
+.side-bar-wrapper .image {
+  width: 96rpx;
+  height: 96rpx;
+}
+page .side-bar-wrapper {
+  --td-side-bar-border-radius: 6px;
+  --td-side-bar-active-color: green;
+}
+.show {
+  width: 100%;
+  height: 92vh;
+  position: fixed;
+  top: 120rpx;
+  z-index: 888;
+  background-color: #fff;
+}
+.show .t-empty {
+  margin-top: 200rpx !important;
+}
+/*# sourceMappingURL=libraryCategoryList.wxss.map */

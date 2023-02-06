@@ -1,0 +1,63 @@
+/* pages/message.wxss */
+.item{
+  display: flex;
+}
+.left{
+  display: flex;
+}
+.content{
+  padding: 20rpx;
+}
+.img{
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.img image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.title{
+  flex:1;
+  
+  align-self: center;
+}
+.title .names{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.time{
+  color:#bec2c5;
+  font-size: 26rpx;
+}
+.title .name{
+  font-weight: 600;
+  letter-spacing: 4rpx;
+  font-size: 32rpx;
+  color:#2b2d36;
+}
+
+.message{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.message .msg{
+  font-size: 28rpx;
+  color:#777a82;
+  margin-top: 12rpx;
+}
+.message .megNum{
+  height: 36rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fb4709;
+  color:#fff;
+  font-size: 24rpx;
+  border-radius: 18rpx;
+  margin-top: 12rpx;
+
+}
+

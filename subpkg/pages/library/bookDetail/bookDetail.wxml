@@ -1,0 +1,104 @@
+<!--subpkg/pages/library/bookDetail/bookDetail.wxml-->
+<view class="book">
+  <t-message id="t-message" />
+  <!-- top -->
+  <view class="book-view">
+    <view class="book-img">
+      <image style="width:100%;height:100%;" src="{{info.url}}" />
+
+    </view>
+    <view class="book-cont">
+      <view class="cont-title">
+        {{info.publishName}}
+      </view>
+      <view class="cont-detail">
+        {{info.describe}}
+      </view>
+      <view class="cont-more">
+        <t-button theme="light" shape="round" bindtap="showMoreDescription">更多</t-button>
+      </view>
+    </view>
+  </view>
+
+  <!-- center -->
+  <view class="cell">
+    <view>
+      <text class="cell-left">
+        图书名称：
+      </text>
+      <text class="cell-right">
+        {{info.publishName}}
+      </text>
+    </view>
+    <view>
+      <text class="cell-left">
+        作者：
+      </text>
+      <text class="cell-right">
+        {{info.author}}
+      </text>
+    </view>
+  </view>
+
+  <view class="cell" wx:for="{{info.bookNumberList}}" wx:for-item="itemLibrary">
+    <view>
+      <text class="cell-left">
+        分馆名称：
+      </text>
+      <text class="cell-right">
+        {{itemLibrary.branchLibraryName}}
+      </text>
+    </view>
+    <view>
+      <text class="cell-left">
+        藏书数量：
+      </text>
+      <text class="cell-right">
+        {{itemLibrary.bookNumber}}
+      </text>
+    </view>
+    <view>
+      <text class="cell-left">
+        可借数量：
+      </text>
+      <text class="cell-right">
+        {{itemLibrary.borrowableBookNumber}}
+      </text>
+    </view>
+
+  </view>
+  <!-- buttom -->
+  <view class="introduce">
+    <view class="introduce-title">
+      详情介绍
+    </view>
+    <view class="introduce-detail">
+      {{info.describe}}
+    </view>
+
+  </view>
+
+
+</view>
+<!-- footer -->
+<view class="footer">
+  <view>
+    联系客服
+  </view>
+  <view wx:if="{{orderFlag}}" bind:tap="showReserveInfoModel">
+    查看订单
+  </view>
+  <view wx:if="{{!orderFlag}}" bind:tap="showReserveModel">
+    立即预约
+  </view>
+
+
+</view>
+
+<t-dialog visible="{{showMultiTextAndTitle}}" title="对话框标题" confirm-btn="知道了" bind:confirm="closeDialog">
+  <scroll-view slot="content" scroll-y class="long-content">
+    <view class="content-container">{{info.describe}}</view>
+  </scroll-view>
+</t-dialog>
+
+<t-action-sheet id="t-action-sheet" bind:selected="handleSelected" />

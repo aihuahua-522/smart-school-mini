@@ -1,0 +1,10 @@
+<view class="page">
+    <t-empty wx:if="{{activityList.length === 0}}" icon="info-circle-filled" description="暂无收藏"/>
+
+    <view wx:else   style="padding:15rpx">
+        <t-divider />
+        <activityItem  activityList="{{activityList}}"></activityItem>
+    </view>
+
+
+</view>

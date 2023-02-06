@@ -1,0 +1,262 @@
+/* pages/forum/details/details.wxss */
+/* pages/topic-more.wxss */
+.container {
+  padding: 10rpx 20rpx;
+}
+
+.top-item {
+  padding:10rpx 0 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 10rpx solid #F2F2F2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+
+.top-content {
+  color: #999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 50rpx;
+}
+
+.top-tit {
+  font-size: 36rpx;
+  font-weight: 800;
+  margin-right: 20rpx;
+  color: #000000;
+  width: 480rpx;
+  display: flex;
+}
+.top-tit view{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bot {
+  display: flex;
+}
+
+.talk {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-right: 10rpx;
+}
+
+.look {
+  font-size: 28rpx;
+}
+
+.info {
+  width: 260px;
+  font-size: 28rpx;
+ /* 文本自动换行 */
+ word-wrap: break-word;
+ word-break: break-all;
+}
+
+
+.personal-data {
+  width: 100%;
+  padding-top: 10rpx;
+  display: flex;
+  position: relative;
+}
+
+.personal-box {
+  display: flex;
+  align-items: center;
+}
+
+.headportrait {
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.human {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #5c5b5b;
+}
+
+/* 关注 */
+.concern {
+  position: absolute;
+  top: 24rpx;
+  right: 0;
+  font-size: 28rpx;
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #FFCC33;
+}
+
+
+/* 内容 */
+.content {
+  width: 100%;
+  border-bottom: 2rpx solid #999999;
+  padding-bottom: 8rpx;
+}
+.text-box {
+  padding: 10rpx 0;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  /* 文本自动换行 */
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  /*必须结合的属性,当内容溢出元素框时发生的事情*/
+  text-overflow: ellipsis;
+  /*可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。*/
+  display: -webkit-box;
+  /*必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。*/
+  -webkit-line-clamp: 3;
+  /*用来限制在一个块元素显示的文本的行数。*/
+  -webkit-box-orient: vertical;
+}
+
+.topic-name {
+  color: #4A77B0;
+}
+
+.img {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img image {
+  width: 32%;
+  height: 180rpx;
+  margin: 5rpx;
+}
+
+/* 操作区域 */
+.handle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.handle-item {
+  display: flex;
+  color: rgb(78, 77, 77);
+  color: #999999;
+}
+.icon-great{
+  color: #FFCC33;
+}
+
+.num {
+  margin-left: 4rpx;
+  line-height: 60rpx;
+}
+.item-box{
+  width: 100%;
+  padding-bottom: 160rpx;
+}
+
+
+/* 空空如也图片 */
+.none image{
+  width: 100%;
+  height: 500rpx;
+  padding: 50rpx 0;
+  }
+  /* 上拉加载状态 */
+  .indicator-black{
+    color: #333333 !important;
+  }
+  .text-l {
+    font-size: 36rpx;
+  }
+  .loading{
+    text-align: center;
+    padding: 15rpx;
+    
+  }
+  .none-more{
+    text-align: center;
+    padding: 15rpx;
+    color: #333333;
+    font-size: 28rpx;
+  }
+  
+  /* 弹出层 */
+  .block {
+    width: 176rpx;
+    height: 176rpx;
+    background: #fff;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .block--bottom {
+    width: 100vw;
+    height: 45vh;
+  }
+  .tit{
+    padding-top: 20rpx;
+  }
+  .where{
+    display: flex;
+  }
+  .icon-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40rpx;
+    color: #333333;
+  }
+  .icon-item image{
+    height: 120rpx;
+    width: 120rpx;
+    padding: 10rpx;
+  }
+  .cancel{
+    color: #000000;
+    font-weight: 600;
+    width: 100%;
+    /* 自适应高度 */
+    height: calc(80rpx + env(safe-area-inset-bottom));
+    line-height: 80rpx;
+    text-align: center;
+    border-top: 10rpx solid #cdcdd1;
+  }
+/* page{
+  height: 100vh;
+  position: relative;
+} */
+button{
+  position: fixed;
+  bottom: 20rpx;
+  width: 70%;
+  height: 90rpx;
+  border-radius: 45rpx;
+  color: #ffffff;
+  background-color: #aaaaaa;
+}

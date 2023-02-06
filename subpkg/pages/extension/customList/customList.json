@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "navigationBarTitleText": "申报列表",
+  "navigationStyle": "default",
+  "onReachBottomDistance":0,
+  "usingComponents": {
+    "t-fab": "tdesign-miniprogram/fab/fab",
+    "activityCostomItem": "/components/activityCostomItem/activityCostomItem"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "图书系统",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "libraryHome": "/components/library/libraryHome/libraryHome",
+    "libraryBookCategoryList": "/components/library/libraryBookCategoryList/libraryBookCategoryList",
+    "libraryMy": "/components/library/libraryMy/libraryMy",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar/tab-bar-item"
+  }
+}

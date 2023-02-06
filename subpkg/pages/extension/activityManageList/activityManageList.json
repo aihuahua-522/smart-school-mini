@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "navigationBarTitleText": "我的活动",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 0,
+  "usingComponents": {
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel",
+    "activityItem": "/components/activityItem/activityItem",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh",
+    "t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
+  }
+}

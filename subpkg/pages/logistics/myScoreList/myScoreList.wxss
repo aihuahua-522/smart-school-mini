@@ -1,0 +1,47 @@
+/* subpkg/pages/logistics/myScoreList/myScoreList.less */
+.signList {
+  background-color: #fff;
+}
+.dorm {
+  height: 100rpx;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f8f6f688;
+}
+.dorm_name {
+  font-size: 34rpx;
+}
+.building {
+  font-size: 30rpx;
+}
+.situation {
+  position: relative;
+  color: #898989;
+}
+.seal {
+  position: absolute;
+  right: 10rpx;
+  background-color: #54e26099;
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #000;
+}
+.seal view {
+  transform: rotate(35deg);
+  font-size: 30rpx;
+}
+.roomInfo {
+  position: relative;
+  padding: 50rpx 50rpx 50rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+/*# sourceMappingURL=myScoreList.wxss.map */

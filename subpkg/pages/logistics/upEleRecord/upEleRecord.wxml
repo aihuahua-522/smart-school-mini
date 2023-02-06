@@ -1,0 +1,20 @@
+<!--subpkg/pages/upEleRecord/upEleRecord.wxml-->
+<view class="container">
+  <block wx:if="{{infoData.info.length !== 0}}">
+    <view class="addressBox">
+      <view>{{address}}</view>
+    </view>
+    <w-cell style="width:100%;" infoData="{{infoData}}"></w-cell>
+  </block>
+  <view wx:else>
+    无充值记录
+  </view>
+
+  <!-- 加载圈圈 -->
+  <view class="loading">
+    <t-loading theme="circular" size="48rpx" text="加载中..." loading="{{loading}}" wx:if="{{infoData.info.length>=7}}">
+    </t-loading>
+  </view>
+  <view class="none-more" wx:if="{{!loading && noMore}}">到底了~</view>
+
+</view>

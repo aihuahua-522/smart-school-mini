@@ -1,0 +1,33 @@
+<!--pages/topic-more.wxml-->
+<view class="container">
+  <!-- 没数据显示空空如也图片 -->
+  <view wx:if="{{bbsTopicList.length==0 && isEnd}}" class="none">
+    <image src="/image/none.jpg"></image>
+  </view>
+  <block wx:else>
+    <view class="item" data-index="{{item.id}}" bindtap="goTopicDetails" wx:for="{{bbsTopicList}}" wx:key="index">
+      <image class="img" src="/image/tutu.jpg"></image>
+
+      <view class="content">
+        <view class="top">
+          <view class="tit"><text style="color: #ffbc2d; margin-right: 10rpx; ">#</text>
+            <view>{{item.topicName}}</view>
+            
+          </view>
+        </view>
+        <view class="info">{{item.description}}</view>
+        <view class="bot">
+          <view class="talk">{{item.dynamicCount}}条讨论</view>
+          <view class="look">{{item.views}}人浏览</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 加载圈圈 -->
+    <view class="loading">
+      <t-loading theme="circular" size="48rpx" text="加载中..." t-class-text="text-l" t-class-indicator="indicator-black" loading="{{isCheck}}" wx:if="{{bbsTopicList.length>=7}}">
+      </t-loading>
+    </view>
+    <view class="none-more" wx:if="{{!isCheck && isEnd}}">我也是有底线的哦~</view>
+  </block>
+</view>

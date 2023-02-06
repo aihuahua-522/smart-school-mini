@@ -1,0 +1,18 @@
+<!--subpkg/pages/logistics/myScoreList/myScoreList.wxml-->
+<view class='signList'>
+  <view class='dorm'>
+    <text class="dorm_name">房间</text>
+    <text class='building'>{{dormInfo.schoolName}}/{{dormInfo.packName}}/{{dormInfo.dormName}}/{{dormInfo.roomName}}</text>
+  </view>
+  <view class='isSign'>
+        <view class="roomInfo" wx:for="{{scoreList}}" wx:key="id" data-id="{{item.id}}" bindtap='toDetail'>
+          <text>{{item.createTime}}</text>
+
+          <view class='seal'>
+              <view>{{item.score}}分</view>
+            </view>
+
+        </view>
+
+  </view>
+</view>

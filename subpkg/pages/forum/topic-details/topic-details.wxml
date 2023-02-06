@@ -1,0 +1,100 @@
+<!--pages/forum/details/details.wxml-->
+<!-- 自定义导航栏 -->
+<page-meta>
+  <navigation-bar title="{{bbsTopicList[0].topicName}}" />
+</page-meta>
+<view class="container">
+  <view class="top-item">
+    <image class="top-img" src="{{bbsTopicList[0].icon}}"></image>
+    <view class="top-content">
+      <view class="top-tit"># <view>{{bbsTopicList[0].topicName}}</view> #</view>
+      <view class="bot">
+        <view class="talk">{{bbsTopicList[0].dynamicCount}}条讨论</view>
+        <!-- <view class="look">{{bbsTopicList[0].views}}人浏览</view> -->
+      </view>
+      <view class="info">{{bbsTopicList[0].description}}adrfasfeghdfyrtgsfs</view>
+    </view>
+  </view>
+
+  <view class="item-box">
+    <!-- 没数据显示空空如也图片 -->
+    <view wx:if="{{bbsDynamicList.length==0 && isEnd}}" class="none">
+      <image src="/image/none.jpg"></image>
+    </view>
+    <!-- 论坛item -->
+    <block wx:else>
+      <view class="container-item" wx:for="{{bbsDynamicList}}" wx:key="index">
+        <dynamicItem item="{{item}}"></dynamicItem>
+        <!-- 个人信息区域
+        <view class="personal-data">
+          <view class="personal-box" bindtap="goPersonalData">
+            <image src="{{item.avatar}}" class="headportrait"></image>
+            <view class="human">
+              <view class="name">{{item.nickname}}</view>
+              <view class="time">{{item.createTime}}</view>
+            </view>
+          </view>
+          <text class="concern" data-index="{{index}}" bindtap="handleAssess">{{item.essence==0?'关注':'已关注'}}</text>
+        </view>
+        &lt;!&ndash; 文本内容区域 &ndash;&gt;
+        <view class="content">
+          <view class="con-box" bindtap="goForumDetails"
+          data-index="{{item.id}}"
+          bindlongpress="binddelete"
+          >
+                <view class="text-box">
+                  <text class="topic-name" wx:if="{{item.topicName}}">#{{item.topicName}}#</text>
+                  <text class="con-text">{{item.content}}6574324567857432456787746334</text>
+                </view>
+
+
+            <view class="img">
+              <image wx:for="{{item.photos}}" wx:key="index" src="{{item.url}}"></image>
+            </view>
+          </view>
+          &lt;!&ndash; 点赞操作区域 &ndash;&gt;
+          <view class="handle">
+            <view class="handle-item">
+              <t-icon name="thumb-up" class="{{item.attentionFlag==0?'':'icon-great'}}" size="60rpx" data-name="thumb-up" bind:click="onIconTap" data-index="{{index}}" bindtap="handleGreat" />
+              <text class="num">{{item.greats}}</text>
+            </view>
+            <view class="handle-item">
+              <t-icon name="mail" size="60rpx" data-name="mail" bind:click="goForumDetails"  data-index="{{item.id}}"/>
+              <text class="num">{{item.comments}}</text>
+            </view>
+            &lt;!&ndash; 分享 &ndash;&gt;
+            <view class="handle-item">
+              <t-icon name="jump" size="60rpx" data-name="jump" bind:tap="handlePopup" />
+              <text class="num">{{item.shares}}</text>
+            </view>
+          </view>
+        </view>-->
+      </view>
+      <!-- 加载圈圈 -->
+      <view class="loading">
+        <t-loading theme="circular" size="48rpx" text="加载中..." t-class-text="text-l" t-class-indicator="indicator-black" loading="{{isCheck}}" wx:if="{{bbsDynamicList.length>=5}}">
+        </t-loading>
+      </view>
+      <view class="none-more" wx:if="{{!isCheck && isEnd && bbsDynamicList.length>=5}}">我也是有底线的哦~</view>
+    </block>
+  </view>
+  <!-- 分享弹出层 -->
+  <t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom" duration="{{time}}">
+    <view class="block block--bottom">
+      <view class="tit">分享到</view>
+      <view class="where">
+        <view class="icon-item">
+          <image src="/image/wx.png"></image>
+          微信
+        </view>
+        <view class="icon-item">
+          <image src="/image/friends.png"></image>
+          朋友圈
+        </view>
+      </view>
+      <view class="cancel" bindtap="cancelHandle">取消</view>
+    </view>
+  </t-popup>
+  <!-- 底部按钮 -->
+  <button bindtap="goPost" data-index="{{[bbsTopicList[0].topicName,bbsTopicList[0].id]}}">发帖参与讨论</button>
+</view>

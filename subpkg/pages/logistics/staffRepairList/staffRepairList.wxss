@@ -1,0 +1,53 @@
+.container {
+  padding: 0 20rpx;
+}
+t-tabs {
+  width: 100%;
+}
+.sh {
+  visibility: hidden;
+}
+.t-fab {
+  z-index: 9999 !important;
+}
+.list-item {
+  position: relative;
+  overflow: hidden;
+  height: 180rpx;
+  margin: 20rpx 0;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.time {
+  position: absolute;
+  font-size: 24rpx;
+  top: 42rpx;
+  left: 170rpx;
+  z-index: 999;
+}
+/* 状态公用样式 */
+.repair-type {
+  width: 180rpx;
+  height: 180rpx;
+  text-align: center;
+  line-height: 180rpx;
+  font-size: 40rpx;
+  border-radius: 50%;
+  transform: rotateZ(30deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.pending {
+  background: rgba(228, 76, 76, 0.7);
+}
+.visited {
+  background: rgba(245, 222, 179, 0.7);
+}
+.evaluated {
+  background: rgba(33, 127, 216, 0.7);
+}
+.finish {
+  background: rgba(33, 207, 91, 0.7);
+}
+/*# sourceMappingURL=staffRepairList.wxss.map */

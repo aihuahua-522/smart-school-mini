@@ -1,0 +1,9 @@
+<!--subpkg/pages/library/orderList/orderList.wxml-->
+<t-message id="t-message" />
+<t-tabs defaultValue="{{currentTab}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel label="{{item.title}}" value="{{item.index}}" wx:for="{{tabList}}">
+    <view wx:for="{{orderList}}">
+      <bookOrderItem item="{{item}}"></bookOrderItem>
+    </view>
+  </t-tab-panel>
+</t-tabs>

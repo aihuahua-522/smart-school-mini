@@ -1,0 +1,27 @@
+/* components/logistics/score/score.wxss */
+.main {
+  font-family: "微软雅黑";
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+}
+.demo-section__wrapper {
+  margin: 32rpx 0;
+}
+.seizeaseat {
+  background-color: #f1eded;
+  height: 45px;
+  line-height: 45px;
+  color: #999999;
+}
+.txt {
+  margin-left: 15px;
+}
+.single {
+  border-bottom: 1px solid #f1eded;
+  height: 48px;
+  line-height: 48px;
+  padding-left: 10px;
+}

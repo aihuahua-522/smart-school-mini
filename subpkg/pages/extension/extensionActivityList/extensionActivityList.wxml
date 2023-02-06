@@ -1,0 +1,21 @@
+<!--subpkg/pages/extension/extensionActivityList/extensionActivityList.wxml-->
+
+<t-tabs defaultValue="{{-1}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel wx:for="{{tabs}}" label="{{item.label}}" value="{{item.value}}">
+
+    <view style="padding:18rpx">
+      <activityItem activityList="{{activityList}}"></activityItem>
+    </view>
+
+    <!-- <t-pull-down-refresh loadingProps="{{loadingProps}}" t-class-indicator="indicator-blue" refreshTimeout="2000" loadingTexts="{{['继续拉哦', '该松手啦', '努力刷新中', '完成~']}}" bind:refresh="onRefreshChange">
+      <view class="pulldown-reflesh__content">
+        <activityItem activityList="{{activityList}}"></activityItem>
+        <activityItem activityList="{{activityList}}"></activityItem>
+        <activityItem activityList="{{activityList}}"></activityItem>
+        <activityItem activityList="{{activityList}}"></activityItem>
+        <activityItem activityList="{{activityList}}"></activityItem>
+      </view>
+    </t-pull-down-refresh> -->
+  </t-tab-panel>
+
+</t-tabs>

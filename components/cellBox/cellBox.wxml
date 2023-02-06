@@ -1,0 +1,46 @@
+<block wx:if="infoData">
+  <view class="contentBox">
+    <block wx:if="{{infoData.isFlag>0}}">
+      <view class="cellBox" wx:for="{{infoData.info}}" wx:key="index">
+        <view class="cellBox-min">
+          <view class="cellTitle">
+            <view>
+              <t-tag variant="light-outline" theme="primary">
+                订单号
+              </t-tag>
+              <text>{{item.code}}</text>
+            </view>
+            <view wx:if="{{item.result == 1}}">充值成功</view>
+            <view wx:else>充值失败</view>
+          </view>
+          <!--
+            <t-cell
+              title="充值金额：{{item.money}}"
+              description="充值时间：{{item.createTime}}hh 支付方式：oo"
+              align="top"
+              image="https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png"
+            />
+            -->
+          <view class="cellContent">
+            <view class="cellImg">
+              <image src="https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png" lazy-load="false" />
+
+            </view>
+            <view class="cellText">
+              <view>
+                充值金额：{{item.money}}
+              </view>
+              <view>
+                充值时间：{{item.createTime}}
+              </view>
+              <view>
+                支付方式：{{item.sourceName}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <t-empty t-class="empty-cls" icon="info-circle-filled" description="无充值信息" wx:elif="{{infoData.isFlag == 0}}" />
+  </view>
+</block>

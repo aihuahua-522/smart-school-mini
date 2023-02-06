@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "onReachBottomDistance":0,
+  "navigationBarTitleText": "报修列表",
+  "navigationStyle": "default"
+}

@@ -1,0 +1,22 @@
+<!--subpkg/pages/logistics/dorm_sign_list/dorm_sign_detail/dorm_sign_detail.wxml-->
+<view class='signListDetail'>
+  <t-cell title="日期"  note="{{date}}" > </t-cell>
+  <t-cell title="校区"  note="{{roomDetail.schoolName}}" > </t-cell>
+  <t-cell title="园区"  note="{{roomDetail.packName}}" > </t-cell>
+  <t-cell title="楼栋"  note="{{roomDetail.dormName}}" > </t-cell>
+  <t-cell title="宿舍"  note="{{roomDetail.roomName}}" > </t-cell>
+  <view class="deatil">
+    <view class="item" wx:for="{{signData}}" style="dis">
+      <image src="{{item.url}}"></image>
+      <view class="info">
+        <view class="title">
+          <view class="name">{{item.name}}</view>
+          <view class="date font-sm ig-text-color" wx:if="{{item.signFlag==1}}">签到时间:{{item.signTime}}</view>
+          <view class="date font-sm ig-text-color" wx:if="{{item.signFlag==1}}">{{item.address}}</view>
+        </view>
+        <view class="isSing NoSign" wx:if="{{item.signFlag==1}}">未签到</view>
+        <view class="isSing Signed" wx:else>已签到</view>
+      </view>
+    </view>
+  </view>
+</view>

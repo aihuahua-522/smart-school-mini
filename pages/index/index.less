@@ -1,0 +1,221 @@
+.container {
+  background-color: #f3f5f5;
+}
+
+.banner {
+  width: 100%;
+}
+// top
+.top_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80rpx;
+  text{
+    font-size: 20px;
+    padding-left: 20rpx;
+  }
+  .title_icon{
+    display: flex;
+    justify-content: left;
+    padding-right: 20rpx;
+  }
+}
+// swiper
+.swiper{
+  width: 100%;
+    .s_ss{
+      margin: 20rpx;
+      overflow: hidden;
+      border-radius: 20rpx;
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+}
+// 中间区块
+.center_container {
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: white;
+
+  .school_title {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .school_icon {
+      margin: 10rpx;
+      height: 80rpx;
+      width: 80rpx;
+    }
+  }
+}
+
+// info
+.info{
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: #fff;
+  .info_wait{
+    padding: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    .info_image{
+      image{width: 300rpx; height: 120rpx;}
+    }
+  }
+  .info_hot{
+    padding: 20rpx;
+    text{
+      display: inline-block;
+      height: 64rpx;
+      line-height: 64rpx;
+    }
+    .infoTag{
+      width: 162rpx;
+      padding-left: 20rpx;
+      background-color: #ffbc2d;
+      position: relative;
+      border-radius: 6rpx;
+      color: #fff;
+    }
+    .infoTag::after{
+      content: '';
+      width: 0rpx;
+      height: 0;
+      position: absolute;
+      top: -4rpx;
+      right: -2rpx;
+      border-color: #fff transparent; /*上下颜色 左右颜色*/
+      border-width: 0 0 74rpx 18px;
+      border-style: solid;
+
+
+    }
+  }
+}
+
+//news
+.news{
+  width: 100%;
+  margin-top: 20rpx;
+  .news_content{
+    padding: 20rpx;
+    height: 300rpx;
+    .news_info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .news_text{
+        flex: 1;
+      }
+      .news_description{
+        color: rgb(32, 27, 27);
+        font-size: 35rpx;
+        text-overflow:ellipsis;
+        z-index: -1;
+        display: -webkit-box;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden
+      }
+    }
+    .news_publish_info{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 18rpx 0 0;
+    }
+  }
+}
+
+// 底部区块
+.bottom_container {
+  margin-top: 20rpx;
+  background-color: white;
+  width: 100%;
+
+  .schedule_title {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .schedule_icon {
+      margin: 10rpx;
+      height: 80rpx;
+      width: 80rpx;
+    }
+  }
+  .today_schedule {
+    box-sizing: border-box;
+    .course_info {
+      border-radius: 18rpx;
+      display: flex;
+      padding: 10rpx 20rpx;
+      margin: 10rpx 20rpx;
+      background-color: rgb(204, 204, 204);
+      justify-content: space-around;
+      align-items: center;
+      color: #979797;
+      & > view {
+        display: inline-block;
+        flex: 1;
+        text-align: center;
+        font-size: 24rpx;
+        .show_more {
+          color: rgb(153, 153, 153);
+        }
+      }
+      .course_teacher_info {
+        .course_name {
+          font-size: 32rpx;
+        }
+      }
+    }
+
+    .course_info2 {
+      border-radius: 18rpx;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10rpx 20rpx;
+      margin: 10rpx 20rpx;
+      background-color: #ffbc2d;
+      color: #fef8d5;
+      & > view {
+        display: inline-block;
+        flex: 1;
+        text-align: center;
+        font-size: 24rpx;
+        .show_more {
+          color: rgb(153, 153, 153);
+        }
+      }
+      .course_teacher_info {
+        .course_name {
+          font-size: 32rpx;
+        }
+      }
+    }
+  }
+}
+
+.external-class-content {
+  padding: 32rpx 0 !important;
+}
+
+.image-icon {
+  width: 64rpx !important;
+  height: 64rpx !important;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  font-size: 24rpx !important;
+  line-height: 40rpx !important;
+}

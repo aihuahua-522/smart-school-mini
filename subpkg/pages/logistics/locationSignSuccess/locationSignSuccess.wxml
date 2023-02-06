@@ -1,0 +1,5 @@
+<!--subpkg/pages/logistics/locationSignSuccess/locationSignSuccess.wxml-->
+<view class="container">
+  <t-result theme="success" title="签到成功" />
+  <t-button theme="primary" bindtap="back" class="back" variant="outline" disabled="{{disabled}}">返回</t-button>
+</view>

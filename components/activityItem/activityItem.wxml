@@ -1,0 +1,20 @@
+<view>
+  <view class="flex" style="justify-content: space-between; padding: 30rpx 18rpx; border-bottom: 1rpx solid #ccc;" wx:for="{{activityList}}" wx:key="id" bindtap="goActivityPage" data-id="{{item.id}}">
+    <view>
+      <text style="font-weight: 700;">{{item.title}}</text>
+      <view style="font-size: 20rpx;">
+        <text>{{item.activityTime}}</text>
+        <text style="margin-left: 20rpx;">{{item.activityTypeName}}</text>
+      </view>
+      <view style="font-size: 20rpx;" wx:if="{{shouldSignOut ===1}}">
+        <text>{{item.reports}}人参与</text>
+        <text style="margin-left: 20rpx; color: skyblue;">需要签退</text>
+      </view>
+      <view style="font-size: 20rpx;" wx:else="{{shouldSignOut ===1}}">
+        <text>{{item.reports}}人参与</text>
+        <text style="margin-left: 20rpx; color: skyblue;">无需签退</text>
+      </view>
+    </view>
+    <t-image style="margin-left: 50rpx;" src="{{item.icon}}" shape="circle" width="80" height="80" />
+  </view>
+</view>

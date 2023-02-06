@@ -1,0 +1,228 @@
+<view class="container">
+  <view class="top_container">
+    <text>智慧校园</text>
+    <!-- <view class="title_icon">
+      <t-icon name="search" size="40rpx" bind:click="searchEvent" />
+      <t-icon style="margin: 0 16rpx;" name="notification" size="40rpx" bind:click="notifiEvent" />
+      <t-icon name="user" size="40rpx" bind:click="userEvent" />
+    </view> -->
+  </view>
+  <!-- 顶部banner 轮播图
+
+    -->
+  <view class="swiper">
+    <view class="s_ss">
+      <t-swiper current="{{current}}" navigation>
+        <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
+          <image src="{{item.image}}" class="img" />
+        </t-swiper-item>
+      </t-swiper>
+    </view>
+  </view>
+
+
+  <!-- 中间功能模块 -->
+  <view class="center_container">
+    <view class="school_title">
+      <image src="/image/school_icon.png" class="school_icon"></image>
+      <text class="font-mm tx">智慧校园</text>
+    </view>
+
+
+    <t-grid class="four">
+
+      <t-grid-item wx:for="{{menuList}}" wx:key="id" text="{{item.name}}" bindtap="clickItem" data-path="{{item.path}}" image="{{item.icon}}">
+
+      </t-grid-item>
+
+      <!-- <t-grid-item text="健康打卡" t-class-text="text" t-class-image="image-icon" t-class-content="external-class-content" bindtap="clickItem" data-path="">
+              <image class="image" src="/image/heath.png" slot="image" />
+            </t-grid-item>
+
+            <t-grid-item text="素拓活动" t-class-text="text" t-class-image="image-icon" t-class-content="external-class-content" bindtap="clickItem" data-path="">
+              <image class="image" src="/image/heath.png" slot="image" />
+            </t-grid-item> -->
+
+    </t-grid>
+
+  </view>
+  <!-- 消息通知 -->
+  <view class="info">
+    <!-- <view class="info_wait">
+      <view>
+        <view style="font-size: 36rpx; font-weight: 600; margin-top: 10rpx;">共5条代办消息</view>
+        <view style="font-size: 28rpx; margin-top: 20rpx;">您还有10条代办信息未处理</view>
+      </view>
+      <view class="info_image">
+        <image src="../../image/nocont.png" />
+      </view>
+    </view> -->
+    <!-- <view class="info_hot">
+      <text class="infoTag">热门消息</text>
+      <text style="margin-left: 10rpx; font-size: 28rpx;">关于智慧校园版本更新得通知</text>
+    </view> -->
+  </view>
+  <!--新闻 -->
+  <view class="news">
+    <t-tabs defaultValue="{{0}}" sticky t-class="custom-tabs" bind:change="onTabsChange">
+      <t-tab-panel label="学校要闻" value="0">
+        <view class="news_content" bind:tap="news" data-url="{{item.url}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{newsList}}" wx:key="id">
+          <view class="news_title" style="font-weight: 600">{{item.title}}</view>
+          <view class="news_info">
+
+            <view class="news_text">
+              <!--新闻主体-->
+              <view class="news_description">
+                {{item.description}}
+              </view>
+              <!--新闻发布信息-->
+              <view class="news_publish_info">
+                <text>阅读 {{item.views}}</text>
+                <text> {{item.createTime}}</text>
+              </view>
+            </view>
+
+            <view>
+              <t-image src="{{item.icon}}" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+            </view>
+          </view>
+
+
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="综合信息" value="1">
+        <view class="news_content" bind:tap="news" data-url="{{item.url}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{newsList}}" wx:key="id">
+          <view class="news_title" style="font-weight: 600">{{item.title}}</view>
+          <view class="news_info">
+
+            <view class="news_text">
+              <!--新闻主体-->
+              <view class="news_description">
+                {{item.description}}
+              </view>
+              <!--新闻发布信息-->
+              <view class="news_publish_info">
+                <text>阅读 {{item.views}}</text>
+                <text> {{item.createTime}}</text>
+              </view>
+            </view>
+
+            <view>
+              <t-image src="{{item.icon}}" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+            </view>
+          </view>
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="通知公告" value="2">
+        <view class="news_content" bind:tap="news" data-url="{{item.url}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{newsList}}" wx:key="id">
+          <view class="news_title" style="font-weight: 600">{{item.title}}</view>
+          <view class="news_info">
+
+            <view class="news_text">
+              <!--新闻主体-->
+              <view class="news_description">
+                {{item.description}}
+              </view>
+              <!--新闻发布信息-->
+              <view class="news_publish_info">
+                <text>阅读 {{item.views}}</text>
+                <text> {{item.createTime}}</text>
+              </view>
+            </view>
+
+            <view>
+              <t-image src="{{item.icon}}" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+            </view>
+          </view>
+
+
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="学术动态" value="3">
+        <view class="news_content" bind:tap="news" data-url="{{item.url}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{newsList}}" wx:key="id">
+          <view class="news_title" style="font-weight: 600">{{item.title}}</view>
+          <view class="news_info">
+
+            <view class="news_text">
+              <!--新闻主体-->
+              <view class="news_description">
+                {{item.description}}
+              </view>
+              <!--新闻发布信息-->
+              <view class="news_publish_info">
+                <text>阅读 {{item.views}}</text>
+                <text> {{item.createTime}}</text>
+              </view>
+            </view>
+
+            <view>
+              <t-image src="{{item.icon}}" mode="aspectFill" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
+            </view>
+          </view>
+
+
+        </view>
+      </t-tab-panel>
+    </t-tabs>
+  </view>
+
+  <!-- 课程表模块
+    <view class="bottom_container">
+      <view class="schedule_title">
+        <image src="/image/schedule.png" class="schedule_icon"></image>
+        <h1 class="font-mm tx-c"> 今日课表</h1>
+      </view>
+
+
+      <view class="today_schedule">
+        <view class="course_info">
+          <view class="course_time">
+            <view>08:30</view>
+            <view>~</view>
+            <view>10:30</view>
+          </view>
+
+          <view class="course_teacher_info">
+            <view class="course_name">大学体育</view>
+            <view>花花</view>
+          </view>
+
+          <view class="course_other_info">
+            <view>体育馆</view>
+            <view>第1-18周</view>
+          </view>
+
+          <view>
+            <view class="iconfont icon-jinrujiantouxiao show_more"></view>
+          </view>
+        </view>
+
+        <view class="course_info2">
+          <view class="course_time">
+            <view>08:30</view>
+            <view>~</view>
+            <view>10:30</view>
+          </view>
+
+          <view class="course_teacher_info">
+            <view class="course_name">大学体育</view>
+            <view>阿秀</view>
+          </view>
+
+          <view class="course_other_info">
+            <view>体育馆</view>
+            <view>第1-18周</view>
+          </view>
+
+
+          <view>
+            <view class="iconfont icon-jinrujiantouxiao show_more"></view>
+          </view>
+        </view>
+
+      </view>
+      </view>
+    -->
+
+
+</view>

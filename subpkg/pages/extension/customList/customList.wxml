@@ -1,0 +1,10 @@
+<!--subpkg/pages/extension/customList/customList.wxml-->
+<view>
+  <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+    <t-tab-panel label="{{item.lable}}" value="{{item.value}}" wx:for="{{tabs}}">
+    <activityCostomItem  wx:for="{{activityList}}" wx:key="userId"  activityListItem="{{item}}" bindtap="toDetail" data-activityId="{{item.activityId}}"></activityCostomItem>
+    </t-tab-panel>
+
+  </t-tabs>
+  <t-fab icon="add" bind:click="handleAdd"></t-fab>
+</view>

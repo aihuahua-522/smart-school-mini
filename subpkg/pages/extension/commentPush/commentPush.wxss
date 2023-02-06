@@ -1,0 +1,85 @@
+.comment-wrapper {
+  background-color: #f9f9f9;
+}
+.comment-wrapper .box-shadow {
+  margin: 30rpx;
+  background: #fffefe;
+  box-shadow: 0 4rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 16rpx;
+}
+.comment-wrapper .choose-star {
+  height: 160rpx;
+  padding: 0 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.comment-wrapper .choose-star > image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+}
+.comment-wrapper .choose-star .stars {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.comment-wrapper .choose-star .stars image {
+  width: 100%;
+  height: 100%;
+}
+.comment-wrapper .input-comment {
+  height: 160rpx;
+  padding: 20rpx;
+}
+.comment-wrapper .input-comment textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+}
+.comment-wrapper .choose-pic {
+  padding: 22rpx 20rpx;
+}
+.comment-wrapper .choose-pic .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666;
+}
+.comment-wrapper .choose-pic .pic-wrapper {
+  margin-top: 10rpx;
+}
+.comment-wrapper .choose-pic .pic-wrapper > view {
+  display: inline-block;
+  width: 202rpx;
+  height: 202rpx;
+  margin-left: 22rpx;
+}
+.comment-wrapper .choose-pic .pic-wrapper > view image {
+  width: 100%;
+  height: 100%;
+}
+.comment-wrapper .choose-pic .pic-wrapper > view:nth-child(3n+1) {
+  margin-left: 0;
+}
+.comment-wrapper .choose-pic .pic-wrapper .picture-box {
+  position: relative;
+}
+.comment-wrapper .choose-pic .pic-wrapper .picture-box .delete-btn {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+.comment-wrapper .submit-comment {
+  width: 90%;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 50rpx auto;
+  background-color: #ff6700;
+  color: #fff;
+  border-radius: 12rpx;
+}
+/*# sourceMappingURL=commentPush.wxss.map */

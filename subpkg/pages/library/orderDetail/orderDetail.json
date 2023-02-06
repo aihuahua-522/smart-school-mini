@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "t-action-sheet": "tdesign-miniprogram/action-sheet/action-sheet",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText": "订单详情",
+  "navigationStyle": "default"
+}

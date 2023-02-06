@@ -1,0 +1,84 @@
+<!--pages/forum/forum-details/forum-details.wxml-->
+<!-- <t-overlay visible="{{overlayVisible}}" backgroundColor="#aaaaaa"/> -->
+<view class="container">
+  <!-- 详情item -->
+  <view class="container-item">
+    <!-- 个人信息区域 -->
+    <view class="personal-data">
+      <view class="personal-box" bindtap="goPersonalData">
+        <image src="{{dynamicDetailsList.avatar}}" class="headportrait"></image>
+        <view class="human">
+          <view class="name">{{dynamicDetailsList.nickname}}</view>
+          <view class="time">{{dynamicDetailsList.createTime}}</view>
+        </view>
+      </view>
+      <text class="concern" data-index="{{index}}" data-id="{{dynamicDetailsList.createBy}}" bindtap="handleAssess">{{dynamicDetailsList.attentionFlag==0?'关注':'已关注'}}</text>
+    </view>
+    <!-- 文本内容区域 -->
+    <view class="content">
+      <view class="con-box" data-index="{{dynamicDetailsList.id}}" bindlongpress="bindDeleteForum">
+        <view class="text-box">
+          <text class="topic-name" wx:if="{{dynamicDetailsList.topicName}}">#{{dynamicDetailsList.topicName}}#</text>
+          <text class="con-text">{{dynamicDetailsList.content}}</text>
+        </view>
+        <view class="img">
+          <image wx:for="{{avatar}}" wx:key="index" src="{{item}}" data-index="{{index}}" bindtap="previewAvatarImage"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 点赞人数 -->
+    <view class="zan-num" wx:if="{{dynamicDetailsList.greats}}" bindtap="goGood">
+      <view class="zan-imgs">
+        <image class="{{dynamicDetailsList.greats<=5?'img':['img','app']}}" wx:for="{{dynamicDetailsList.avatars}}" wx:key="index" src="{{item}}"></image>
+      </view>
+      <view class="number">{{dynamicDetailsList.greats}}人点赞</view>
+      <view class="icon">></view>
+    </view>
+
+  </view>
+
+
+  <!-- 评价模块 -->
+  <view class="assess" wx:if="{{commentTotal}}">
+    <view class="assess-num">{{commentTotal}}条评价</view>
+    <view wx:for="{{bbsCommentList}}" wx:key="id">
+      <dynamicCommentItem item="{{item}}" canClick="{{true}}"></dynamicCommentItem>
+
+    </view>
+
+
+  </view>
+  <view wx:else class="else-back">暂无评论，期待你的回复</view>
+</view>
+<!-- 输入框 -->
+<view class="run" style="bottom:{{bottomVal}}px">
+  <t-input placeholder="有何高见，发表一下..." bindchange="onPriceInput" value="{{content}}" adjust-position="{{adjust}}" bindfocus="focusChange" bindblur="blurChange" />
+  <view class="run-right1" wx:if="{{isShow}}">
+    <!-- 收藏 -->
+    <t-icon name="star" class="{{dynamicDetailsList.favoriteFlag ==0?'':'icon-great'}}" size="60rpx" bindtap="handleFavorite" />
+    <!-- 点赞 -->
+    <t-icon name="thumb-up" class="{{dynamicDetailsList.greatFlag==0?'':'icon-great'}}" size="60rpx" data-index="{{index}}" bindtap="handleGreat" />
+    <!-- 分享 -->
+    <!-- <t-icon name="jump" size="60rpx" data-name="jump" bind:tap="handlePopup" /> -->
+  </view>
+  <view class="run-right2" wx:if="{{!isShow}}">
+    <button bindtap="sendAssess">发送</button>
+  </view>
+  <!-- 弹出层 -->
+  <t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom" duration="{{time}}">
+    <view class="block block--bottom">
+      <view class="tit">分享到</view>
+      <view class="where">
+        <button open-type="share" class='icon-item'>
+          <image src="/image/wx.png"></image>
+          微信
+        </button>
+        <!-- <view class="icon-item" bindtap="onShare">
+          <image src="/image/friends.png"></image>
+          朋友圈
+        </view> -->
+      </view>
+      <view class="cancel" bindtap="cancelHandle">取消</view>
+    </view>
+  </t-popup>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "activityItem": "/components/activityItem/activityItem",
+    "dynamicItem": "/components/forum/dynamicItem/dynamicItem"
+
+  },
+  "navigationBarTitleText": "个人中心",
+  "navigationStyle": "default"
+}

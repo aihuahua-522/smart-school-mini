@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"rate": "../../../../components/logistics/rate/rate",
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-button-group": "tdesign-miniprogram/button-group/button-group"
+	},
+	"navigationBarTitleText": "评分",
+	"navigationStyle": "default"
+}

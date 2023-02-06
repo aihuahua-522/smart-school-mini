@@ -1,0 +1,62 @@
+<view class="container-item">
+  <!-- 个人信息区域 -->
+  <view class="personal-data">
+    <view class="personal-box" bindtap="goPersonalData" data-id="{{item.createBy}}">
+      <image src="{{item.avatar}}" class="headportrait"></image>
+      <view class="human">
+        <view class="name">{{item.nickname}}</view>
+        <view class="time">{{item.createTime}}</view>
+      </view>
+    </view>
+    <!-- <text class="concern" data-index="{{index}}" bindtap="handleAssess">{{item.essence == 0 ? '关注' : '已关注'}}</text> -->
+  </view>
+  <!-- 文本内容区域 -->
+  <view class="content">
+    <view class="con-box" data-index="{{item.id}}" bindtap="goForumDetails" bindlongpress="binddelete">
+      <view class="text-box">
+        <text class="topic-name" wx:if="{{item.topicName}}">#{{item.topicName}}#</text>
+        <text class="con-text">{{item.content}}</text>
+      </view>
+      <view class="img">
+        <image wx:for="{{item.photos}}" wx:key="index1" src="{{item.url}}"></image>
+      </view>
+    </view>
+    <!-- 点赞操作区域 -->
+    <view class="handle">
+      <!--点赞-->
+      <view class="handle-item">
+        <t-icon name="thumb-up" class="{{item.greatFlag == 0 ?'':'icon-great'}}" size="32rpx" data-name="thumb-up" bind:click="onIconTap" data-index="{{index}}" bindtap="handleGreat" />
+        <text class="num">{{item.greats}}</text>
+      </view>
+      <!--评论-->
+      <view class="handle-item">
+        <t-icon name="mail" size="32rpx" data-name="mail" data-index="{{item.id}}" bind:click="goForumDetails" />
+        <text class="num">{{item.comments}}</text>
+      </view>
+      <!--收藏-->
+      <view class="handle-item">
+        <t-icon name="star" class="{{item.favoriteFlag==0?'':'icon-great'}}" size="32rpx" data-name="mail" data-index="{{item.id}}" bind:click="onFavoriteTap" />
+        <text class="num">{{item.favorites}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--&lt;!&ndash; 分享弹出层 &ndash;&gt;-->
+  <!--<t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom" duration="100">-->
+  <!--    <view class="block block&#45;&#45;bottom">-->
+  <!--        <view class="tit">分享到</view>-->
+  <!--        <view class="where">-->
+  <!--            <button open-type="share" class='icon-item'>-->
+  <!--                <image src="/image/wx.png"></image>-->
+  <!--                微信-->
+  <!--            </button>-->
+  <!--            &lt;!&ndash; <view class="icon-item">-->
+  <!--                      <image src="/image/friends.png"></image>-->
+  <!--                      朋友圈-->
+  <!--                    </view> &ndash;&gt;-->
+  <!--        </view>-->
+  <!--        <view class="cancel" bindtap="cancelHandle">取消</view>-->
+  <!--    </view>-->
+  <!--</t-popup>-->
+
+</view>

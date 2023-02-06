@@ -1,0 +1,46 @@
+<!--pages/forum/good/good.wxml-->
+<page-meta>
+<navigation-bar
+    title="TA的关注 ({{num}})"
+  />
+</page-meta>
+<view class="container">
+  <!-- 个人信息区域 -->
+  <view class="good-item">
+    <view class="personal-box">
+      <image src="/image/school_icon.png" class="headportrait"></image>
+      <view class="human">
+        <view class="name">花花的智慧校园</view>
+        <view class="signature">郭总爱花花~~</view>
+      </view>
+    </view>
+      <text class="concern">关注</text>
+    
+  </view>
+
+<!-- 个人信息区域 -->
+<view class="good-item">
+    <view class="personal-box">
+      <image src="/image/school_icon.png" class="headportrait"></image>
+      <view class="human">
+        <view class="name">花花的智慧校园</view>
+        <view class="signature">郭总爱花花~~</view>
+      </view>
+    </view>
+      <text class="concern">关注</text>
+    
+  </view>
+
+<!-- 个人信息区域 -->
+<view class="good-item">
+    <view class="personal-box">
+      <image src="/image/school_icon.png" class="headportrait"></image>
+      <view class="human">
+        <view class="name">花花的智慧校园</view>
+        <view class="signature">郭总爱花花~~</view>
+      </view>
+    </view>
+      <text class="concern">关注</text>
+    
+  </view>
+</view>

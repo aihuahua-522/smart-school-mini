@@ -1,0 +1,10 @@
+<!--subpkg/pages/useEleRecord/useEleRecord.wxml-->
+<view class="container">
+<!-- 用电折线图 -->
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <!-- 时间选择器 -->
+  <t-cell title="{{dateText?'':'选择日期'}}" hover note="{{dateText || ''}}" arrow data-mode="date" bindtap="showPicker" class="test" t-class="pannel-item" t-class-note="{{dateText ? 'sub-text' : 'empty'}}" />
+
+  <!-- 年月日 -->
+  <t-date-time-picker title="选择日期" visible="{{dateVisible}}" mode="date" defaultValue="{{date}}" format="YYYY-MM-DD" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker" start="{{start}}" end="{{end}}"></t-date-time-picker>
+</view>

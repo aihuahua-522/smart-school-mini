@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "成绩查询",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "t-collapse": "tdesign-miniprogram/collapse/collapse",
+    "t-collapse-panel": "tdesign-miniprogram/collapse/collapse-panel",
+    "scoreList": "../../../components/edu/scoreList/scoreList"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dynamicItem": "/components/forum/dynamicItem/dynamicItem"
+  },
+  "navigationBarTitleText": "校园论坛",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}

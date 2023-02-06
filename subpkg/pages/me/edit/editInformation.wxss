@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3601525 */
+  src: url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.woff2?t=1669161024505') format('woff2'), url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.woff?t=1669161024505') format('woff'), url('//at.alicdn.com/t/c/font_3601525_5i0ozvwdwxn.ttf?t=1669161024505') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-gou:before {
+  content: "\e63b";
+}
+.icon-dian:before {
+  content: "\ec1e";
+}
+.icon-nv:before {
+  content: "\e6f0";
+}
+.icon-xingbienv:before {
+  content: "\e605";
+}
+.icon-xingbienan:before {
+  content: "\e606";
+}
+.icon-jinrujiantouxiao:before {
+  content: "\e8b9";
+}
+.icon-shoucang:before {
+  content: "\e8c6";
+}
+.icon-youjiantou:before {
+  content: "\e600";
+}
+.icon-icon_fire:before {
+  content: "\e79d";
+}
+page {
+  background-color: #ffffff;
+}
+.tx-c {
+  text-align: center;
+}
+/**app.wxss**/
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card_shadow {
+  border: 0 solid #f5f5f5;
+  box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+.container {
+  display: flex;
+  /* 纵向排列 */
+  flex-direction: column;
+  /* 每项居中 */
+  align-items: center;
+  /* 两端居中 */
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+  overflow: visible;
+  color: #333;
+}
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 1300rpx;
+}
+.font-sm {
+  font-size: 10pt;
+}
+.font-mm {
+  font-size: 12pt;
+  color: black;
+}
+.tc {
+  text-align: center;
+}
+.font-l {
+  font-size: 14pt;
+}
+.font-xl {
+  font-size: 16pt;
+}
+.font-xxl {
+  font-size: 20pt;
+}
+.ig-text-color {
+  color: #6c6c6c;
+}
+.graw-text-color {
+  color: #8c8c8c;
+}
+.white-text-color {
+  color: white;
+}
+.t-empty {
+  margin-top: 400rpx;
+}
+.t-empty__description {
+  margin-top: 30rpx !important;
+}
+.full_vh {
+  height: 100vh;
+}
+.loading {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.fl1 {
+  flex: 1;
+}
+.container {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f5f5;
+}
+.imgCell {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.imgCell text {
+  padding-left: 20rpx;
+}
+.imgCell image {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 50%;
+}
+.imgCell::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid var(--td-input-border-color, #e7e7e7);
+  transform: scaleY(0.5);
+  left: 32rpx;
+}
+.tagTitle {
+  background-color: #fff;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+}
+.pickMenu {
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  position: relative;
+}
+.pickMenu .pick-icon {
+  padding: 10rpx;
+}
+.pickMenu .pick-icon .icon-tag {
+  margin: 10rpx;
+}
+.dropdown {
+  width: 82rpx;
+}
+.dropdown .dropdown-i {
+  position: absolute;
+  bottom: 2rpx;
+  right: 0;
+}
+.dropdown .t-button--primary {
+  background-color: #ffbc2d !important;
+}
+.t-dropdown-menu__item.t-is-active {
+  color: #ffbc2d !important;
+}
+.btn {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+}
+.btn .t-button--default {
+  background-color: #ffbc2d !important;
+  color: white !important;
+}
+.t-cell-group--card {
+  margin: 0 !important;
+}
+.t-input__label {
+  margin-right: 0 !important;
+}
+.t-input {
+  padding: 24rpx 20rpx !important;
+}
+.t-divider--horizontal {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+  margin-left: 30rpx;
+}
+.t-tag {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.t-input__control--disabled {
+  color: #999 !important;
+}
+.t-checkbox--tag.t-is-actived {
+  color: #ffbc2d !important;
+  background-color: #FeF6e6 !important;
+}
+/*# sourceMappingURL=editInformation.wxss.map */

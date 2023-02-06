@@ -1,0 +1,67 @@
+<!--subpkg/pages/logistics/adminScoreList/adminScoreList.wxml-->
+<view>
+
+    <t-pull-down-refresh
+            value="{{baseRefresh.value}}"
+            t-class-indicator="indicator-blue"
+            loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}"
+            bind:refresh="onPullDownRefresh"
+            bind:scrolltolower="onReachBottom"
+    >
+        <t-message id="t-message"/>
+
+        <view class='signList'>
+            <view class='dorm'>
+                <t-cell title="选择日期" hover note="{{queryObj.date || '年 月 日'}}" arrow data-mode="date"
+                        bindtap="showPicker" class="test" t-class="pannel-item"
+                        t-class-note="{{queryObj.date ? 'sub-text' : 'empty'}}"/>
+
+                <!-- 年月日 -->
+                <t-date-time-picker title="选择日期" visible="{{dateVisible}}" mode="date"
+                                    defaultValue="{{queryObj.date}}" format="YYYY-MM-DD" bindchange="onConfirm"
+                                    bindpick="onColumnChange" bindcancel="hidePicker" start="{{start}}"
+                                    end="{{end}}"></t-date-time-picker>
+
+                <t-cell title="楼栋" note="{{note}}" bind:click="showCascader" arrow></t-cell>
+
+
+                <!--<text class='building'>三校/女生/10号楼</text>-->
+            </view>
+            <view class='isSign'>
+                <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" t-class="custom-tabs">
+                    <t-tab-panel label="未打分" value="0">
+                        <view class="roomInfo card_shadow" wx:for="{{scoreList}}" bindtap='toDetail' data-roomid="{{item.roomId}}">
+                            <view style="display:flex;flex-direction: column;">
+                                <text>{{item.dormName}}</text>
+                                <text>{{item.roomName}}</text>
+                            </view>
+                            <view class='seal'>
+                                <view>未评分</view>
+                            </view>
+                        </view>
+                    </t-tab-panel>
+                    <t-tab-panel label="已打分" value="1">
+                        <view class="roomInfo" wx:for="{{scoreList}}" bindtap='toDetail' data-id="{{item.id}}">
+                            <view style="display:flex;  flex-direction: column;justify-content: space-around;">
+                                <text>{{item.dormName}}</text>
+                                <text>{{item.roomName}}</text>
+                                <text class="font-sm ig-text-color">{{item.createTime}}</text>
+                            </view>
+                            <view class='seal red'>
+                                <view>{{item.score}}分</view>
+                            </view>
+                        </view>
+                    </t-tab-panel>
+                </t-tabs>
+            </view>
+        </view>
+
+        <!-- 加载圈圈 -->
+        <view class="loading">
+            <t-loading theme="circular" size="48rpx" text="加载中..." loading="{{loading}}" wx:if="{{scoreList.length>=7}}">
+            </t-loading>
+        </view>
+        <view class="none-more" wx:if="{{!loading && noMore}}">我也是有底线的哦~</view>
+    </t-pull-down-refresh>
+    <t-cascader visible="{{visible}}" options="{{options}}" title="请选择楼栋" bind:change="onChange"></t-cascader>
+</view>

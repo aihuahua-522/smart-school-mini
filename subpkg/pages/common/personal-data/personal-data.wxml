@@ -1,0 +1,50 @@
+<!--pages/common/personal-data/personal-data.wxml-->
+<view class="container">
+    <!-- 个人信息区域 -->
+    <view class="personal-center">
+        <image src="/image/school_icon.png" class="center-headportrait"></image>
+        <view class="name-box">
+            <view class="center-name">{{userObj.nickName}}</view>
+            <view class="sex">
+                <!-- 图标 -->
+                <view class="iconfont icon-nv" wx:if="{{userObj.sex === 1}}"
+                      style="color: #ff4d94;font-size: 1.4em;"></view>
+                <view class="iconfont icon-nv" wx:else style="color: #75b9eb;font-size: 1.4em;"></view>
+            </view>
+        </view>
+        <view class="signature">{{userObj.personSign}}</view>
+        <view class="handle-box">
+            <view class="care" wx:if="{{userObj.attentionFlag === 0}}" bindtap="switchAttention">关注</view>
+            <view bindtap="switchAttention" class="care" wx:else>已关注</view>
+
+            <view class="care quiz" bindtap="handlePrivateMessage">私聊</view>
+        </view>
+        <view class="num-box">
+            <view class="fan-num" bindtap="goFans">{{userObj.fenCount}}粉丝</view>
+            <view class="care-num" bindtap="goAttention">{{userObj.followCount}}关注</view>
+        </view>
+    </view>
+
+    <!--用户tag区域 -->
+    <view class="portray">
+        <view class="portray-tit">他的标签</view>
+        <view class="item-box">
+
+            <view class="portray-item" wx:for="{{userObj.tags}}">{{item}}</view>
+        </view>
+    </view>
+
+    <!-- tab切换栏 -->
+    <view class="trends">
+        <view class="trends-box">
+            <t-tabs defaultValue="{{0}}">
+                <t-tab-panel label="动态" value="0">
+                    <dynamicItem wx:for="{{dynamicList}}" item="{{item}}"></dynamicItem>
+                </t-tab-panel>
+                <t-tab-panel label="活动" value="1">
+                    <activityItem activityList="{{activityList}}"></activityItem>
+                </t-tab-panel>
+            </t-tabs>
+        </view>
+    </view>
+</view>

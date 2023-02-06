@@ -1,0 +1,118 @@
+.container {
+  background-color: white !important;
+}
+.user_info_box {
+  width: 100vw;
+  position: relative;
+  .user_info {
+    position: absolute;
+    top: 80rpx;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    // 学校图标
+    .school_icon {
+      height: 84rpx;
+      width: 84rpx;
+    }
+  }
+  // 顶部用户背景
+  .user_info_bg {
+    height: 400rpx;
+    width: 100%;
+  }
+
+  .banner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .banner_image {
+      height: 42rpx;
+      width: 100%;
+    }
+  }
+}
+
+// 标题
+.title {
+  color: #424242;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 28rpx 0;
+  text-align: center;
+  position: relative;
+}
+
+.title:before {
+  content: "";
+  width: 74rpx;
+  height: 2rpx;
+  background-color: #979797;
+  position: absolute;
+  top: 20rpx;
+  left: 220rpx;
+}
+
+.title:after {
+  content: "";
+  width: 74rpx;
+  height: 2rpx;
+  background-color: #979797;
+  position: absolute;
+  top: 20rpx;
+  right: 220rpx;
+}
+
+// 中间大导航栏
+.nav_list {
+  display: flex;
+  font-size: 26rpx;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 17rpx 50rpx;
+  width: 100%;
+  box-sizing: border-box;
+  .nav_icon {
+    height: 118rpx;
+    margin: 0 auto;
+    width: 118rpx;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // 活动列表
+  .activityListContainer {
+    padding: 20rpx;
+    background-color: white;
+    margin-bottom: 20rpx;
+    display: flex;
+
+    // 图片浏览区
+    .activity_image {
+      padding: 0 20rpx 0 20rpx;
+      .external-class {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    // 报名活动的容器
+    .activityInfo {
+      // 标题
+      .activity_title {
+        font-weight: 900; /*取值范围是100~900*/
+      }
+
+      // 时间容器
+      .timeContainer {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

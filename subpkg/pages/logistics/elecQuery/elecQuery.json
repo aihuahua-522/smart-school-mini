@@ -1,0 +1,13 @@
+{
+	"component": true,
+	"usingComponents": {
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-button-group": "tdesign-miniprogram/button-group/button-group",
+		"t-tag": "tdesign-miniprogram/tag/tag",
+		"t-check-tag": "tdesign-miniprogram/tag/check-tag",
+		"t-icon": "tdesign-miniprogram/icon/icon",
+		"t-cascader": "tdesign-miniprogram/cascader/cascader"
+	},
+	"navigationBarTitleText": "电费",
+	"navigationStyle": "default"
+}

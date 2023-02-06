@@ -1,0 +1,44 @@
+<!--pages/elecQuery/elecQuery.wxml-->
+<view class="container">
+  <view class="title">
+    <view>
+      <view>剩余电量</view>
+      <view>{{residueEle}}W</view>
+    </view>
+    <view bindtap="selectRoom">
+      <t-tag variant="light-outline" theme="primary" shape="round">
+        {{note}}
+        <t-icon name="app" size="14px" slot="icon" />
+      </t-tag>
+    </view>
+  </view>
+  <!-- 主体显示区 -->
+  <view class="content">
+    <view class="content-num">
+      <view>
+        <text>{{power}}</text>
+        <text>/kw.h</text>
+      </view>
+    </view>
+    <view>累计还可以用3-4天</view>
+  </view>
+  
+
+  
+  <view class="rcord-btn">
+    <navigator url="../useEleRecord/useEleRecord?roomId={{roomId}}" hoverClass="none" hover-class="navigator-hover">
+      <view>用电记录</view>
+    </navigator>
+    <navigator url="../foulEleRecord/foulEleRecord?roomId={{roomId}}" hoverClass="none" hover-class="navigator-hover">
+      <view>违规记录</view>
+    </navigator>
+    <navigator url="../upEleRecord/upEleRecord?roomId={{roomId}}" hoverClass="none" hover-class="navigator-hover">
+      <!-- <view>充值记录</view> -->
+    </navigator>
+  </view>
+  <!-- 弹出层 
+     
+  -->
+
+  <t-cascader visible="{{visibleRoom}}" options="{{options}}" title="请选择房间" bind:change="onChange"></t-cascader>
+</view>

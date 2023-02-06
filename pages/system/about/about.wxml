@@ -1,0 +1,29 @@
+<!--pages/users/about/about.wxml-->
+<view class='padding-top-sm bg-white'>
+  <image src='/image/school_bg.png' mode='widthFix' class='png' style='width:100%'></image>
+</view>
+<view class='card_shadow' style="margin: 20rpx 18rpx;padding: 30rpx;">
+  <view>
+    <text style="color: #1cbbb4;">丨</text>
+    小程序简介
+  </view>
+  <view class='text-grey text-df'>
+    <view class='margin-top-sm '>
+      智慧校园和其他“智慧+场景”类概念（如智慧医院、智慧社区等）一样，是“智慧化”这一概念的分支，源自于2009年前后被引入国内的“智慧城市”概念，而“智慧城市”则源于IBM公司在2008年提出的“智慧地球”；因此可以说，智慧校园是一个从2010年才开始逐渐形成和完善的科技术语，所指称的技术带有人工智能成分（特别是深度学习和自然语言理解）
+    </view>
+    <view class='margin-top-sm '>
+      在传统校园基础上构建一个数字空间，实现从环境信息（包括教室、实验室等）、资源信息（如图书、讲义、课件等）到应用信息（包括教学、管理、服务、办公等）等全部数字化，从而为资源和服务共享提供有效支撑，这种做法称之为数字校园（digit campus）
+    </view>
+    <view class='margin-top-sm '>
+      智慧校园是数字校园的进一步发展和提升，是教育信息化的更高级形态
+    </view>
+    <view class='margin-top-sm '>
+      视频数据指通过音视频监测获得的非结构化数据，此类数据来自于正在高速发展的视频监控系统，实践中最迫切的需求是让“行为和态势识别”功能普及化、融入智慧校园管理的真实业务流程
+    </view>
+    <view class='margin-top-sm text-center text-cyan'>更多功能敬请期待！</view>
+  </view>
+</view>
+
+<view class="ig-text-color tx-c">
+  <text>Copyright © 2022 All Rights Reserved</text>
+</view>

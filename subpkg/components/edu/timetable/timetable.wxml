@@ -1,0 +1,36 @@
+<view class="timetable">
+  <view class="header">
+    <view class="header_title">
+      {{weeks.title}}
+    </view>
+    <view class="header-item" wx:for="{{weeks.data}}" :style="{ color: todayWeekIndex === index ? '#4070FF' : 'unset' }">
+      <view>
+        {{ item.week }}
+      </view>
+      <view>
+        {{ item.date }}
+      </view>
+    </view>
+    <!-- <lx-calendar @change="calendarChange"></lx-calendar> -->
+  </view>
+
+  <view class="main">
+    <view class="row" wx:for="{{timetableType}}">
+      <view class="time-item">
+        <view class="index">{{ item.index }}</view>
+        <view class="time">{{ item.start }}</view>
+        <view class="time">{{ item.end }}</view>
+      </view>
+    </view>
+
+    <view class="course-container">
+      <view class="week" wx:for="{{mergeData}}" wx:key="weekIndex" wx:for-item="week">
+        <view class="courseList" wx:for="{{week}}" wx:key="courseIndex" wx:for-item="course">
+          <view bindclick="handleCourseClick" data-course="1" data-course="1" data-courseIndex="1" class="course" style=" height: calc(((100vh - 150rpx ) / {{week.length}}) * {{ course.length}}); background: {{course.backgroundColor}}" wx:if="{{course.length > 0}}">
+            {{course.name }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

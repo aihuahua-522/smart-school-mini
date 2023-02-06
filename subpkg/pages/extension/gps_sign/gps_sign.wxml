@@ -1,0 +1,105 @@
+<view style="background-color: white;height: 100vh;">
+  <t-message id="t-message" />
+  <view class="info">
+    <image src="{{userinfo.avatar}}"></image>
+    <view>{{userinfo.name}}</view>
+  </view>
+  <view class="essay">每一个活动，都有一个意义</view>
+  <view class="sign_box">
+    <view class="sign_in">
+      <view class="sign_title">
+        <view class="iconfont icon-dian {{signDetail.signInFlag?'green':''}}"></view>
+        <view class="sign_time">签到时间：{{signDetail.signInStartTime}}</view>
+      </view>
+      <view wx:if="{{signDetail.isSignIn}}">
+        <view class="reality_time">打卡时间：{{signDetail.signInTime}}</view>
+        <view class="sign_in_address">
+          <view class="iconfont icon-site"></view>
+          {{address}}
+        </view>
+      </view>
+      <view class="clock_in" wx:elif="{{signDetail.signInFlag == 1&&!signDetail.isSignIn}}">
+        <view bindtap="signIn" class="sign_ball" data-wpysignin-a="">
+          <image src="/image/is_sign.png" wx:if="{{isCanSign==1}}"></image>
+          <image src="/image/no_sign.png" wx:else></image>
+          <view>
+            <view class="text">签到</view>
+            <view class="time">{{realTime}}</view>
+          </view>
+        </view>
+        <view class="now_address" wx:if="{{isCanSign==0}}">
+          <view class="iconfont icon-pass"></view>
+          未在签到范围内
+          <view bindtap="goMap" class="see_map" data-wpygomap-a="">查看定位范围</view>
+        </view>
+
+        <view class="now_address" wx:elif="{{isCanSign==1}}">
+          <view class="iconfont icon-pass green"></view>
+          已进入签到范围：{{address}}
+          <view bindtap="goMap" class="see_map" data-wpygomap-a="">查看定位范围</view>
+        </view>
+
+        <view class="now_address" wx:else>
+          <view class="iconfont icon-gou"></view>
+          定位中...
+        </view>
+      </view>
+      <view wx:if="{{signInSuccess}}">
+        <view class="reality_time">打卡时间：{{signInTime}}</view>
+        <view class="sign_in_address">
+          <view class="iconfont icon-site"></view>
+          {{actiDetails.sign_address}}
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="sign_out" wx:if="{{signDetail.shouldSignOut==1}}">
+      <view class="sign_title">
+        <view class="iconfont icon-dian  {{signDetail.signOutFlag?'green':''}}"></view>
+        <view class="sign_time">签退时间：{{signDetail.signOutStartTime}}</view>
+      </view>
+      <view wx:if="{{signDetail.signInFlag == 0||signDetail.isSignIn}}">
+        <view class="clocked_in" wx:if="{{signDetail.isSignOut == 1}}">
+          <view class="reality_time">打卡时间：{{signDetail.signOutTime}}</view>
+          <view class="sign_in_address">
+            <view class="iconfont icon-site"></view>
+            <view>{{signDetail.signOutAddress}}</view>
+          </view>
+        </view>
+        <view class="clock_in" wx:elif="{{signDetail.signOutFlag == 1 &&!signDetail.isSignOut }}">
+          <view bindtap="signOut" class="sign_ball" data-wpysignout-a="">
+            <image src="/image/is_sign.png" wx:if="{{isCanSign==1}}"></image>
+            <image src="/images/no_sign.png" wx:else></image>
+            <view>
+              <view class="text">签退</view>
+              <view class="time">{{realTime}}</view>
+            </view>
+          </view>
+          <view class="now_address" wx:if="{{isCanSign==1}}">
+            <view class="iconfont icon-pass green"></view>
+            已进入签退范围：{{signDetail.signAddress}}
+            <view bindtap="goMap" class="see_map" data-wpygomap-a="">查看定位范围</view>
+          </view>
+          <view class="now_address" wx:elif="{{isCanSign==0}}">
+            <view class="iconfont icon-pass"></view>
+            未在签退范围内
+            <view bindtap="goMap" class="see_map" data-wpygomap-a="">查看定位范围</view>
+          </view>
+          <view class="now_address" wx:else>
+            <view class="iconfont icon-pass"></view>
+            定位中...
+          </view>
+        </view>
+        <view wx:if="{{signOutSuccess}}">
+          <view class="reality_time">打卡时间：{{signOutTime}}</view>
+          <view class="sign_in_address">
+            <view class="iconfont icon-site"></view>
+            {{actiDetails.sign_address}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

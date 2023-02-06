@@ -1,0 +1,53 @@
+<view class="comment-lists">
+  <view class="comment-status">
+    <view bindtap="chooseTab" class="{{type==3 ?'active':''}}" data-type="3">
+      <view>全部</view>
+      <view class="right">{{commentPreview.total}}</view>
+    </view>
+    <view bindtap="chooseTab" class="{{type==0?'active':''}}" data-type="0">
+      <view>好评</view>
+      <view class="right">{{commentPreview.goodCount}}</view>
+    </view>
+    <view bindtap="chooseTab" class="{{type==1?'active':''}}" data-type="1">
+      <view>中评</view>
+      <view class="right">{{commentPreview.middleCount}}</view>
+    </view>
+    <view bindtap="chooseTab" class="{{type==2?'active':''}}" data-type="2">
+      <view>差评</view>
+      <view class="right">{{commentPreview.badCount}}</view>
+    </view>
+  </view>
+  <view class="lists-wrapper">
+    <view class="comment-list" wx:for="{{comments}}" wx:key="{{index}}">
+      <image alt="" src="{{item.avatar}}"></image>
+      <view class="comment-info">
+        <view class="name">
+          <view>{{item.name}}</view>
+          <view class="star-num float-right">
+            <image alt="" src="../../images/stared.png" wx:for="{{item.stars-0}}" wx:key="{{index}}"></image>
+            <image alt="" src="../../images/star.png" wx:for="{{5-item.stars}}" wx:key="{{index}}"></image>
+          </view>
+        </view>
+        <view class="comment-form">
+          <view>{{item.createTime}} </view>
+          <view>来自{{item.deptName}}</view>
+        </view>
+        <!-- <view class="comment-content">
+          <view class="text">{{item.contents}}</view>
+          <view class="one-img-box" wx:if="{{item.pictures.length===1}}">
+            <image alt="" mode="aspectFit" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="{{index}}"></image>
+          </view>
+          <view class="four-img-box" wx:elif="{{item.pictures.length===4}}">
+            <image alt="" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="{{index}}"></image>
+          </view>
+          <view class="other-img-box" wx:else>
+            <image alt="" src="{{pic.path}}" wx:for="{{item.pictures}}" wx:for-item="pic" wx:key="{{index}}"></image>
+          </view>
+        </view> -->
+      </view>
+    </view>
+    <view class="no_cont" wx:if="{{comments.length==0}}">
+      <image src="../../images/nocont.png"></image>
+    </view>
+  </view>
+</view>

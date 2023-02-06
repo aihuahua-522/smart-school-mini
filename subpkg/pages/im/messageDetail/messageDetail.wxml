@@ -1,0 +1,38 @@
+<!--pages/message/messageDetail/messageDeatil.wxml-->
+<view class="box">
+  <t-message id="t-message" />
+
+  <scroll-view scroll-y="true" class="chat_list" id="message_scroll" scroll-into-view="{{bottom}}">
+    <view wx:for="{{timeGroupList}}" wx:key="time">
+      <view class="chart-timer">
+        {{item.time}}
+      </view>
+
+      <view wx:for="{{item.messageList}}" wx:for-item="messageItem" wx:key="id">
+
+        <view class="item left" wx:if="{{userId == messageItem.createBy}}">
+          <t-loading wx:if="{{messageItem.status === -1}}" theme="spinner" size="40rpx" t-class-indicator="indicator-black"></t-loading>
+          <t-avatar image="{{messageItem.avatar}}" />
+          <text class="message">{{messageItem.content}}</text>
+        </view>
+
+        <view class="item right" wx:else>
+          <t-avatar image="{{messageItem.avatar}}" />
+          <!--<t-image class="header-image" src="{{}}" width="72" height="72" />-->
+          <text class="message">{{messageItem.content}}</text>
+          <t-loading wx:if="{{messageItem.status === -1}}" theme="spinner" size="40rpx" t-class-indicator="indicator-black"></t-loading>
+        </view>
+
+
+      </view>
+    </view>
+    <view id="scrollBottom"> </view>
+  </scroll-view>
+
+
+  <view class="input-box">
+    <t-input value="{{value}}" bindchange="inputMessage" />
+
+    <t-button theme="light" size="large" bindtap="sendMessage">发送</t-button>
+  </view>
+</view>

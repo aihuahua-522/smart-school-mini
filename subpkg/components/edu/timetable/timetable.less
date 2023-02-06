@@ -1,0 +1,87 @@
+.timetable {
+  background: white;
+  border: 1px solid #e4e7ed;
+  border-radius: 8rpx;
+
+  .header {
+    position: sticky;
+    // top: 88rpx;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    background: #f5f7fa;
+    z-index: 999;
+    .header_title {
+      width: 88rpx;
+    }
+    .header-item {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  .main {
+    position: relative;
+    // top: 40px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 150rpx);
+    .row {
+      flex: 1;
+      // height: 120px;
+      position: relative;
+      &:after {
+        content: "";
+        height: 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 1rpx dashed #e4e7ed;
+      }
+
+      .time-item {
+        height: 100%;
+        width: 88rpx;
+        text-align: center;
+        background: #f5f7fa;
+
+        .index {
+          color: #909399;
+          padding-bottom: 8rpx;
+          padding-top: 16rpx;
+        }
+      }
+    }
+
+    .course-container {
+      position: absolute;
+      top: 0;
+      left: 88rpx;
+      width: calc(100% - 88rpx);
+      height: 100%;
+      display: flex;
+
+      .week {
+        flex: 1;
+        width: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        .courseList {
+          word-break: break-all;
+          color: white;
+          overflow: hidden;
+
+          .course {
+            padding: 8rpx;
+            border-radius: 16rpx;
+            text-align: center;
+            font-size: 24rpx;
+          }
+        }
+      }
+    }
+  }
+}

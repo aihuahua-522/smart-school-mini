@@ -1,0 +1,15 @@
+<view class="noticeLists">
+  <t-message id="t-message" />
+  <view class="noticeList" wx:for="{{noticeList}}" wx:key="id">
+    <navigator hoverClass="none" openType="navigate" url="/subpkg/pages/extension/extension_notice/extension_notice?id={{item.id}}">
+      <view class="line"></view>
+      <view class="noticeContainer">
+        <view class="title">{{item.title}}</view>
+        <view class="from_time">发布时间: {{item.createTime}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="noCont" wx:if="{{is_cont}}">
+    <image src="../../images/nocont.png"></image>
+  </view>
+</view>

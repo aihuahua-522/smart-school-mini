@@ -1,0 +1,129 @@
+.container-item {
+  padding: 20rpx;
+}
+/* 论坛内容 */
+.personal-data {
+  width: 100%;
+  padding-top: 10rpx;
+  display: flex;
+  position: relative;
+}
+.personal-box {
+  display: flex;
+  align-items: center;
+}
+.headportrait {
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.human {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.time {
+  font-size: 24rpx;
+  color: #5c5b5b;
+}
+/* 关注 */
+.concern {
+  position: absolute;
+  top: 24rpx;
+  right: 0;
+  font-size: 28rpx;
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  color: white;
+  background-color: #ffbc2d;
+}
+/* 内容 */
+.content {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8rpx;
+}
+.text-box {
+  padding: 10rpx 0 20rpx;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  /* 文本自动换行 */
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.topic-name {
+  color: #4a77b0;
+}
+.img {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img image {
+  width: 32%;
+  height: 180rpx;
+  margin: 5rpx;
+}
+/* 操作区域 */
+.handle {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0 10rpx;
+}
+.handle .t-icon {
+  font-size: 38rpx !important;
+  vertical-align: middle;
+}
+.handle-item {
+  display: flex;
+  justify-content: space-between;
+  color: #999999;
+}
+.icon-great {
+  color: #ffbc2d;
+}
+.num {
+  margin-left: 4rpx;
+}
+/* 弹出层 */
+.block {
+  width: 176rpx;
+  height: 176rpx;
+  background: #fff;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.block .tit {
+  padding-top: 20rpx;
+}
+.block .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40rpx;
+  background-color: #ffffff;
+}
+.block .icon-item image {
+  height: 120rpx;
+  width: 120rpx;
+  padding: 10rpx;
+}
+.block--bottom {
+  width: 100vw;
+  height: 40vh;
+}

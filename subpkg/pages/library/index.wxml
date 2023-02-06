@@ -1,0 +1,43 @@
+<!--subpkg/pages/library/index.wxml-->
+<view class="page">
+    <t-swiper
+            current="{{currentTab}}"
+            bindchange="onChangeSwiper"
+            navigation
+            class="full_vh"
+    >
+        <t-swiper-item >
+            <!--<libraryHome></libraryHome>-->
+            <libraryBookCategoryList class="full_vh"></libraryBookCategoryList>
+
+        </t-swiper-item>
+
+        <t-swiper-item >
+            <libraryBookCategoryList></libraryBookCategoryList>
+        </t-swiper-item>
+
+        <t-swiper-item >
+            <libraryMy></libraryMy>
+        </t-swiper-item>
+
+    </t-swiper>
+
+    <t-tab-bar value="{{currentTab}}" bindchange="onChangeTabs" theme="tag" split="{{false}}">
+
+
+        <t-tab-bar-item value="0" icon="app">
+            首页
+        </t-tab-bar-item>
+        <t-tab-bar-item value="1" icon="app">
+            分类
+        </t-tab-bar-item>
+
+        <t-tab-bar-item value="2" icon="app">
+            我的
+        </t-tab-bar-item>
+
+
+    </t-tab-bar>
+
+
+</view>

@@ -1,0 +1,141 @@
+<!--subpkg/pages/library/orderDetail/orderDetail.wxml-->
+<view class="book">
+    <t-message id="t-message"/>
+
+    <!-- top -->
+    <view class="book-view">
+        <view class="book-img">
+            <image style="width:100%;height:100%;" src="{{detail.icon}}"/>
+
+        </view>
+        <view class="book-cont">
+            <view class="cont-title">
+                {{detail.bookName}}
+            </view>
+            <view class="cont-detail">
+                {{detail.description}}
+            </view>
+            <view class="cont-more">
+                <t-button theme="light" shape="round" bindtap="showMoreDescription">更多</t-button>
+            </view>
+        </view>
+    </view>
+
+    <!-- center -->
+    <view class="cell">
+        <view>
+            <text class="cell-left">
+                图书名称：
+            </text>
+            <text class="cell-right">
+                {{detail.bookName}}
+            </text>
+        </view>
+        <view>
+            <text class="cell-left">
+                作者：
+            </text>
+            <text class="cell-right">
+                {{detail.author}}
+            </text>
+        </view>
+    </view>
+
+    <!-- 订单信息 -->
+    <view class="cell">
+        <view>
+            <text class="cell-left">
+                预约时间：
+            </text>
+            <text class="cell-right">
+                {{detail.reserveTime}}
+            </text>
+        </view>
+        <view>
+            <text class="cell-left">
+                借阅时间：
+            </text>
+            <text class="cell-right">
+                {{detail.borrowTime || ''}}
+            </text>
+        </view>
+        <view>
+            <text class="cell-left">
+                应还时间：
+            </text>
+            <text class="cell-right">
+                {{detail.shouldReturnTime || ''}}
+            </text>
+        </view>
+        <view>
+            <text class="cell-left">
+                归还时间：
+            </text>
+            <text class="cell-right">
+                {{detail.returnTime || ''}}
+            </text>
+        </view>
+
+        <view>
+            <text class="cell-left">
+                可续借次数：
+            </text>
+            <text class="cell-right">
+                {{detail.canContinueCount || ''}}
+            </text>
+        </view>
+
+    </view>
+
+
+    <view class="introduce">
+        <view class="introduce-title">
+            详情介绍
+        </view>
+        <view class="introduce-detail">
+            {{detail.description}}
+        </view>
+
+    </view>
+
+
+    <!-- footer -->
+    <view class="footer">
+        <view>
+            丢失点我
+        </view>
+        <view wx:if="{{detail.status == 0}}">
+            已预约
+        </view>
+        <view wx:elif="{{detail.status == 1}}">
+            已取消
+        </view>
+        <view wx:elif="{{detail.status == 2 || detail.status == 3}}" bind:tap="showReserveInfoModel">
+            续借
+        </view>
+        <view wx:elif="{{detail.status == 4}}">
+            已归还
+        </view>
+        <view wx:elif="{{detail.status == 5}}">
+            已逾期
+        </view>
+        <view wx:elif="{{detail.status == 6}}">
+            已逾期未支付
+        </view>
+        <view wx:elif="{{detail.status == 7}}">
+            已归还
+        </view>
+        <view wx:elif="{{detail.status == 8}}">
+            已丢失
+        </view>
+    </view>
+</view>
+
+
+<t-dialog visible="{{showMultiTextAndTitle}}" title="对话框标题" confirm-btn="知道了" bind:confirm="closeDialog">
+    <scroll-view slot="content" scroll-y class="long-content">
+        <view class="content-container">{{detail.describe}}</view>
+    </scroll-view>
+</t-dialog>
+
+<t-action-sheet id="t-action-sheet" bind:selected="handleSelected"/>

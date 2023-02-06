@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "dynamicCommentItem": "/subpkg/components/forum/dynamicCommentItem/dynamicCommentItem",
+    "dynamicItem": "/components/forum/dynamicItem/dynamicItem"
+  },
+  "navigationBarTitleText": "话题广场",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true
+}

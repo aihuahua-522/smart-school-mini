@@ -1,0 +1,151 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/im/message",
+    "pages/logs/logs",
+    "pages/me/me",
+    "pages/login/login",
+    "pages/forum/forum",
+    "pages/wx_login/wx_login",
+    "pages/system/about/about"
+  ],
+  "usingComponents": {
+    "t-message": "tdesign-miniprogram/message/message",
+    "t-button": "miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-tabs": "miniprogram_npm/tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "miniprogram_npm/tdesign-miniprogram/tabs/tab-panel",
+    "t-picker": "miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-item": "miniprogram_npm/tdesign-miniprogram/picker/picker-item",
+    "t-icon": "miniprogram_npm/tdesign-miniprogram/icon/icon",
+    "t-cell": "miniprogram_npm/tdesign-miniprogram/cell/cell",
+    "t-cell-group": "miniprogram_npm/tdesign-miniprogram/cell-group/cell-group",
+    "t-tab-bar": "miniprogram_npm/tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "miniprogram_npm/tdesign-miniprogram/tab-bar/tab-bar-item",
+    "t-sticky": "miniprogram_npm/tdesign-miniprogram/sticky/sticky",
+    "t-textarea": "miniprogram_npm/tdesign-miniprogram/textarea/textarea",
+    "t-input": "miniprogram_npm/tdesign-miniprogram/input/input",
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-popup": "miniprogram_npm/tdesign-miniprogram/popup/popup",
+    "t-fab": "miniprogram_npm/tdesign-miniprogram/fab/fab",
+    "t-back-top": "miniprogram_npm/tdesign-miniprogram/back-top/back-top",
+    "t-toast": "miniprogram_npm/tdesign-miniprogram/toast/toast",
+    "t-loading": "miniprogram_npm/tdesign-miniprogram/loading/loading",
+    "t-drawer": "miniprogram_npm/tdesign-miniprogram/drawer/drawer",
+    "t-overlay": "miniprogram_npm/tdesign-miniprogram/overlay/overlay",
+    "t-cascader": "tdesign-miniprogram/cascader/cascader",
+    "t-date-time-picker": "miniprogram_npm/tdesign-miniprogram/date-time-picker/date-time-picker",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-empty": "tdesign-miniprogram/empty/empty"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#ffbc2d",
+    "list": [{
+        "iconPath": "/image/首页未选中.png",
+        "selectedIconPath": "/image/首页选中.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "/image/发现 .png",
+        "selectedIconPath": "/image/发现选中 .png",
+        "pagePath": "pages/forum/forum",
+        "text": "论坛"
+      },
+      {
+        "iconPath": "/image/消息.png",
+        "selectedIconPath": "/image/消息选中.png",
+        "pagePath": "pages/im/message",
+        "text": "消息"
+      },
+      {
+        "iconPath": "/image/我的未选中.png",
+        "selectedIconPath": "/image/我的选中.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [
+      "pages/common/personal-data/personal-data",
+      "pages/common/moreApplication/moreApplication",
+      "pages/logistics/dorm_sign_list/dorm_sign_list",
+      "pages/logistics/locationSign/locationSign",
+      "pages/logistics/elecQuery/elecQuery",
+      "pages/logistics/health_sign/health_sign",
+      "pages/logistics/useEleRecord/useEleRecord",
+      "pages/logistics/foulEleRecord/foulEleRecord",
+      "pages/logistics/upEleRecord/upEleRecord",
+      "pages/logistics/dorm_info/dorm_info",
+      "pages/logistics/dorm_sign_list/dorm_sign_detail/dorm_sign_detail",
+      "pages/logistics/scorePage/scorePage",
+      "pages/logistics/repair/repair",
+      "pages/logistics/repair-list/repair-list",
+      "pages/logistics/repair-detail/repair-detail",
+      "pages/logistics/adminScoreList/adminScoreList",
+      "pages/logistics/myScoreList/myScoreList",
+      "pages/forum/topic-more/topic-more",
+      "pages/forum/topic-details/topic-details",
+      "pages/forum/post/post",
+      "pages/forum/forum-details/forum-details",
+      "pages/forum/assess-details/assess-details",
+      "pages/forum/good/good",
+      "pages/forum/attention/attention",
+      "pages/forum/fans/fans",
+      "pages/extension/extension_activity/extension_activity",
+      "pages/extension/extension_activity_detail/extension_activity_detail",
+      "pages/extension/comment/comment",
+      "pages/extension/commentPush/commentPush",
+      "pages/extension/gps_sign/gps_sign",
+      "pages/extension/map/map",
+      "pages/extension/show_qr_code/show_qr_code",
+      "pages/extension/gesture_sign/gesture_sign",
+      "pages/extension/extension_notice_list/extension_notice_list",
+      "pages/extension/tribal_list/tribal_list",
+      "pages/extension/tribal_detail/tribal_detail",
+      "pages/extension/activityFavorite/activityFavorite",
+      "pages/extension/password_sign/password_sign",
+      "pages/extension/extensionActivityList/extensionActivityList",
+      "pages/extension/customList/customList",
+      "pages/extension/customAdd/customAdd",
+      "pages/extension/customDetail/customDetail",
+      "pages/im/messageDetail/messageDetail",
+      "pages/library/index",
+      "pages/library/libraryCategoryList/libraryCategoryList",
+      "pages/library/bookDetail/bookDetail",
+      "pages/me/edit/editInformation",
+      "pages/logistics/studentSelfSignList/studentSelfSignList",
+      "pages/logistics/locationSignSuccess/locationSignSuccess",
+      "pages/extension/adminQrSign/adminQrSign",
+      "pages/logistics/staffRepairList/staffRepairList",
+      "pages/searchPage/indexSearch/search",
+      "pages/searchPage/bookSearch/search",
+      "pages/logistics/repairComment/repairComment",
+      "pages/news/newsDetail",
+      "pages/library/orderList/orderList",
+      "pages/library/orderDetail/orderDetail",
+      "pages/extension/activityManageList/activityManageList",
+      "pages/edu/timetable/timetable",
+      "pages/edu/examList/examList"
+    ]
+  }],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ]
+}

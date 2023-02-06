@@ -1,0 +1,23 @@
+<!--subpkg/pages/wx_login/wx_login.wxml-->
+<div class="login">
+  <t-message id="t-message" />
+  <div class="login-main-color">
+    <div class="login-title">智慧校园</div>
+  </div>
+  <div class="login-con">
+    <div class="login-sub-title">登录</div>
+    <div class="login-use-name">账号：
+      <div class="login-imput-back">
+        <input class="weui-input" bindinput="onInputNum" placeholder="请输入登录账号" />
+      </div>
+    </div>
+    <div class="login-use-name">密码：
+      <div class="login-imput-back">
+        <input type="text" password placeholder="请输入登录密码" bindinput="onInputPsd" />
+      </div>
+    </div>
+    <view class="login-btn" bindtap="onLoginAction">立即登录</view>
+    <!-- <div>微信code: {{wxLoginCode}}</div> -->
+  </div>
+
+</div>

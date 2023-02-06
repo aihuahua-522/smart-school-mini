@@ -1,0 +1,91 @@
+/* pages/topic-more.wxss */
+.container {
+  padding: 20rpx;
+
+}
+
+.item {
+  width: 100%;
+  padding:20rpx 0rpx 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content: space-around;
+}
+
+.img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+}
+
+.content {
+  color: #999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+  font-size: 32rpx;
+}
+
+.tit {
+  font-weight: 600;
+  margin-right: 20rpx;
+  color: #000000;
+  display: flex;
+  width: 480rpx;
+}
+.tit view{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.talk {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.look {
+  font-size: 28rpx;
+}
+
+/* 空空如也图片 */
+.none image{
+  width: 100%;
+  height: 500rpx;
+  padding: 50rpx 0;
+  }
+  /* 上拉加载状态 */
+  .indicator-black{
+    color: #333333 !important;
+  }
+  .text-l {
+    font-size: 36rpx;
+  }
+  .loading{
+    text-align: center;
+    padding: 15rpx;
+  }
+  .none-more{
+    text-align: center;
+    padding: 15rpx;
+    color: #333333;
+    font-size: 28rpx;
+  }

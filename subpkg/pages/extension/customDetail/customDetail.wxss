@@ -1,0 +1,126 @@
+.container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100vw;
+  height: 100vh;
+  background-color: white ;
+}
+.top-con-view {
+  height: calc(100vh - 100px);
+  /* background-color: red; */
+  overflow: scroll;
+  padding-bottom: 20px;
+}
+.con-item {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  height: 50px;
+  width: 100vw;
+  background-color: white;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+.item-right-text {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+.ss{
+  color: #000;
+}
+.line-view {
+  width: 100vw;
+  height: 2px;
+  /* color:red ; */
+}
+.chooseImg {
+  width: 90%;
+  padding: 20rpx;
+  /* padding: 30rpx 50rpx 70rpx; */
+}
+.imgs {
+  display: flex;
+  width: calc(100vw - 30px);
+  flex-wrap: wrap;
+  /* background-color: red; */
+}
+.add-img {
+  position: relative;
+  width: calc(25vw - 13px);
+  height: calc(25vw - 13px);
+  margin-left: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+  /* margin: 10rpx 25rpx 10rpx 0; */
+}
+image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  /* border: 1rpx solid #3a3a3a; */
+}
+.removeicon {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  text-align: center;
+  line-height: 36rpx;
+  color: #495258;
+  font-size: 26rpx;
+  z-index: 2;
+  top: 5rpx;
+  right: 5rpx;
+}
+.sign-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: calc(100vw - 80px);
+  height: 50px;
+  border-radius: 25px;
+  background-color: #ffbb01;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pannel-item {
+  display: flex;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 32rpx;
+  font-size: 32rpx;
+  margin-bottom: 32rpx;
+  background-color: #fff;
+}
+
+.pannel-item .last {
+  margin-bottom: -13rpx;
+}
+.pannel-label {
+  width: 160rpx;
+  margin-right: 32rpx;
+}
+
+.pannel-text {
+  flex: 1;
+  color: #000;
+  font-size: 30rpx;
+
+}
+.t-icon{
+  padding-right: 20rpx;
+}
+
+/*# sourceMappingURL=customAdd.wxss.map */

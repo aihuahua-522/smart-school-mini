@@ -1,0 +1,71 @@
+<!--subpkg/pages/extension/adminQrSign/adminQrSign.wxml-->
+<view style="background-color: white;height: 100vh;">
+  <t-message id="t-message" />
+  <view class="info">
+    <image src="{{userinfo.avatar}}"></image>
+    <view>{{userinfo.name}}</view>
+  </view>
+  <view class="essay">每一个活动，都有一个意义</view>
+  <view class="sign_box">
+    <view class="sign_in">
+      <view class="sign_title">
+        <view class="iconfont icon-dian {{signDetail.signInFlag?'green':''}}"></view>
+        <view class="sign_time">签到时间：{{signDetail.signInStartTime}}</view>
+      </view>
+
+      <view wx:if="{{signDetail.adminFlag === 1 && signDetail.signInFlag}}" class="signBtn">
+        <t-button size="large" theme="primary" bindtap="signIn">签到</t-button>
+      </view>
+      <view wx:elif="{{signDetail.isSignIn}}">
+        <view class="reality_time">打卡时间：{{signDetail.signInTime}}</view>
+        <view class="sign_in_address">
+          <view class="iconfont icon-site"></view>
+          {{address}}
+        </view>
+      </view>
+      <view class="clock_in" wx:elif="{{signDetail.signInFlag == 1&&!signDetail.isSignIn}}">
+        <t-button theme="primary">点击签到</t-button>
+      </view>
+      <view wx:if="{{signInSuccess}}">
+        <view class="reality_time">打卡时间：{{signInTime}}</view>
+        <view class="sign_in_address">
+          <view class="iconfont icon-site"></view>
+          {{actiDetails.sign_address}}
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="sign_out" wx:if="{{signDetail.shouldSignOut==1}}">
+      <view class="sign_title">
+        <view class="iconfont icon-dian  {{signDetail.signOutFlag?'green':''}}"></view>
+        <view class="sign_time">签退时间：{{signDetail.signOutStartTime}}</view>
+      </view>
+      <view wx:if="{{signDetail.adminFlag === 1 && signDetail.signOutFlag}}" class="signBtn">
+        <t-button size="large" theme="primary" bindtap="signOut">签退</t-button>
+      </view>
+      <view wx:elif="{{signDetail.signInFlag == 0||signDetail.isSignIn}}">
+        <view class="clocked_in" wx:if="{{signDetail.isSignOut == 1}}">
+          <view class="reality_time">打卡时间：{{signDetail.signOutTime}}</view>
+          <view class="sign_in_address">
+            <view class="iconfont icon-site"></view>
+            <!-- <view>{{signDetail.signOutAddress}}</view> -->
+          </view>
+        </view>
+
+        <view class="clock_in tx-c" wx:elif="{{signDetail.signOutFlag == 1 &&!signDetail.isSignOut }}">
+          <t-button theme="primary">点击签退</t-button>
+        </view>
+        <view wx:if="{{signOutSuccess}}">
+          <view class="reality_time">打卡时间：{{signOutTime}}</view>
+          <view class="sign_in_address">
+            <view class="iconfont icon-site"></view>
+            <!-- {{actiDetails.sign_address}} -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<view class="container">
+  <t-message id="t-message" />
+
+  <view wx:for="{{questionList}}" wx:key="index" class="formpadding">
+    <rate question="{{item}}" disable="{{!showSubmitBtn}}" bindchange="onChange" data-id="{{item.id}}"></rate>
+  </view>
+  <t-button theme="primary" size="large" block wx:if="{{showSubmitBtn}}" bindtap="submitQuestion">提交</t-button>
+
+</view >
+

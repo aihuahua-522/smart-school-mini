@@ -1,0 +1,38 @@
+
+<view class="container">
+  <t-fab icon="add" bind:click="handleFabClick"></t-fab>
+  <t-tabs defaultValue="{{'0'}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+
+    <t-tab-panel label="{{val.label}}" value="{{val.value}}" wx:for="{{tabs}}" wx:for-item="val" wx:for-index="idx" wx:key="val">
+
+      <view class="list-item" bindtap="goRepairDetail" wx:for="{{repairList}}" wx:key="index" data-id='{{item.id}}'>
+        <t-cell title="{{item.type.value}}" description="故障描述：{{item.repairQuestion}}" bordered="{{false}}" />
+        <view class="time">{{item.repairDate}}</view>
+        <view class="repair-type {{val.value==0?'pending':val.value==1?'visited':val.value==2?'evaluated':'finish' }}">{{repairVal}}</view>
+      </view>
+      <view class="sh">123</view>
+    </t-tab-panel>
+    <!-- <t-tab-panel label="待上门" value="1">
+  
+      <view class="list-item">
+        <t-cell title="故障类型" description="故障描述一段很长很长的内容文豆腐干发萨尔发我二号发广告dfsadas" bordered="{{false}}" />
+        <view class="time">2022-12-27 12:00</view>
+        <view class="repair-type visited">待上门</view>
+      </view>
+    </t-tab-panel>
+    <t-tab-panel label="待评价" value="2">
+      <view class="list-item">
+        <t-cell title="故障类型" description="故障描述一段很长很长的内容文豆腐干发萨尔发我二号发广告dfsadas" bordered="{{false}}" />
+        <view class="time">2022-12-27 12:00</view>
+        <view class="repair-type evaluated ">待评价</view>
+      </view>
+    </t-tab-panel>
+    <t-tab-panel label="已完结" value="3">
+      <view class="list-item">
+        <t-cell title="故障类型" description="故障描述一段很长很长的内容文豆腐干发萨尔发我二号发广告dfsadas" bordered="{{false}}" />
+        <view class="time">2022-12-27 12:00</view>
+        <view class="repair-type finish ">已完结</view>
+      </view>
+    </t-tab-panel> -->
+  </t-tabs>
+</view>

@@ -1,0 +1,130 @@
+<t-pull-down-refresh value="{{baseRefresh}}" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}" bind:refresh="onPullDownRefresh">
+  <!-- 申请部落的弹框 -->
+  <t-dialog visible="{{showWithInput}}" title="申请社团" confirm-btn="确认" cancel-btn="取消" bind:confirm="submitApplyTeam" bind:cancel="closeDialog">
+    <!-- <input slot="content" placeholder="请输入申请理由" placeholder-class="placeholder" /> -->
+    <t-input slot="content" bind:change="changeReason" value="{{reason}}" placeholder=" 请输入申请理由" />
+
+  </t-dialog>
+  <view class="page">
+    <t-search model:value="{{keyword}}" bind:clear="clearHandle" bind:change="changeHandle" placeholder="搜索部落" center="{{true}}" />
+    <t-tabs defaultValue="{{currentIndex}}" bind:change="onTabsChange" t-class="custom-tabs">
+      <t-tab-panel label="全部" value="0">
+        <view class="tribal_container" wx:for="{{dataList[0]}}" wx:key="id" bindtap="clickItem" data-id="{{item.id}}">
+          <!-- 社团头像 -->
+          <view class="tribal_icon">
+            <t-avatar image="{{item.imgList.length != 0 ? item.imgList[0].url : ''}}" />
+          </view>
+          <!-- 社团信息 -->
+          <view class="tribal_info">
+            <!-- 上部分 社团名称 人数 -->
+            <view class="tribal_info_top">
+              <view class="tribal_info_top_content">
+                <text class="team_name">{{item.teamName}}</text>
+                <text class="ig-text-color">{{item.personCount}}人</text>
+              </view>
+
+              <!-- 右边的加入按钮 -->
+              <view class="tribal_info_top_join">
+                <t-button wx:if="{{item.joinFlag == 0}}" size="small" shape="round" theme="primary" variant="outline" bindtap="showApplyTeamDialog" data-id="{{item.id}}">报名</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 1}}" size="small" shape="round" theme="primary" variant="outline">审核中</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 2}}" size="small" shape="round" theme="primary" variant="outline">已加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 3}}" size="small" shape="round" theme="primary" variant="outline">被拒绝</t-button>
+              </view>
+            </view>
+            <!-- 下部分 描述 -->
+            <view class="tribal_info_bottom graw-text-color">{{item.teamDescription}}
+            </view>
+          </view>
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="待审核" value="1">
+        <view class="tribal_container" wx:for="{{dataList[1]}}" wx:key="id" bindtap="clickItem" data-id="{{item.id}}">
+          <!-- 社团头像 -->
+          <view class="tribal_icon">
+            <t-avatar image="{{item.icon}}" />
+          </view>
+          <!-- 社团信息 -->
+          <view class="tribal_info">
+            <!-- 上部分 社团名称 人数 -->
+            <view class="tribal_info_top">
+              <view class="tribal_info_top_content">
+                <text class="team_name">{{item.teamName}}</text>
+                <text class="ig-text-color">{{item.personCount}}人</text>
+              </view>
+
+              <!-- 右边的加入按钮 -->
+              <view class="tribal_info_top_join">
+                <t-button wx:if="{{item.joinFlag == 0}}" size="small" shape="round" theme="primary" variant="outline">加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 1}}" size="small" shape="round" theme="primary" variant="outline">审核中</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 2}}" size="small" shape="round" theme="primary" variant="outline">已加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 3}}" size="small" shape="round" theme="primary" variant="outline">被拒绝</t-button>
+
+              </view>
+            </view>
+            <!-- 下部分 描述 -->
+            <view class="tribal_info_bottom graw-text-color">{{item.teamDescription}}
+            </view>
+          </view>
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="已加入" value="2">
+        <view class="tribal_container" wx:for="{{dataList[2]}}" wx:key="id" bindtap="clickItem" data-id="{{item.id}}">
+          <!-- 社团头像 -->
+          <view class="tribal_icon">
+            <t-avatar image="{{item.icon}}" />
+          </view>
+          <!-- 社团信息 -->
+          <view class="tribal_info">
+            <!-- 上部分 社团名称 人数 -->
+            <view class="tribal_info_top">
+              <view class="tribal_info_top_content">
+                <text class="team_name">{{item.teamName}}</text>
+                <text class="ig-text-color">{{item.personCount}}人</text>
+              </view>
+
+              <!-- 右边的加入按钮 -->
+              <view class="tribal_info_top_join">
+                <t-button wx:if="{{item.joinFlag == 0}}" size="small" shape="round" theme="primary" variant="outline">加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 1}}" size="small" shape="round" theme="primary" variant="outline">审核中</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 2}}" size="small" shape="round" theme="primary" variant="outline">已加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 3}}" size="small" shape="round" theme="primary" variant="outline">被拒绝</t-button>
+              </view>
+            </view>
+            <!-- 下部分 描述 -->
+            <view class="tribal_info_bottom graw-text-color">{{item.teamDescription}}
+            </view>
+          </view>
+        </view>
+      </t-tab-panel>
+      <t-tab-panel label="被拒绝" value="3">
+        <view class="tribal_container" wx:for="{{dataList[3]}}" wx:key="id" bindtap="clickItem" data-id="{{item.id}}">
+          <!-- 社团头像 -->
+          <view class="tribal_icon">
+            <t-avatar image="{{item.icon}}" />
+          </view>
+          <!-- 社团信息 -->
+          <view class="tribal_info">
+            <!-- 上部分 社团名称 人数 -->
+            <view class="tribal_info_top">
+              <view class="tribal_info_top_content">
+                <text class="team_name">{{item.teamName}}</text>
+                <text class="ig-text-color">{{item.personCount}}人</text>
+              </view>
+
+              <!-- 右边的加入按钮 -->
+              <view class="tribal_info_top_join">
+                <t-button wx:if="{{item.joinFlag == 0}}" size="small" shape="round" theme="primary" variant="outline">加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 1}}" size="small" shape="round" theme="primary" variant="outline">审核中</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 2}}" size="small" shape="round" theme="primary" variant="outline">已加入</t-button>
+                <t-button disabled wx:if="{{item.joinFlag == 3}}" size="small" shape="round" theme="primary" variant="outline">被拒绝</t-button>
+              </view>
+            </view>
+            <!-- 下部分 描述 -->
+            <view class="tribal_info_bottom graw-text-color">拒绝原因:{{item.refuseReason}}
+            </view>
+          </view>
+        </view>
+      </t-tab-panel>
+    </t-tabs>
+  </view>
+</t-pull-down-refresh>

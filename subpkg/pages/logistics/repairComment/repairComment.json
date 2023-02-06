@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "t-rate": "tdesign-miniprogram/rate/rate",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea"
+  },
+  "navigationBarTitleText": "工单评论",
+  "navigationStyle": "default"
+}

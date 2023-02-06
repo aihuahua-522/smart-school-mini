@@ -1,0 +1,64 @@
+<!--subpkg/pages/locationSign/locationSign.wxml-->
+<view class="container">
+  <t-message id="t-message" />
+  <view class="top-con-view">
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      校区名:
+      <view class="item-right-text">{{schoolName}}</view>
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      园区名:
+      <view class="item-right-text">{{packName}}</view>
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      楼栋号:
+      <view class="item-right-text">{{dormName}}</view>
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item">
+      房间号:<view class="item-right-text">{{roomName}}</view>
+    </view>
+    <view style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+    <view class="con-item" style="font-size: 16px; font-weight: 500; color: #333333;">
+      图片：
+    </view>
+    <view class="chooseImg">
+      <view class="imgs">
+
+        <view wx:for="{{avatarPath}}" wx:key="index">
+          <!-- 添加的图片 -->
+          <view class="add-img img">
+            <image data-index="{{index}}" bindtap="previewAvatarImage" src="{{item}}" />
+            <image  wx:if="{{showSignBtn}}"  class="removeicon" src="/image/image-del.png" mode="" bindtap="removeAvatarImage"></image>
+            <!-- 删除按钮 -->
+            <!-- <view class="removeicon" data-index="{{index}}" bindtap="removeAvatarImage">×</view> -->
+          </view>
+        </view>
+
+        <image wx:if="{{(avatarPath.length == 2 ? false : true )&& showSignBtn}}" class="add-img" bindtap="goChooseImg" src="/image/delete.png" mode=""></image>
+
+      </view>
+    </view>
+
+    <view class="con-item" wx:if="{{showSignBtn}}" style="font-size: 16px; font-weight: 500; color: #333333; margin-top: -10px;">
+      当前位置：
+    </view>
+    <view class="con-item" wx:else style="font-size: 16px; font-weight: 500; color: #333333; margin-top: -10px;">
+      签到位置：
+    </view>
+
+    <view class="item-right-text" style="color: #666666;">{{signObj.address.length == 0 ? "正在获取位置信息" : signObj.address}}</view>
+  </view>
+  <view  wx:if="{{showSignBtn}}" style="height: 1px; width: 100vw; background-color: #e4e4e4;"></view>
+
+  <view class="sign-btn" wx:if="{{showSignBtn}}" bindtap="signCheck">立即签到</view>
+
+
+
+
+  <!-- 添加图片按钮 -->
+
+</view>
